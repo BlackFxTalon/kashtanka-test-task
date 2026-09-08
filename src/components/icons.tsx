@@ -57,9 +57,9 @@ export function GearIcon() {
   );
 }
 
-export function DocIcon() {
+export function DocIcon({ width = 21, height = 16 }: { width?: number; height?: number }) {
   return (
-    <svg width="9" height="11" viewBox="0 0 9 11" fill="none" stroke="currentColor" strokeWidth="1.1" aria-hidden="true">
+    <svg width={width} height={height} viewBox="0 0 9 11" fill="none" stroke="currentColor" strokeWidth="1.1" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
       <path d="M1 1h4.5L8 3.5V10H1Z" />
       <path d="M5.5 1v3H8" />
     </svg>

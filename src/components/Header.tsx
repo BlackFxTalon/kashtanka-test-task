@@ -150,7 +150,7 @@ export default function Header() {
             <span className={styles.menuDivider} />
             <a href="#" className={`btn btn--sale ${styles.saleBtn}`}>
               Продажа щенка
-              <PawIcon />
+              <Image src="/images/icons/icon-profile.svg" alt="Меню пользователя" width={38} height={38} />
             </a>
             {submenuOpen && (
               <div className={styles.submenu}>
