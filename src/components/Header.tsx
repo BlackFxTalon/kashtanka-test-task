@@ -102,37 +102,37 @@ export default function Header() {
           <Image src="/images/icons/icon-home.svg" alt="Главная" width={17} height={17} className={styles.homeIcon} />
         </button>
 
-        {searchOpen ? (
-          <div className={styles.search}>
-            <input className={styles.searchInput} type="text" placeholder="Введите фразу для поиска" />
-            <button type="button" className={styles.checkbox} onClick={() => setBySite((v) => !v)}>
-              <Image
-                src={bySite ? "/images/icons/checkbox-active.svg" : "/images/icons/checkbox-inactive.svg"}
-                alt={bySite ? "Чекбокс отмечен" : "Чекбокс не отмечен"}
-                width={20}
-                height={20}
-              />
-              По сайту
-            </button>
-            <button type="button" className={styles.checkbox} onClick={() => setByMedia((v) => !v)}>
-              <Image
-                src={byMedia ? "/images/icons/checkbox-active.svg" : "/images/icons/checkbox-inactive.svg"}
-                alt={byMedia ? "Чекбокс отмечен" : "Чекбокс не отмечен"}
-                width={20}
-                height={20}
-              />
-              По медиа
-            </button>
-            <span className={styles.searchDivider} />
-            <button type="button" className={styles.searchSubmit}>
-              <Image src="/images/icons/icon-search.svg" alt="Найти" width={17} height={17} />
-            </button>
-            <button type="button" className={styles.searchClose} onClick={() => setSearchOpen(false)}>
-              <Image src="/images/icons/icon-close.svg" alt="Закрыть поиск" width={38} height={38} />
-            </button>
-          </div>
-        ) : (
-          <div className={styles.menu}>
+        <div className={styles.menu}>
+            <div className={`${styles.search}${searchOpen ? ` ${styles.searchOpen}` : ""}`}>
+              <div className={styles.searchBody}>
+                <input className={styles.searchInput} type="text" placeholder="Введите фразу для поиска" />
+                <button type="button" className={styles.checkbox} onClick={() => setBySite((v) => !v)}>
+                  <Image
+                    src={bySite ? "/images/icons/checkbox-active.svg" : "/images/icons/checkbox-inactive.svg"}
+                    alt={bySite ? "Чекбокс отмечен" : "Чекбокс не отмечен"}
+                    width={20}
+                    height={20}
+                  />
+                  По сайту
+                </button>
+                <button type="button" className={styles.checkbox} onClick={() => setByMedia((v) => !v)}>
+                  <Image
+                    src={byMedia ? "/images/icons/checkbox-active.svg" : "/images/icons/checkbox-inactive.svg"}
+                    alt={byMedia ? "Чекбокс отмечен" : "Чекбокс не отмечен"}
+                    width={20}
+                    height={20}
+                  />
+                  По медиа
+                </button>
+                <span className={styles.searchDivider} />
+                <button type="button" className={styles.searchSubmit}>
+                  <Image src="/images/icons/icon-search.svg" alt="Найти" width={17} height={17} />
+                </button>
+                <button type="button" className={styles.searchClose} onClick={() => setSearchOpen(false)}>
+                  <Image src="/images/icons/icon-close.svg" alt="Закрыть поиск" width={38} height={38} />
+                </button>
+              </div>
+            </div>
             <nav className={styles.nav}>
               {MENU.map((item) => (
                 <button
@@ -166,7 +166,6 @@ export default function Header() {
               </div>
             )}
           </div>
-        )}
 
         <div className={styles.profileNav}>
           <button type="button" className={styles.iconBtn} onClick={() => setSearchOpen(true)}>
