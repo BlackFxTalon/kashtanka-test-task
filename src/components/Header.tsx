@@ -150,7 +150,7 @@ export default function Header() {
             <span className={styles.menuDivider} />
             <a href="#" className={`btn btn--sale ${styles.saleBtn}`}>
               Продажа щенка
-              <Image src="/images/icons/icon-profile.svg" alt="Меню пользователя" width={38} height={38} />
+              <Image src="/images/icons/icon-profile.svg" alt="Меню пользователя" width={21} height={16} />
             </a>
             {submenuOpen && (
               <div className={styles.submenu}>
@@ -178,7 +178,7 @@ export default function Header() {
           </a>
           <span className={styles.profileDivider} />
           <button type="button" className={styles.iconBtn}>
-            <Image src="/images/icons/icon-message.svg" alt="Сообщения" width={38} height={38} />
+            <Image src="/images/icons/icon-message.svg" alt="Сообщения" width={18} height={18} />
           </button>
           <button type="button" className={styles.iconBtn}>
             <Image src="/images/icons/icon-bell.svg" alt="Уведомления" width={38} height={38} />
@@ -189,7 +189,7 @@ export default function Header() {
               className={styles.iconBtn}
               onClick={() => setUserMenuOpen((v) => !v)}
             >
-              <Image src="/images/icons/icon-profile.svg" alt="Меню пользователя" width={38} height={38} />
+              <Image src="/images/icons/icon-profile.svg" alt="Меню пользователя" width={21} height={16} />
             </button>
             {userMenuOpen && (
               <div className={styles.userMenu}>
