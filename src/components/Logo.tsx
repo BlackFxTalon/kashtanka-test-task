@@ -5,10 +5,11 @@ export default function Logo({ compact = false }: { compact?: boolean }) {
   return (
     <span className={styles.logo}>
       <Image
-        src="/images/logo/logo-dog.png"
+        src="/images/logo/logo-dog.svg"
         alt=""
         width={40}
         height={30}
+        unoptimized
         className={styles.logo__img}
       />
       <span className={styles.logo__text}>
