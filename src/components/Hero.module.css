@@ -1,0 +1,176 @@
+/* Шапка: три Инфоблока (фото + стеклянная панель с кнопками), слоган и текстовая панель. */
+
+.hero {
+  padding: 50px 20px 0;
+}
+
+.inner {
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+/* --- Инфоблоки --- */
+
+.blocks {
+  display: grid;
+  grid-template-columns: 400px 500px 500px;
+  gap: 50px;
+}
+
+.block {
+  position: relative;
+  height: 350px;
+  border: 1px solid var(--color-primary);
+  border-radius: var(--radius-card);
+}
+
+.blockPhoto {
+  object-fit: cover;
+  border-radius: var(--radius-card);
+}
+
+.blockBody {
+  position: absolute;
+  left: 1px;
+  right: 1px;
+  bottom: 1px;
+  display: flex;
+  flex-direction: column;
+  min-height: 150px;
+  padding: 24px 30px 25px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.6) 100%);
+  backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--color-white);
+  border-radius: var(--radius-card);
+}
+
+.blockTitle {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 30px;
+  white-space: nowrap;
+}
+
+.blockBtns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: auto;
+}
+
+/* --- Слоган + текст --- */
+
+.bottom {
+  display: grid;
+  grid-template-columns: 400px 1fr;
+  gap: 50px;
+  align-items: start;
+  margin-top: 30px;
+  padding-bottom: 50px;
+}
+
+.slogan {
+  margin: 0;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 37px;
+  color: var(--color-white);
+}
+
+.text {
+  min-height: 104px;
+  padding: 20px 15px;
+  background: var(--grad-btn-white);
+  border: 0.5px solid var(--glass-border-color);
+  border-radius: var(--radius-btn);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 32px;
+  color: var(--color-text);
+}
+
+/* ==================== 1600 ==================== */
+
+@media (min-width: 980px) and (max-width: 1679px) {
+  .inner {
+    max-width: 1420px;
+  }
+
+  .blocks {
+    grid-template-columns: 400px 1fr 1fr;
+    gap: 59px;
+  }
+
+  .bottom {
+    grid-template-columns: 400px 1fr;
+    gap: 59px;
+  }
+}
+
+/* ==================== 980 ==================== */
+
+@media (min-width: 980px) and (max-width: 1119px) {
+  .inner {
+    max-width: 890px;
+  }
+}
+
+@media (max-width: 1599px) {
+  .text {
+    display: none;
+  }
+
+  .bottom {
+    grid-template-columns: 1fr;
+    padding-bottom: 40px;
+  }
+}
+
+@media (min-width: 980px) and (max-width: 1599px) {
+  .blocks {
+    grid-template-columns: 400px 1fr;
+    gap: 38px;
+  }
+
+  .blocks > .block:nth-child(3) {
+    display: none;
+  }
+}
+
+/* ==================== 375 ==================== */
+
+@media (max-width: 979px) {
+  .hero {
+    padding: 23px 10px 0;
+  }
+
+  .blocks {
+    grid-template-columns: 1fr;
+  }
+
+  .blocks > .block:nth-child(1),
+  .blocks > .block:nth-child(3) {
+    display: none;
+  }
+
+  .block {
+    height: 350px;
+  }
+
+  .blockTitle {
+    white-space: normal;
+  }
+
+  .bottom {
+    margin-top: 30px;
+    padding-bottom: 20px;
+  }
+
+  .slogan {
+    font-size: 30px;
+    line-height: 37px;
+  }
+}
