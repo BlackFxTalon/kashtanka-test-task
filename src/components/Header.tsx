@@ -16,13 +16,13 @@ import styles from "./Header.module.css";
 
 /* wide: на каких диапазонах пункт виден.
    xl — только ≥1800 (по макету 1920), md — ≥1240 (по макету 1600), all — всегда */
-const MENU: { label: string; wide: "xl" | "md" | "all"; trigger?: boolean }[] = [
+const MENU: { label: string; wide: "xl" | "md" | "all" | "1920"; trigger?: boolean }[] = [
   { label: "О проекте", wide: "xl" },
   { label: "Щенки", wide: "all" },
   { label: "Услуги", wide: "all" },
-  { label: "Тарифы", wide: "md" },
-  { label: "Социальные проекты", wide: "all" },
-  { label: "Блог", wide: "md" },
+  { label: "Тарифы", wide: "1920" },
+  { label: "Социальные проекты", wide: "1920" },
+  { label: "Блог", wide: "1920" },
   { label: "База пород", wide: "xl" },
   { label: "Другое", wide: "all", trigger: true },
 ];
@@ -139,7 +139,13 @@ export default function Header() {
                   key={item.label}
                   type="button"
                   className={`${styles.navLink} ${
-                    item.wide === "xl" ? styles.navLinkXl : item.wide === "md" ? styles.navLinkMd : ""
+                    item.wide === "xl"
+                      ? styles.navLinkXl
+                      : item.wide === "md"
+                        ? styles.navLinkMd
+                        : item.wide === "1920"
+                          ? styles.navLink1920
+                          : ""
                   }${item.trigger && submenuOpen ? ` ${styles.navLinkOpen}` : ""}`}
                   onClick={item.trigger ? () => setSubmenuOpen((v) => !v) : undefined}
                 >

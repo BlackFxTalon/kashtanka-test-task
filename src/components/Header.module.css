@@ -104,6 +104,10 @@
   display: none;
 }
 
+.navLink1920 {
+  display: none;
+}
+
 .menuDivider {
   width: 1px;
   height: 50px;
@@ -157,6 +161,18 @@
 }
 
 /* --- Профильная навигация справа --- */
+
+/* login скрыт до 1600, на мобильной зоне (<=979) показывается снова */
+.login {
+  display: none;
+}
+
+@media (min-width: 1600px) {
+  .login {
+    display: inline-flex;
+  }
+}
+
 
 .profileNav {
   display: flex;
@@ -216,7 +232,6 @@
 
 .login {
   position: relative;
-  display: inline-flex;
   align-items: center;
   gap: 8px;
   height: 39px;
@@ -498,9 +513,15 @@
   }
 }
 
+@media (min-width: 1600px) {
+  .navLink1920 {
+    display: inline-block;
+  }
+}
+
 /* ==================== десктоп ≥980 ==================== */
 
-@media (min-width: 980px) {
+@media (min-width: 1600px) {
   .homeBtn {
     display: flex;
   }
@@ -517,6 +538,18 @@
   .userWrap,
   .profileDivider {
     display: none;
+  }
+}
+
+@media (min-width: 980px) and (max-width: 1919px) {
+  .profileDivider {
+    display: none;
+  }
+}
+
+@media (min-width: 1920px) {
+  .profileDivider {
+    display: block;
   }
 }
 
@@ -601,6 +634,7 @@
   }
 
   .login {
+    display: inline-flex;
     font-size: 14px;
     height: 30px;
     padding: 0 12px;
