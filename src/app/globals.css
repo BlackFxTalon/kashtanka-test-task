@@ -15,7 +15,7 @@
   --grad-btn: linear-gradient(180deg, var(--color-accent) 0%, var(--color-primary) 100%);
   --grad-btn-active: linear-gradient(180deg, var(--color-accent) 0%, var(--color-accent-end) 100%);
   --grad-btn-white: linear-gradient(180deg, var(--color-white) 0%, var(--color-gray-light) 100%);
-  --bg-page: linear-gradient(180deg, #8d7ac8 0%, var(--color-primary) 100%);
+  --bg-page: linear-gradient(180deg, #8d7ac8 0%, var(--color-primary) 34%);
 
   /* Стекло (glassmorphism-подложки) */
   --glass: linear-gradient(90deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.6) 100%);

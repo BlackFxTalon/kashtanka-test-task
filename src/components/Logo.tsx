@@ -13,8 +13,8 @@ export default function Logo({ compact = false }: { compact?: boolean }) {
         className={styles.logo__img}
       />
       <div className={styles.logo__text}>
-        <p className={styles.logo__name}>KASHTANKA</p>
-        {!compact && <p className={styles.logo__tagline}>заведи пушистого друга</p>}
+        <span className={styles.logo__name}>KASHTANKA</span>
+        {!compact && <span className={styles.logo__tagline}>заведи пушистого друга</span>}
       </div>
     </div>
   );

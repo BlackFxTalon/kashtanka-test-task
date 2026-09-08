@@ -98,8 +98,7 @@ export default function Header() {
           <Logo />
         </div>
 
-        <button type="button" className={styles.homeBtn}>
-          <Image src="/images/icons/icon-circle-bg.svg" alt="" width={38} height={38} />
+        <button type="button" className={styles.iconBtn} >
           <Image src="/images/icons/icon-home.svg" alt="Главная" width={17} height={17} className={styles.homeIcon} />
         </button>
 
@@ -126,8 +125,7 @@ export default function Header() {
             </button>
             <span className={styles.searchDivider} />
             <button type="button" className={styles.searchSubmit}>
-              <Image src="/images/icons/icon-circle-bg.svg" alt="" width={38} height={38} />
-              <Image src="/images/icons/icon-search.svg" alt="Найти" width={17} height={17} className={styles.homeIcon} />
+              <Image src="/images/icons/icon-search.svg" alt="Найти" width={17} height={17} />
             </button>
             <button type="button" className={styles.searchClose} onClick={() => setSearchOpen(false)}>
               <Image src="/images/icons/icon-close.svg" alt="Закрыть поиск" width={38} height={38} />
@@ -172,8 +170,7 @@ export default function Header() {
 
         <div className={styles.profileNav}>
           <button type="button" className={styles.iconBtn} onClick={() => setSearchOpen(true)}>
-            <Image src="/images/icons/icon-circle-bg.svg" alt="" width={38} height={38} />
-            <Image src="/images/icons/icon-search.svg" alt="Открыть поиск" width={17} height={17} className={styles.iconGlyph} />
+            <Image src="/images/icons/icon-search.svg" alt="Открыть поиск" width={17} height={17} />
           </button>
           <a href="#" className={styles.login}>
             <Image src="/images/icons/icon-login.svg" alt="" width={18} height={18} />
