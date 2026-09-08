@@ -174,14 +174,14 @@ export default function Header() {
           </button>
           <a href="#" className={styles.login}>
             <Image src="/images/icons/icon-login.svg" alt="" width={18} height={18} />
-            Вход
+            <span>Вход</span>
           </a>
           <span className={styles.profileDivider} />
           <button type="button" className={styles.iconBtn}>
             <Image src="/images/icons/icon-message.svg" alt="Сообщения" width={18} height={18} />
           </button>
           <button type="button" className={styles.iconBtn}>
-            <Image src="/images/icons/icon-bell.svg" alt="Уведомления" width={38} height={38} />
+            <Image src="/images/icons/icon-bell.svg" alt="Уведомления" width={19} height={20} />
           </button>
           <span className={styles.userWrap}>
             <button
