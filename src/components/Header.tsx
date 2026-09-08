@@ -98,7 +98,7 @@ export default function Header() {
           <Logo />
         </div>
 
-        <button type="button" className={styles.iconBtn} >
+        <button type="button" className={styles.homeBtn}>
           <Image src="/images/icons/icon-home.svg" alt="Главная" width={17} height={17} className={styles.homeIcon} />
         </button>
 
@@ -177,16 +177,16 @@ export default function Header() {
             Вход
           </a>
           <span className={styles.profileDivider} />
-          <button type="button" className={styles.iconBtnPlain}>
+          <button type="button" className={styles.iconBtn}>
             <Image src="/images/icons/icon-message.svg" alt="Сообщения" width={38} height={38} />
           </button>
-          <button type="button" className={styles.iconBtnPlain}>
+          <button type="button" className={styles.iconBtn}>
             <Image src="/images/icons/icon-bell.svg" alt="Уведомления" width={38} height={38} />
           </button>
           <span className={styles.userWrap}>
             <button
               type="button"
-              className={styles.iconBtnPlain}
+              className={styles.iconBtn}
               onClick={() => setUserMenuOpen((v) => !v)}
             >
               <Image src="/images/icons/icon-profile.svg" alt="Меню пользователя" width={38} height={38} />
