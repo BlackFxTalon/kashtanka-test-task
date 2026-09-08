@@ -94,13 +94,13 @@ export default function Header() {
           <BurgerIcon />
         </button>
 
-        <span className={styles.logo}>
+        <div className={styles.logo}>
           <Logo />
-        </span>
+        </div>
 
         <button type="button" className={styles.homeBtn}>
           <Image src="/images/icons/icon-circle-bg.svg" alt="" width={38} height={38} />
-          <Image src="/images/icons/icon-home.svg" alt="" width={17} height={17} className={styles.homeIcon} />
+          <Image src="/images/icons/icon-home.svg" alt="Главная" width={17} height={17} className={styles.homeIcon} />
         </button>
 
         {searchOpen ? (
@@ -109,7 +109,7 @@ export default function Header() {
             <button type="button" className={styles.checkbox} onClick={() => setBySite((v) => !v)}>
               <Image
                 src={bySite ? "/images/icons/checkbox-active.svg" : "/images/icons/checkbox-inactive.svg"}
-                alt=""
+                alt={bySite ? "Чекбокс отмечен" : "Чекбокс не отмечен"}
                 width={20}
                 height={20}
               />
@@ -118,7 +118,7 @@ export default function Header() {
             <button type="button" className={styles.checkbox} onClick={() => setByMedia((v) => !v)}>
               <Image
                 src={byMedia ? "/images/icons/checkbox-active.svg" : "/images/icons/checkbox-inactive.svg"}
-                alt=""
+                alt={byMedia ? "Чекбокс отмечен" : "Чекбокс не отмечен"}
                 width={20}
                 height={20}
               />
@@ -127,10 +127,10 @@ export default function Header() {
             <span className={styles.searchDivider} />
             <button type="button" className={styles.searchSubmit}>
               <Image src="/images/icons/icon-circle-bg.svg" alt="" width={38} height={38} />
-              <Image src="/images/icons/icon-search.svg" alt="" width={17} height={17} className={styles.homeIcon} />
+              <Image src="/images/icons/icon-search.svg" alt="Найти" width={17} height={17} className={styles.homeIcon} />
             </button>
             <button type="button" className={styles.searchClose} onClick={() => setSearchOpen(false)}>
-              <Image src="/images/icons/icon-close.svg" alt="" width={38} height={38} />
+              <Image src="/images/icons/icon-close.svg" alt="Закрыть поиск" width={38} height={38} />
             </button>
           </div>
         ) : (
@@ -163,7 +163,7 @@ export default function Header() {
                   </span>
                 ))}
                 <button type="button" className={styles.submenuClose} onClick={() => setSubmenuOpen(false)}>
-                  <Image src="/images/icons/icon-close.svg" alt="" width={38} height={38} />
+                  <Image src="/images/icons/icon-close.svg" alt="Закрыть меню" width={38} height={38} />
                 </button>
               </div>
             )}
@@ -173,7 +173,7 @@ export default function Header() {
         <div className={styles.profileNav}>
           <button type="button" className={styles.iconBtn} onClick={() => setSearchOpen(true)}>
             <Image src="/images/icons/icon-circle-bg.svg" alt="" width={38} height={38} />
-            <Image src="/images/icons/icon-search.svg" alt="" width={17} height={17} className={styles.iconGlyph} />
+            <Image src="/images/icons/icon-search.svg" alt="Открыть поиск" width={17} height={17} className={styles.iconGlyph} />
           </button>
           <a href="#" className={styles.login}>
             <Image src="/images/icons/icon-login.svg" alt="" width={18} height={18} />
@@ -181,10 +181,10 @@ export default function Header() {
           </a>
           <span className={styles.profileDivider} />
           <button type="button" className={styles.iconBtnPlain}>
-            <Image src="/images/icons/icon-message.svg" alt="" width={38} height={38} />
+            <Image src="/images/icons/icon-message.svg" alt="Сообщения" width={38} height={38} />
           </button>
           <button type="button" className={styles.iconBtnPlain}>
-            <Image src="/images/icons/icon-bell.svg" alt="" width={38} height={38} />
+            <Image src="/images/icons/icon-bell.svg" alt="Уведомления" width={38} height={38} />
           </button>
           <span className={styles.userWrap}>
             <button
@@ -192,12 +192,12 @@ export default function Header() {
               className={styles.iconBtnPlain}
               onClick={() => setUserMenuOpen((v) => !v)}
             >
-              <Image src="/images/icons/icon-profile.svg" alt="" width={38} height={38} />
+              <Image src="/images/icons/icon-profile.svg" alt="Меню пользователя" width={38} height={38} />
             </button>
             {userMenuOpen && (
               <div className={styles.userMenu}>
                 <button type="button" className={styles.userMenuClose} onClick={() => setUserMenuOpen(false)}>
-                  <Image src="/images/icons/icon-close.svg" alt="" width={26} height={26} />
+                  <Image src="/images/icons/icon-close.svg" alt="Закрыть меню пользователя" width={26} height={26} />
                 </button>
                 {USER_MENU.map((item) => (
                   <a key={item.label} href="#" className={styles.userMenuItem}>
@@ -216,7 +216,7 @@ export default function Header() {
       {mobileMenuOpen && (
         <div className={styles.mobileMenu}>
           <button type="button" className={styles.mobileMenuClose} onClick={() => setMobileMenuOpen(false)}>
-            <Image src="/images/icons/icon-close.svg" alt="" width={38} height={38} />
+            <Image src="/images/icons/icon-close.svg" alt="Закрыть меню" width={38} height={38} />
           </button>
           <a href="#" className={`btn btn--primary ${styles.mobileSale}`}>
             Продажа щенка

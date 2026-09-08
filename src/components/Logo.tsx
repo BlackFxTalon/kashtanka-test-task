@@ -3,19 +3,19 @@ import styles from "./Logo.module.css";
 
 export default function Logo({ compact = false }: { compact?: boolean }) {
   return (
-    <span className={styles.logo}>
+    <div className={styles.logo}>
       <Image
         src="/images/logo/logo-dog.svg"
-        alt=""
+        alt="logo dog"
         width={40}
         height={30}
         unoptimized
         className={styles.logo__img}
       />
-      <span className={styles.logo__text}>
-        <span className={styles.logo__name}>KASHTANKA</span>
-        {!compact && <span className={styles.logo__tagline}>заведи пушистого друга</span>}
-      </span>
-    </span>
+      <div className={styles.logo__text}>
+        <p className={styles.logo__name}>KASHTANKA</p>
+        {!compact && <p className={styles.logo__tagline}>заведи пушистого друга</p>}
+      </div>
+    </div>
   );
 }

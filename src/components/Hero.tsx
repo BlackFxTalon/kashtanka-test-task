@@ -34,7 +34,7 @@ export default function Hero() {
             <div key={block.title} className={styles.block}>
               <Image
                 src={block.photo}
-                alt=""
+                alt={block.title}
                 fill
                 sizes="(max-width: 979px) calc(100vw - 20px), (max-width: 1599px) 460px, 500px"
                 className={styles.blockPhoto}

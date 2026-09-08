@@ -26,7 +26,7 @@ export default function Announcement({ data }: { data: AnnouncementData }) {
       <div className={styles.announcement__media}>
         <Image
           src={data.photo}
-          alt=""
+          alt={`${data.title} — ${data.breed}`}
           fill
           sizes="(max-width: 979px) calc(100vw - 40px), (max-width: 1599px) 450px, 400px"
           className={styles.announcement__photo}
@@ -37,12 +37,12 @@ export default function Announcement({ data }: { data: AnnouncementData }) {
           className={`${styles.announcement__favorite}${favorite ? ` ${styles.announcement__favoriteActive}` : ""}`}
           onClick={() => setFavorite((v) => !v)}
         >
-          <Image
-            src={favorite ? "/images/icons/heart-active.svg" : "/images/icons/heart-inactive.svg"}
-            alt=""
-            width={38}
-            height={38}
-          />
+        <Image
+          src={favorite ? "/images/icons/heart-active.svg" : "/images/icons/heart-inactive.svg"}
+          alt={favorite ? "Убрать из избранного" : "Добавить в избранное"}
+          width={38}
+          height={38}
+        />
         </button>
       </div>
 
@@ -70,7 +70,7 @@ export default function Announcement({ data }: { data: AnnouncementData }) {
 
         <div className={styles.announcement__row}>
           <span className={styles.announcement__city}>
-            <Image src="/images/icons/icon-city.svg" alt="" width={10} height={10} />
+            <Image src="/images/icons/icon-city.svg" alt="Город" width={10} height={10} />
             {data.city}
           </span>
           <span className={styles.announcement__date}>
