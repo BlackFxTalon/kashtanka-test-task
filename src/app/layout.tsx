@@ -26,10 +26,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ru">
-      <body className={`${montserrat.variable} ${manrope.variable}`}>
-        {children}
-      </body>
+    <html lang="ru" className={`${montserrat.variable} ${manrope.variable}`}>
+      <body>{children}</body>
     </html>
   );
 }
