@@ -98,8 +98,7 @@
   }
 
   .grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
+    display: none;
   }
 
   .footer {

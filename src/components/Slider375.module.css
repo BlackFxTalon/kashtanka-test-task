@@ -1,0 +1,36 @@
+/* Обёртка слайдера: виден только ниже 980. Буллеты — по Ui KIT:
+   активная — белая с фиолетовой обводкой, неактивные — светло-серые. */
+
+.slider {
+  display: none;
+}
+
+.slider :global(.swiper-pagination) {
+  position: static;
+  margin-top: 24px;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.slider :global(.swiper-pagination-bullet) {
+  width: 10px;
+  height: 10px;
+  margin: 0;
+  background: #f4f4f4;
+  opacity: 1;
+  transition: all 0.2s ease;
+}
+
+.slider :global(.swiper-pagination-bullet-active) {
+  width: 20px;
+  height: 20px;
+  background: #f4f4f4;
+  border: 5px solid var(--color-accent);
+}
+
+@media (max-width: 979px) {
+  .slider {
+    display: block;
+  }
+}

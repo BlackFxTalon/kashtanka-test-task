@@ -1,4 +1,5 @@
 import Announcement from "./Announcement";
+import Slider375 from "./Slider375";
 import { ANNOUNCEMENTS } from "./data";
 import styles from "./Vitrina.module.css";
 
@@ -18,6 +19,8 @@ export default function Vitrina() {
             <Announcement key={item.id} data={item} />
           ))}
         </div>
+
+        <Slider375 items={ANNOUNCEMENTS} />
 
         <div className={styles.footer}>
           <a href="#" className="btn btn--primary">
