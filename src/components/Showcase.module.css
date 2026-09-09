@@ -1,6 +1,6 @@
-/* Витрина 1: белая секция со скруглением сверху, грид Объявлений 4/3/2 колонки. */
 
-.vitrina {
+
+.showcase {
   margin-top: 50px;
   padding: 50px 20px 80px;
   background: var(--color-white);
@@ -36,12 +36,10 @@
 }
 
 .footer {
-  display: flex;
-  justify-content: center;
-  margin-top: 60px;
+  display: none;
 }
 
-/* ==================== 1600 ==================== */
+
 
 @media (min-width: 980px) and (max-width: 1679px) {
   .inner {
@@ -54,7 +52,7 @@
   }
 }
 
-/* ==================== 980 ==================== */
+
 
 @media (min-width: 980px) and (max-width: 1119px) {
   .inner {
@@ -63,7 +61,7 @@
 }
 
 @media (max-width: 1599px) {
-  .vitrina {
+  .showcase {
     margin-top: 30px;
     padding: 50px 30px 60px;
     border-radius: 30px 30px 0 0;
@@ -75,17 +73,19 @@
   }
 }
 
-/* ==================== 375 ==================== */
+
 
 @media (max-width: 979px) {
-  .vitrina {
+  .showcase {
+    position: relative;
     margin-top: 30px;
-    padding: 40px 10px 50px;
+    padding: 39px 9px 49px;
+    border-radius: 30px;
   }
 
   .head {
     justify-content: center;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
   }
 
   .head :global(.btn) {
@@ -102,6 +102,18 @@
   }
 
   .footer {
-    margin-top: 40px;
+    position: absolute;
+    z-index: 1;
+    left: 50%;
+    bottom: -20px;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    transform: translateX(-50%);
+  }
+
+  .footer :global(.btn) {
+    width: 140px;
+    padding-inline: 10px;
   }
 }

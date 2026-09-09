@@ -1,4 +1,4 @@
-/* Шапка: три Инфоблока (фото + стеклянная панель с кнопками), слоган и текстовая панель. */
+
 
 .hero {
   padding: 50px 20px 0;
@@ -9,7 +9,7 @@
   margin: 0 auto;
 }
 
-/* --- Инфоблоки --- */
+
 
 .blocks {
   display: grid;
@@ -22,6 +22,10 @@
   height: 350px;
   border: 1px solid var(--color-primary);
   border-radius: var(--radius-card);
+}
+
+.block:nth-child(1) .blockBody {
+  padding-left: 10px;
 }
 
 .blockPhoto {
@@ -37,7 +41,10 @@
   display: flex;
   flex-direction: column;
   min-height: 150px;
-  padding: 24px 30px 25px;
+  padding-left: 24px;
+  padding-right: 14px;
+  padding-top: 26px;
+  padding-bottom: 28px;
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%),
     linear-gradient(90deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.6) 100%);
@@ -54,14 +61,27 @@
   white-space: nowrap;
 }
 
+.blockTitleMobile {
+  display: none;
+  margin: 0;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 30px;
+  white-space: nowrap;
+}
+
+.mobileText {
+  display: none;
+}
+
 .blockBtns {
   display: flex;
-  flex-wrap: wrap;
+  justify-content: space-between;
   gap: 12px;
   margin-top: auto;
 }
 
-/* --- Слоган + текст --- */
+
 
 .bottom {
   display: grid;
@@ -92,7 +112,7 @@
   color: var(--color-text);
 }
 
-/* ==================== 1600 ==================== */
+
 
 @media (min-width: 980px) and (max-width: 1679px) {
   .inner {
@@ -110,7 +130,13 @@
   }
 }
 
-/* ==================== 980 ==================== */
+@media (min-width: 1600px) and (max-width: 1919px) {
+  .block:nth-child(3) .blockBtns {
+    flex-wrap: wrap;
+  }
+}
+
+
 
 @media (min-width: 980px) and (max-width: 1119px) {
   .inner {
@@ -140,7 +166,7 @@
   }
 }
 
-/* ==================== 375 ==================== */
+
 
 @media (max-width: 979px) {
   .hero {
@@ -152,7 +178,7 @@
   }
 
   .blocks > .block:nth-child(1),
-  .blocks > .block:nth-child(3) {
+  .blocks > .block:nth-child(2) {
     display: none;
   }
 
@@ -161,7 +187,27 @@
   }
 
   .blockTitle {
+    display: none;
+  }
+
+  .blockBody {
+    padding-left: 20px;
+    padding-right: 45px;
+    padding-top: 26px;
+    padding-bottom: 28px;
+  }
+
+  .blockTitleMobile {
+    display: block;
     white-space: normal;
+  }
+
+  .desktopText {
+    display: none;
+  }
+
+  .mobileText {
+    display: inline;
   }
 
   .bottom {
@@ -170,7 +216,8 @@
   }
 
   .slogan {
-    font-size: 30px;
-    line-height: 37px;
+    font-size: 24px;
+    line-height: inherit;
+    text-align: center;
   }
 }

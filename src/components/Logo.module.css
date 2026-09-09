@@ -31,14 +31,19 @@
   line-height: 1;
 }
 
-@media (max-width: 979px) {
+@media (min-width: 980px) and (max-width: 1599px) {
   .logo__img {
     width: 33px;
     height: 25px;
   }
 
-  .logo__name {
-    font-size: 22px;
-    line-height: 30px;
+  .logo__tagline {
+    line-height: initial;
+    white-space: nowrap;
+  }
+
+    .logo__name {
+    font-size: 20px;
+    line-height: 28px;
   }
 }

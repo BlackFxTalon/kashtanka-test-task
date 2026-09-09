@@ -1,6 +1,6 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
-import Vitrina from "@/components/Vitrina";
+import Showcase from "@/components/Showcase";
 
 export default function Home() {
   return (
@@ -8,7 +8,7 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
-        <Vitrina />
+        <Showcase />
       </main>
     </>
   );

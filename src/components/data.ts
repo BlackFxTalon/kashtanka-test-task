@@ -1,6 +1,8 @@
 import type { AnnouncementData } from "./Announcement";
 
-/* Все карточки в макете — один и тот же помёт ретриверов; различаем только id. */
+
+const PHOTOS = ["dog-1", "dog-2", "dog-3", "dog-4", "dog-5", "dog-1", "dog-4", "dog-3"];
+
 export const ANNOUNCEMENTS: AnnouncementData[] = Array.from(
   { length: 8 },
   (_, i) => ({
@@ -13,6 +15,6 @@ export const ANNOUNCEMENTS: AnnouncementData[] = Array.from(
     femaleCount: 3,
     city: "Москва",
     litterDate: "03.03.2026",
-    photo: "/images/dogs/dog-1.png",
+    photo: `/images/dogs/${PHOTOS[i]}.png`,
   }),
 );

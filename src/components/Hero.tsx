@@ -3,14 +3,14 @@ import styles from "./Hero.module.css";
 
 const BLOCKS = [
   {
-    photo: "/images/hero/hero-subscription.png",
+    photo: "/images/hero/hero-puppy.png",
     title: "Подписка для вас",
     active: "Купить подписку",
     inactive: "Первый раз здесь",
     extra: null,
   },
   {
-    photo: "/images/hero/hero-puppy.png",
+    photo: "/images/hero/hero-subscription.png",
     title: "Щенок в доме, ваш друг",
     active: "Щенки",
     inactive: "Породы",
@@ -19,8 +19,11 @@ const BLOCKS = [
   {
     photo: "/images/hero/hero-help.png",
     title: "Вы любите животных, помогите",
+    titleMobile: "Любишь животных",
     active: "Предложить услугу",
+    activeMobile: "Предложи услуги",
     inactive: "Помочь нашему проекту",
+    inactiveMobile: "Помоги",
     extra: null,
   },
 ];
@@ -41,16 +44,19 @@ export default function Hero() {
               />
               <div className={styles.blockBody}>
                 <h2 className={styles.blockTitle}>{block.title}</h2>
+                <h2 className={styles.blockTitleMobile}>{block.titleMobile ?? block.title}</h2>
                 <div className={styles.blockBtns}>
                   <a href="#" className="btn btn--primary">
-                    {block.active}
+                    <span className={styles.desktopText}>{block.active}</span>
+                    <span className={styles.mobileText}>{block.activeMobile ?? block.active}</span>
                   </a>
                   <a href="#" className="btn btn--white">
-                    {block.inactive}
+                    <span className={styles.desktopText}>{block.inactive}</span>
+                    <span className={styles.mobileText}>{block.inactiveMobile ?? block.inactive}</span>
                   </a>
                   {block.extra && (
                     <a href="#" className="btn btn--white">
-                      {block.extra}
+                      <span>{block.extra}</span>
                     </a>
                   )}
                 </div>

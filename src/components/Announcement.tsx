@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { MaleIcon, FemaleIcon } from "./icons";
+import { CityIcon, FemaleIcon, HeartIcon, MaleIcon } from "./icons";
 import styles from "./Announcement.module.css";
 
 export interface AnnouncementData {
@@ -32,26 +32,23 @@ export default function Announcement({ data }: { data: AnnouncementData }) {
           className={styles.announcement__photo}
         />
         <span className={styles.announcement__breed}>{data.breed}</span>
-        <button
-          type="button"
-          className={`${styles.announcement__favorite}${favorite ? ` ${styles.announcement__favoriteActive}` : ""}`}
-          onClick={() => setFavorite((v) => !v)}
-        >
-        <Image
-          src={favorite ? "/images/icons/heart-active.svg" : "/images/icons/heart-inactive.svg"}
-          alt={favorite ? "Убрать из избранного" : "Добавить в избранное"}
-          width={38}
-          height={38}
-        />
-        </button>
       </div>
 
       <div className={styles.announcement__body}>
-        <h3 className={styles.announcement__title}>
-          {data.title}
-          <br />
-          {data.titleLine2}
-        </h3>
+        <div className={styles.announcement__heading}>
+          <h3 className={styles.announcement__title}>
+            {data.title}
+            <br />
+            {data.titleLine2}
+          </h3>
+          <button
+            type="button"
+            className={`${styles.announcement__favorite}${favorite ? ` ${styles.announcement__favoriteActive}` : ""}`}
+            onClick={() => setFavorite((v) => !v)}
+          >
+            <HeartIcon active={favorite} />
+          </button>
+        </div>
 
         <div className={styles.announcement__row}>
           <span className={styles.announcement__price}>{data.price}</span>
@@ -70,7 +67,7 @@ export default function Announcement({ data }: { data: AnnouncementData }) {
 
         <div className={styles.announcement__row}>
           <span className={styles.announcement__city}>
-            <Image src="/images/icons/icon-city.svg" alt="Город" width={10} height={10} />
+            <CityIcon />
             {data.city}
           </span>
           <span className={styles.announcement__date}>

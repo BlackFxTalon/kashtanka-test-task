@@ -1,5 +1,5 @@
-/* Верх: фиксированная высота 100px на десктопе; меню — белая плашка со скруглением
-   снизу; лого и профильные иконки — на градиентном фоне страницы. */
+
+
 
 .top {
   min-height: 100px;
@@ -50,7 +50,7 @@
   opacity: 1;
 }
 
-.homeBtn > img {
+.homeBtn > svg {
   position: relative;
   z-index: 1;
 }
@@ -125,23 +125,44 @@
 .submenu {
   position: absolute;
   left: 0;
+  right: 0;
   top: calc(100% + 20px);
   display: flex;
-  align-items: center;
-  gap: 40px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 15px;
   min-height: 89px;
   padding: 20px 36px;
   background: var(--color-white);
   border-radius: 15px;
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.18);
+  box-sizing: border-box;
   z-index: 4;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(-10px);
+  transition:
+    opacity 0.3s ease-in-out,
+    transform 0.3s ease-in-out,
+    visibility 0s linear 0.3s;
+}
+
+.submenuOpen {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
+  transition-delay: 0s;
 }
 
 .submenuItem {
   display: inline-flex;
   align-items: center;
   gap: 10px;
+  height: 17px;
   font-size: 17px;
+  line-height: 17px;
   white-space: nowrap;
 }
 
@@ -156,13 +177,20 @@
   width: 38px;
   height: 38px;
   padding: 0;
-  border: none;
-  background: none;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.6) 100%);
+  backdrop-filter: blur(var(--glass-blur));
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* --- Профильная навигация справа --- */
 
-/* login скрыт до 1600, на мобильной зоне (<=979) показывается снова */
+
+
 .login {
   display: none;
 }
@@ -198,8 +226,8 @@
   transition: border-color 0.3s ease-in-out;
 }
 
-/* Градиенты (background-image) не анимируются в CSS — hover-градиент кладём
-   слоем ::before и плавно проявляем его прозрачностью */
+
+
 .iconBtn::before {
   content: "";
   position: absolute;
@@ -218,7 +246,7 @@
   opacity: 1;
 }
 
-.iconBtn > img {
+.iconBtn > svg {
   position: relative;
   z-index: 1;
 }
@@ -228,6 +256,11 @@
   position: absolute;
   inset: 0;
   margin: auto;
+}
+
+
+.searchFlip {
+  transform: scaleX(-1);
 }
 
 .login {
@@ -250,7 +283,7 @@
   transition: border-color 0.3s ease-in-out;
 }
 
-/* Градиент hover — слоем ::before, как у iconBtn (background-image не анимируется) */
+
 .login::before {
   content: "";
   position: absolute;
@@ -266,6 +299,10 @@
   z-index: 1;
 }
 
+.login svg {
+  min-width: 18px;
+}
+
 .login:hover {
   border-color: var(--color-primary);
 }
@@ -274,7 +311,7 @@
   opacity: 1;
 }
 
-/* flex-gap 10px в profileNav компенсируем, чтобы фактические отступы были 3px и 14px */
+
 .profileDivider {
   width: 1px;
   height: 50px;
@@ -283,7 +320,7 @@
   margin-right: 4px;
 }
 
-/* --- Меню пользователя --- */
+
 
 .userWrap {
   position: relative;
@@ -293,15 +330,38 @@
 .userMenu {
   position: absolute;
   right: 0;
-  top: calc(100% + 20px);
+  top: calc(100% + 18px);
   display: flex;
   flex-direction: column;
+  gap: 10px;
   width: 200px;
-  padding: 40px 20px 20px;
-  background: var(--color-white);
+  height: 265px;
+  padding: 15px 13px 15px 17px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.6) 100%);
+  backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid rgba(255, 255, 255, 0.5);
   border-radius: 15px;
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.18);
   z-index: 5;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(-10px) scale(0.98);
+  transform-origin: top right;
+  transition:
+    opacity 0.3s ease-in-out,
+    transform 0.3s ease-in-out,
+    visibility 0s linear 0.3s;
+}
+
+.userMenuOpen {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0) scale(1);
+  transition-delay: 0s;
 }
 
 .userMenuClose {
@@ -311,19 +371,28 @@
   width: 26px;
   height: 26px;
   padding: 0;
-  border: none;
-  background: none;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.6) 100%);
+  backdrop-filter: blur(var(--glass-blur));
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .userMenuItem {
   display: inline-flex;
   align-items: center;
   gap: 15px;
-  padding: 5px 0;
+  height: 25px;
+  padding: 0;
   color: var(--color-text);
-  font-size: 15px;
+  font-size: 12px;
   text-decoration: none;
   white-space: nowrap;
+  transition: color .15s;
 }
 
 .userMenuItem:hover {
@@ -336,13 +405,16 @@
   justify-content: center;
   width: 25px;
   height: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
   border-radius: 50%;
-  background: rgba(122, 96, 185, 0.15);
-  color: var(--color-accent);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.6) 100%);
+  backdrop-filter: blur(var(--glass-blur));
   flex: 0 0 auto;
 }
 
-/* --- Вызов поиска --- */
+
 
 .search {
   position: absolute;
@@ -352,6 +424,15 @@
   width: 99%;
   overflow: hidden;
   z-index: 4;
+  visibility: hidden;
+  pointer-events: none;
+  transition: visibility 0s linear 0.3s;
+}
+
+.search.searchOpen {
+  visibility: visible;
+  pointer-events: auto;
+  transition-delay: 0s;
 }
 
 .searchBody {
@@ -365,25 +446,16 @@
   border: 1px solid var(--glass-border-color);
   border-radius: 30px;
   box-sizing: border-box;
-}
-
-/* Открытие/закрытие через ширину: поле разезжается поверх меню и «Продажа щенка» */
-.searchBody {
-  animation: searchClose 0.3s ease-in-out forwards;
+  width: 0;
+  opacity: 0;
+  transition:
+    width 0.3s ease-in-out,
+    opacity 0.3s ease-in-out;
 }
 
 .searchOpen .searchBody {
-  animation: searchOpen 0.3s ease-in-out forwards;
-}
-
-@keyframes searchOpen {
-  from { width: 0; opacity: 0; }
-  to { width: 100%; opacity: 1; }
-}
-
-@keyframes searchClose {
-  from { width: 100%; opacity: 1; }
-  to { width: 0; opacity: 0; }
+  width: 100%;
+  opacity: 1;
 }
 
 .searchInput {
@@ -421,7 +493,7 @@
 
 .searchSubmit {
   position: relative;
-  width: 38px;
+  min-width: 38px;
   height: 38px;
   padding: 0;
   border: 1px solid rgba(255, 255, 255, 0.5);
@@ -442,14 +514,21 @@
 }
 
 .searchClose {
-  width: 38px;
+  min-width: 38px;
   height: 38px;
   padding: 0;
-  border: none;
-  background: none;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.6) 100%);
+  backdrop-filter: blur(var(--glass-blur));
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* --- Бургер (только 375) --- */
+
 
 .burger {
   display: none;
@@ -460,7 +539,7 @@
   z-index: 3;
 }
 
-/* --- Мобильное меню --- */
+
 
 .mobileMenu {
   position: absolute;
@@ -475,6 +554,22 @@
   border-radius: 15px;
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.18);
   z-index: 6;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(-10px);
+  transition:
+    opacity 0.3s ease-in-out,
+    transform 0.3s ease-in-out,
+    visibility 0s linear 0.3s;
+}
+
+.mobileMenuOpen {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
+  transition-delay: 0s;
 }
 
 .mobileMenuClose {
@@ -484,8 +579,15 @@
   width: 38px;
   height: 38px;
   padding: 0;
-  border: none;
-  background: none;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.6) 100%);
+  backdrop-filter: blur(var(--glass-blur));
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .mobileSale {
@@ -505,11 +607,15 @@
   font-size: 17px;
 }
 
-/* ==================== 1920+ ==================== */
+
 
 @media (min-width: 1800px) {
   .navLinkXl {
     display: inline-block;
+  }
+
+  .submenuItemBelow1800 {
+    display: none;
   }
 }
 
@@ -517,9 +623,13 @@
   .navLink1920 {
     display: inline-block;
   }
+
+  .submenuItemBelow1600 {
+    display: none;
+  }
 }
 
-/* ==================== десктоп ≥980 ==================== */
+
 
 @media (min-width: 1600px) {
   .homeBtn {
@@ -531,10 +641,14 @@
   .navLinkMd {
     display: inline-block;
   }
+
+  .submenuItemBelow1240 {
+    display: none;
+  }
 }
 
 @media (min-width: 980px) and (max-width: 1239px) {
-  /* В макете 980 справа только Поиск + Вход */
+
   .userWrap,
   .profileDivider {
     display: none;
@@ -559,7 +673,7 @@
   }
 }
 
-/* ==================== 980 ==================== */
+
 
 @media (max-width: 1599px) {
   .logo {
@@ -573,9 +687,12 @@
     height: 36px;
     padding: 0 14px;
   }
+  .search {
+     width: 97%;
+  }
 }
 
-/* ==================== 375 ==================== */
+
 
 @media (max-width: 979px) {
   .top {
@@ -583,18 +700,41 @@
   }
 
   .inner {
+    position: relative;
     min-height: 143px;
     padding: 0 10px;
   }
 
   .burger {
-    display: block;
+    position: absolute;
+    right: 190px;
+    top: 98px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.6) 100%);
+    backdrop-filter: blur(var(--glass-blur));
+    color: var(--color-primary);
+  }
+
+  .burger svg {
+    width: 17px;
+    height: 13px;
   }
 
   .logo {
+    position: absolute;
     left: 50%;
     top: 20px;
     transform: translateX(-50%);
+    transform-origin: center top;
   }
 
   .homeBtn {
@@ -602,14 +742,46 @@
   }
 
   .menu {
+    position: static;
+    display: block;
+    min-height: 0;
+    padding: 0;
+    background: none;
+    border-radius: 0;
+  }
+
+  .nav,
+  .menuDivider,
+  .submenu {
+    display: none;
+  }
+
+  .saleBtn {
+    position: absolute;
+    left: 10px;
+    top: 83px;
+    width: 130px;
+    min-width: 130px;
+    height: 60px;
+    padding: 0 16px;
+    gap: 10px;
+    font-size: 16px;
+  }
+
+  .saleSuffix {
     display: none;
   }
 
   .search {
     left: 10px;
     right: 10px;
-    top: 33px;
+    top: 155px;
+    width: auto;
     height: 60px;
+  }
+
+  .searchInput {
+    font-size: 14px;
   }
 
   .searchBody {
@@ -629,15 +801,50 @@
     display: none;
   }
 
-  .userWrap {
+  .profileNav {
+    position: absolute;
+    right: 10px;
+    top: 98px;
+    gap: 15px;
+    height: 30px;
+  }
+
+  .profileNav .iconBtn {
+    width: 30px;
+    height: 30px;
+  }
+
+  .messageBtn,
+  .notificationBtn {
     display: none;
+  }
+
+  .userWrap {
+    display: inline-flex;
+    margin-left: -10px;
   }
 
   .login {
     display: inline-flex;
+    width: 95px;
     font-size: 14px;
     height: 30px;
-    padding: 0 12px;
+    padding: 0 11px;
+    gap: 7px;
+  }
+
+  .login svg {
+    min-width: 17px;
+    height: 14px;
+  }
+
+  .userMenu {
+    right: 0;
+    top: calc(100% + 30px);
+    gap: 20px;
+    width: 355px;
+    height: 340px;
+    padding: 15px 20px;
   }
 
   .mobileMenu {

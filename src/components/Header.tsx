@@ -1,21 +1,29 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import Logo from "./Logo";
 import {
-  PawIcon,
-  FlagIcon,
+  AdminPanelIcon,
+  BellIcon,
   BurgerIcon,
-  GearIcon,
-  DocIcon,
-  BoneIcon,
-  DoorIcon,
+  CheckboxIcon,
+  CloseIcon,
+  DogsDatabaseIcon,
+  FavoriteMenuIcon,
+  HomeIcon,
+  LoginIcon,
+  LogoutIcon,
+  MenuArrowIcon,
+  MessageIcon,
+  ProfileIcon,
+  SearchIcon,
+  ServiceListingIcon,
+  UserProfileIcon,
 } from "./icons";
 import styles from "./Header.module.css";
 
-/* wide: на каких диапазонах пункт виден.
-   xl — только ≥1800 (по макету 1920), md — ≥1240 (по макету 1600), all — всегда */
+
+
 const MENU: { label: string; wide: "xl" | "md" | "all" | "1920"; trigger?: boolean }[] = [
   { label: "О проекте", wide: "xl" },
   { label: "Щенки", wide: "all" },
@@ -29,12 +37,16 @@ const MENU: { label: string; wide: "xl" | "md" | "all" | "1920"; trigger?: boole
 
 const SUBMENU = ["Профили собак", "Сбор средств на «Планете»"];
 
+const COLLAPSED_MENU = MENU.filter(
+  (item) => !item.trigger && item.wide !== "all",
+);
+
 const USER_MENU: { label: string; icon: "gear" | "profile" | "heart" | "doc" | "paw" | "bone" | "door" }[] = [
   { label: "Админ панель", icon: "gear" },
   { label: "Мой профиль", icon: "profile" },
   { label: "Избранное", icon: "heart" },
   { label: "Объявление услуг", icon: "doc" },
-  { label: "Объявления щенков", icon: "paw" },
+  { label: "Объявление щенков", icon: "paw" },
   { label: "Мои собаки в базе", icon: "bone" },
   { label: "Выход", icon: "door" },
 ];
@@ -53,19 +65,19 @@ const MOBILE_MENU = [
 function UserMenuIcon({ name }: { name: (typeof USER_MENU)[number]["icon"] }) {
   switch (name) {
     case "gear":
-      return <GearIcon />;
+      return <AdminPanelIcon />;
     case "profile":
-      return <Image src="/images/icons/icon-profile.svg" alt="" width={10} height={11} />;
+      return <UserProfileIcon />;
     case "heart":
-      return <Image src="/images/icons/heart-inactive.svg" alt="" width={12} height={12} />;
+      return <FavoriteMenuIcon />;
     case "doc":
-      return <DocIcon />;
+      return <ServiceListingIcon />;
     case "paw":
-      return <PawIcon size={12} />;
+      return <ProfileIcon width={14} height={11} />;
     case "bone":
-      return <BoneIcon />;
+      return <DogsDatabaseIcon />;
     case "door":
-      return <DoorIcon />;
+      return <LogoutIcon />;
   }
 }
 
@@ -77,10 +89,10 @@ export default function Header() {
   const [bySite, setBySite] = useState(true);
   const [byMedia, setByMedia] = useState(false);
 
-  const closeAll = () => {
+  const toggleUserMenu = () => {
     setSubmenuOpen(false);
-    setUserMenuOpen(false);
     setSearchOpen(false);
+    setUserMenuOpen((isOpen) => !isOpen);
   };
 
   return (
@@ -99,7 +111,7 @@ export default function Header() {
         </div>
 
         <button type="button" className={styles.homeBtn}>
-          <Image src="/images/icons/icon-home.svg" alt="Главная" width={17} height={17} className={styles.homeIcon} />
+          <HomeIcon className={styles.homeIcon} />
         </button>
 
         <div className={styles.menu}>
@@ -107,29 +119,19 @@ export default function Header() {
               <div className={styles.searchBody}>
                 <input className={styles.searchInput} type="text" placeholder="Введите фразу для поиска" />
                 <button type="button" className={styles.checkbox} onClick={() => setBySite((v) => !v)}>
-                  <Image
-                    src={bySite ? "/images/icons/checkbox-active.svg" : "/images/icons/checkbox-inactive.svg"}
-                    alt={bySite ? "Чекбокс отмечен" : "Чекбокс не отмечен"}
-                    width={20}
-                    height={20}
-                  />
+                  <CheckboxIcon active={bySite} />
                   По сайту
                 </button>
                 <button type="button" className={styles.checkbox} onClick={() => setByMedia((v) => !v)}>
-                  <Image
-                    src={byMedia ? "/images/icons/checkbox-active.svg" : "/images/icons/checkbox-inactive.svg"}
-                    alt={byMedia ? "Чекбокс отмечен" : "Чекбокс не отмечен"}
-                    width={20}
-                    height={20}
-                  />
+                  <CheckboxIcon active={byMedia} />
                   По медиа
                 </button>
                 <span className={styles.searchDivider} />
                 <button type="button" className={styles.searchSubmit}>
-                  <Image src="/images/icons/icon-search.svg" alt="Найти" width={17} height={17} />
+                  <SearchIcon className={styles.searchFlip} />
                 </button>
                 <button type="button" className={styles.searchClose} onClick={() => setSearchOpen(false)}>
-                  <Image src="/images/icons/icon-close.svg" alt="Закрыть поиск" width={38} height={38} />
+                  <CloseIcon />
                 </button>
               </div>
             </div>
@@ -155,83 +157,92 @@ export default function Header() {
             </nav>
             <span className={styles.menuDivider} />
             <a href="#" className={`btn btn--sale ${styles.saleBtn}`}>
-              Продажа щенка
-              <Image src="/images/icons/icon-profile.svg" alt="Меню пользователя" width={21} height={16} />
+              <span>Продажа<span className={styles.saleSuffix}> щенка</span></span>
+              <ProfileIcon />
             </a>
-            {submenuOpen && (
-              <div className={styles.submenu}>
-                {SUBMENU.map((label) => (
-                  <span key={label} className={styles.submenuItem}>
-                    <FlagIcon />
-                    {label}
-                  </span>
-                ))}
-                <button type="button" className={styles.submenuClose} onClick={() => setSubmenuOpen(false)}>
-                  <Image src="/images/icons/icon-close.svg" alt="Закрыть меню" width={38} height={38} />
-                </button>
-              </div>
-            )}
+            <div className={`${styles.submenu}${submenuOpen ? ` ${styles.submenuOpen}` : ""}`}>
+              {COLLAPSED_MENU.map((item) => (
+                <span
+                  key={item.label}
+                  className={`${styles.submenuItem} ${
+                    item.wide === "xl"
+                      ? styles.submenuItemBelow1800
+                      : item.wide === "md"
+                        ? styles.submenuItemBelow1240
+                        : styles.submenuItemBelow1600
+                  }`}
+                >
+                  <MenuArrowIcon />
+                  {item.label}
+                </span>
+              ))}
+              {SUBMENU.map((label) => (
+                <span key={label} className={styles.submenuItem}>
+                  <MenuArrowIcon />
+                  {label}
+                </span>
+              ))}
+              <button type="button" className={styles.submenuClose} onClick={() => setSubmenuOpen(false)}>
+                <CloseIcon />
+              </button>
+            </div>
           </div>
 
         <div className={styles.profileNav}>
           <button type="button" className={styles.iconBtn} onClick={() => setSearchOpen(true)}>
-            <Image src="/images/icons/icon-search.svg" alt="Открыть поиск" width={17} height={17} />
+            <SearchIcon className={styles.searchFlip} />
           </button>
           <a href="#" className={styles.login}>
-            <Image src="/images/icons/icon-login.svg" alt="" width={18} height={18} />
+            <LoginIcon />
             <span>Вход</span>
           </a>
           <span className={styles.profileDivider} />
-          <button type="button" className={styles.iconBtn}>
-            <Image src="/images/icons/icon-message.svg" alt="Сообщения" width={18} height={18} />
+          <button type="button" className={`${styles.iconBtn} ${styles.messageBtn}`}>
+            <MessageIcon />
           </button>
-          <button type="button" className={styles.iconBtn}>
-            <Image src="/images/icons/icon-bell.svg" alt="Уведомления" width={19} height={20} />
+          <button type="button" className={`${styles.iconBtn} ${styles.notificationBtn}`}>
+            <BellIcon />
           </button>
-          <span className={styles.userWrap}>
+          <div className={styles.userWrap}>
             <button
               type="button"
               className={styles.iconBtn}
-              onClick={() => setUserMenuOpen((v) => !v)}
+              onClick={toggleUserMenu}
             >
-              <Image src="/images/icons/icon-profile.svg" alt="Меню пользователя" width={21} height={16} />
+              <ProfileIcon />
             </button>
-            {userMenuOpen && (
-              <div className={styles.userMenu}>
-                <button type="button" className={styles.userMenuClose} onClick={() => setUserMenuOpen(false)}>
-                  <Image src="/images/icons/icon-close.svg" alt="Закрыть меню пользователя" width={26} height={26} />
-                </button>
-                {USER_MENU.map((item) => (
-                  <a key={item.label} href="#" className={styles.userMenuItem}>
-                    <span className={styles.userMenuIcon}>
-                      <UserMenuIcon name={item.icon} />
-                    </span>
-                    {item.label}
-                  </a>
-                ))}
-              </div>
-            )}
-          </span>
+            <div className={`${styles.userMenu}${userMenuOpen ? ` ${styles.userMenuOpen}` : ""}`}>
+              <button type="button" className={styles.userMenuClose} onClick={() => setUserMenuOpen(false)}>
+                <CloseIcon width={12} height={12} />
+              </button>
+              {USER_MENU.map((item) => (
+                <a key={item.label} href="#" className={styles.userMenuItem}>
+                  <span className={styles.userMenuIcon}>
+                    <UserMenuIcon name={item.icon} />
+                  </span>
+                  {item.label}
+                </a>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
 
-      {mobileMenuOpen && (
-        <div className={styles.mobileMenu}>
-          <button type="button" className={styles.mobileMenuClose} onClick={() => setMobileMenuOpen(false)}>
-            <Image src="/images/icons/icon-close.svg" alt="Закрыть меню" width={38} height={38} />
-          </button>
-          <a href="#" className={`btn btn--primary ${styles.mobileSale}`}>
-            Продажа щенка
-            <PawIcon />
-          </a>
-          {MOBILE_MENU.map((label) => (
-            <span key={label} className={styles.mobileMenuItem}>
-              <FlagIcon />
-              {label}
-            </span>
-          ))}
-        </div>
-      )}
+      <div className={`${styles.mobileMenu}${mobileMenuOpen ? ` ${styles.mobileMenuOpen}` : ""}`}>
+        <button type="button" className={styles.mobileMenuClose} onClick={() => setMobileMenuOpen(false)}>
+          <CloseIcon />
+        </button>
+        <a href="#" className={`btn btn--primary ${styles.mobileSale}`}>
+          <span>Продажа щенка</span>
+          <ProfileIcon color="white"/>
+        </a>
+        {MOBILE_MENU.map((label) => (
+          <span key={label} className={styles.mobileMenuItem}>
+            <MenuArrowIcon />
+            {label}
+          </span>
+        ))}
+      </div>
     </header>
   );
 }

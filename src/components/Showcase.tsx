@@ -1,16 +1,16 @@
 import Announcement from "./Announcement";
-import Slider375 from "./Slider375";
+import Slider from "./Slider";
 import { ANNOUNCEMENTS } from "./data";
-import styles from "./Vitrina.module.css";
+import styles from "./Showcase.module.css";
 
-export default function Vitrina() {
+export default function Showcase() {
   return (
-    <section className={styles.vitrina}>
+    <section className={styles.showcase}>
       <div className={styles.inner}>
         <div className={styles.head}>
           <h2 className={styles.title}>Новые объявления</h2>
           <a href="#" className="btn btn--primary">
-            Смотреть еще
+            <span>Смотреть еще</span>
           </a>
         </div>
 
@@ -20,11 +20,11 @@ export default function Vitrina() {
           ))}
         </div>
 
-        <Slider375 items={ANNOUNCEMENTS} />
+        <Slider items={ANNOUNCEMENTS} />
 
         <div className={styles.footer}>
           <a href="#" className="btn btn--primary">
-            Смотреть еще
+            <span>Смотреть еще</span>
           </a>
         </div>
       </div>

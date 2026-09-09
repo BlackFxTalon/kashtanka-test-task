@@ -1,5 +1,5 @@
 :root {
-  /* Палитра (Ui KIT) */
+
   --color-primary: #586bbe;
   --color-accent: #7a60b9;
   --color-accent-end: #2344d4;
@@ -10,29 +10,30 @@
   --color-gray-bg: #edeae9;
   --color-male: #15b1ff;
   --color-female: #ff0d6e;
+  --color-green: #768D45;
 
-  /* Градиенты */
+
   --grad-btn: linear-gradient(180deg, var(--color-accent) 0%, var(--color-primary) 100%);
   --grad-btn-active: linear-gradient(180deg, var(--color-accent) 0%, var(--color-accent-end) 100%);
   --grad-btn-white: linear-gradient(180deg, var(--color-white) 0%, var(--color-gray-light) 100%);
   --bg-page: linear-gradient(180deg, #8d7ac8 0%, var(--color-primary) 34%);
 
-  /* Стекло (glassmorphism-подложки) */
+
   --glass: linear-gradient(90deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.6) 100%);
   --glass-border: 1px solid rgba(255, 255, 255, 0.5);
   --glass-border-color: rgba(255, 255, 255, 0.5);
   --glass-blur: 5px;
 
-  /* Радиусы */
+
   --radius-card: 30px;
   --radius-btn: 15px;
   --radius-pill: 40px;
 
-  /* Типографика */
+
   --font-main: var(--font-montserrat), "Montserrat", sans-serif;
   --font-logo: var(--font-manrope), "Manrope", sans-serif;
 
-  /* Макет */
+
   --container-max: 1720px;
   --container-padding: 20px;
 }
@@ -60,10 +61,13 @@ button {
   cursor: pointer;
 }
 
-/* Кнопки по Ui KIT: градиентные (активная/первичная), белые (неактивные),
-   «Продажа щенка» (светлая с синей рамкой). Радиус 15, высота 40 (Продажа — 60). */
+
+
 
 .btn {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -78,7 +82,32 @@ button {
   line-height: 1;
   text-decoration: none;
   white-space: nowrap;
-  transition: filter 0.15s ease, background 0.15s ease, border-color 0.15s ease;
+  background: transparent;
+  transition: border-color 0.3s ease-in-out;
+}
+
+.btn::before,
+.btn::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.btn::after {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.btn:hover::after {
+  opacity: 1;
+}
+
+.btn > * {
+  position: relative;
+  z-index: 1;
 }
 
 .btn > svg {
@@ -86,21 +115,30 @@ button {
 }
 
 .btn--primary {
-  background: var(--grad-btn);
   color: var(--color-btn-text);
 }
 
-.btn--primary:hover {
+.btn--primary::before {
+  background: var(--grad-btn);
+}
+
+.btn--primary::after {
   background: var(--grad-btn-active);
 }
 
 .btn--white {
-  background: var(--grad-btn-white);
   color: var(--color-text);
 }
 
-.btn--white:hover {
+.btn--white::before {
+  background: var(--grad-btn-white);
+}
+
+.btn--white::after {
   background: var(--color-gray-bg);
+}
+
+.btn--white:hover {
   border-color: var(--color-primary);
 }
 
@@ -108,14 +146,16 @@ button {
   min-width: 220px;
   height: 60px;
   padding: 18px 35px;
-  background: var(--color-gray-bg);
   border: 1px solid var(--color-primary);
   border-radius: var(--radius-btn);
   color: var(--color-text);
   font-weight: 400;
-  transition: background .3s ease-in-out;
 }
 
-.btn--sale:hover {
+.btn--sale::before {
+  background: var(--color-gray-bg);
+}
+
+.btn--sale::after {
   background: var(--grad-btn-white);
 }
