@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 import Logo from "./Logo";
 import {
@@ -24,13 +25,13 @@ import styles from "./Header.module.css";
 
 
 
-const MENU: { label: string; wide: "xl" | "md" | "all" | "1920"; trigger?: boolean }[] = [
+const MENU: { label: string; wide: "xl" | "md" | "all" | "1920"; trigger?: boolean; href?: string }[] = [
   { label: "О проекте", wide: "xl" },
   { label: "Щенки", wide: "all" },
   { label: "Услуги", wide: "all" },
   { label: "Тарифы", wide: "1920" },
   { label: "Социальные проекты", wide: "1920" },
-  { label: "Блог", wide: "1920" },
+  { label: "Блог", wide: "1920", href: "/blog" },
   { label: "База пород", wide: "xl" },
   { label: "Другое", wide: "all", trigger: true },
 ];
@@ -136,24 +137,32 @@ export default function Header() {
               </div>
             </div>
             <nav className={styles.nav}>
-              {MENU.map((item) => (
-                <button
-                  key={item.label}
-                  type="button"
-                  className={`${styles.navLink} ${
-                    item.wide === "xl"
-                      ? styles.navLinkXl
-                      : item.wide === "md"
-                        ? styles.navLinkMd
-                        : item.wide === "1920"
-                          ? styles.navLink1920
-                          : ""
-                  }${item.trigger && submenuOpen ? ` ${styles.navLinkOpen}` : ""}`}
-                  onClick={item.trigger ? () => setSubmenuOpen((v) => !v) : undefined}
-                >
-                  {item.label}
-                </button>
-              ))}
+              {MENU.map((item) => {
+                const className = `${styles.navLink} ${
+                  item.wide === "xl"
+                    ? styles.navLinkXl
+                    : item.wide === "md"
+                      ? styles.navLinkMd
+                      : item.wide === "1920"
+                        ? styles.navLink1920
+                        : ""
+                }${item.trigger && submenuOpen ? ` ${styles.navLinkOpen}` : ""}`;
+
+                return item.href ? (
+                  <Link key={item.label} href={item.href} className={className}>
+                    {item.label}
+                  </Link>
+                ) : (
+                  <button
+                    key={item.label}
+                    type="button"
+                    className={className}
+                    onClick={item.trigger ? () => setSubmenuOpen((v) => !v) : undefined}
+                  >
+                    {item.label}
+                  </button>
+                );
+              })}
             </nav>
             <span className={styles.menuDivider} />
             <a href="#" className={`btn btn--sale ${styles.saleBtn}`}>

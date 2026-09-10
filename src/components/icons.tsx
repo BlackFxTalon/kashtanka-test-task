@@ -331,6 +331,49 @@ export function YandexZenIcon({ className }: { className?: string }) {
   );
 }
 
+export function BlogChevronIcon({ direction = "right", className }: { direction?: "left" | "right"; className?: string }) {
+  return (
+    <svg width="10" height="16" viewBox="0 0 10 16" fill="none" className={className} style={direction === "left" ? { transform: "scaleX(-1)" } : undefined}>
+      <path d="M1 1L8 8L1 15" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+export function BreadcrumbBackIcon({ className }: { className?: string }) {
+  return (
+    <svg width="11" height="9" viewBox="0 0 11 9" fill="none" className={className}>
+      <path d="M.5 4.5h10M4.5 8.5l-4-4 4-4" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+export function PagerChevronIcon({ direction = "right", className }: { direction?: "left" | "right"; className?: string }) {
+  return (
+    <svg width="30" height="30" viewBox="0 0 30 30" fill="none" className={className}>
+      <g transform={`translate(15 15) rotate(${direction === "left" ? -90 : 90}) translate(-8.25 -4.5)`}>
+        <path d="M15.75 8.25S10.2264.75 8.25.75.75 8.25.75 8.25" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+      </g>
+    </svg>
+  );
+}
+
+export function AddStoryPlusIcon({ className }: { className?: string }) {
+  return (
+    <svg width="13" height="13" viewBox="0 0 13 13" fill="none" className={className}>
+      <path d="M6.5 1.5v10M1.5 6.5h10" stroke="currentColor" strokeOpacity=".6" strokeWidth="3" strokeLinecap="round" />
+      <path d="M6.5 1.5v10M1.5 6.5h10" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+export function PlusIcon({ className }: { className?: string }) {
+  return (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className={className}>
+      <path d="M12 3V21M3 12H21" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+    </svg>
+  );
+}
+
 export function PinterestIcon({ className }: { className?: string }) {
   return (
     <svg width="32" height="32" viewBox="0 0 32 32" fill="none" className={className}>

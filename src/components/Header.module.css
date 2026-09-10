@@ -84,6 +84,7 @@
   font-size: 16px;
   line-height: 30px;
   color: var(--color-text);
+  text-decoration: none;
   white-space: nowrap;
   transition: color 0.15s ease;
 }
