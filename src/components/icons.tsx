@@ -357,6 +357,20 @@ export function PagerChevronIcon({ direction = "right", className }: { direction
   );
 }
 
+export function AddStoryLineIcon({ className }: { className?: string }) {
+  return (
+    <svg width="69" height="47" viewBox="0 0 69 47" fill="none" className={className}>
+      <path
+        d="M68 1C47-2 34 8 34.5 26C35 41 40 46 46 45.5C58 44.7 53 26 39 18C29 12 16 14 0.5 14.14"
+        stroke="currentColor"
+        strokeWidth="1"
+        strokeDasharray="1 3"
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+}
+
 export function AddStoryPlusIcon({ className }: { className?: string }) {
   return (
     <svg width="13" height="13" viewBox="0 0 13 13" fill="none" className={className}>

@@ -8,6 +8,7 @@ import type { Swiper as SwiperInstance } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import {
+  AddStoryLineIcon,
   AddStoryPlusIcon,
   BlogChevronIcon,
   BreadcrumbBackIcon,
@@ -231,19 +232,19 @@ export default function BlogPage() {
                 <StoryCard image={image} />
               </SwiperSlide>
             ))}
+            <SwiperSlide className={`${styles.storySlide} ${styles.addStorySlide}`}>
+              <article className={styles.addStory}>
+                <Image src="/images/blog/story-add.png" alt="" width={146} height={149} />
+                <div className={styles.addStoryAction}>
+                  <button type="button">
+                    <AddStoryPlusIcon />
+                  </button>
+                  <AddStoryLineIcon />
+                  <span>Размести<br />свою<br />историю дружбы</span>
+                </div>
+              </article>
+            </SwiperSlide>
           </Swiper>
-          <article className={styles.addStory}>
-            <Image src="/images/blog/story-add.png" alt="" width={146} height={149} />
-            <div className={styles.addStoryAction}>
-              <button type="button">
-                <Image className={styles.addStoryButtonIdle} src="/images/blog/add-story-button-idle.png" alt="" width={58} height={58} />
-                <Image className={styles.addStoryButtonActive} src="/images/blog/add-story-button-active.png" alt="" width={58} height={58} />
-                <AddStoryPlusIcon />
-              </button>
-              <i />
-              <span>Размести<br />свою<br />историю дружбы</span>
-            </div>
-          </article>
           <div className={styles.storyControls}>
             <button type="button" onClick={() => storySwiperRef.current?.slidePrev()}>
               <PagerChevronIcon direction="left" />
