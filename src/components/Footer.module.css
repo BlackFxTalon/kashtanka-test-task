@@ -1,18 +1,8 @@
 .footer {
   padding: 0 47px;
+  padding-top: 100px;
+  padding-bottom: 30px;
   background: linear-gradient(180deg, #0a112b 0%, #0a112b 40%, #444b69 70%, #444b69 100%);
-}
-
-@media (max-width: 1919px) {
-  .footer {
-    padding: 0 4.5625% 0 47px;
-  }
-}
-
-@media (max-width: 1239px) {
-  .footer {
-    padding-right: 1.4286%;
-  }
 }
 
 .card {
@@ -50,15 +40,18 @@
 .cols {
   flex: 1;
   display: grid;
-  grid-template-columns: 28.4% 28.1% 27.43% auto;
+  grid-template-columns: 380px 376px 367px auto;
   align-content: start;
-  padding: 50px 0 0 4.2728%;
+  padding-top: 50px;
+  padding-left: 78px;
+  padding-right: 79px;
 }
 
 @media (max-width: 1919px) {
   .cols {
-    grid-template-columns: 23.157% 24.544% 28.014% auto;
-    padding: 50px 0 0 2.2973%;
+    grid-template-columns: 267px 283px 323px auto;
+    padding-left: 34px;
+    padding-right: 80px;
   }
 }
 
@@ -82,6 +75,7 @@
   line-height: 47px;
   color: var(--color-text);
   text-decoration: none;
+  white-space: nowrap;
   transition: color 0.15s ease;
 }
 
@@ -107,6 +101,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 12px 6px;
+  padding-top: 24px;
 }
 
 .copyLeft,
@@ -133,30 +128,36 @@
   color: var(--color-white);
 }
 
-/* 1600 */
 @media (max-width: 1919px) {
   .brand {
     width: 293px;
   }
 }
 
-/* 980 */
+@media (max-width: 1599px) {
+  .copyright {
+    padding-top: 31px;
+  }
+}
+
 @media (min-width: 980px) and (max-width: 1239px) {
   .card {
     min-height: 838px;
   }
 
   .cols {
-    grid-template-columns: 54.56% auto;
-    padding: 50px 0 0 3.6997%;
+    grid-template-columns: 323px auto;
+    padding-left: 34px;
+    padding-right: 70px;
+    padding-top: 50px;
     row-gap: 40px;
   }
 }
 
-/* 375 */
 @media (max-width: 979px) {
   .footer {
-    padding: 0 10px;
+    padding-left: 10px;
+    padding-right: 10px;
   }
 
   .card {
@@ -195,8 +196,8 @@
 
   .copyright {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     gap: 10px;
-    padding: 30px 10px 20px 25px;
+    padding-top: 30px;
   }
 }
