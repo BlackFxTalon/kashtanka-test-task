@@ -13,17 +13,15 @@ const BLOCKS = [
     photo: "/images/hero/hero-subscription.png",
     title: "Щенок в доме, ваш друг",
     active: "Щенки",
-    inactive: "Породы",
+    inactive: null,
     extra: "Купить сертификат",
   },
   {
     photo: "/images/hero/hero-help.png",
     title: "Вы любите животных, помогите",
     titleMobile: "Любишь животных",
-    active: "Предложить услугу",
-    activeMobile: "Предложи услуги",
-    inactive: "Помочь нашему проекту",
-    inactiveMobile: "Помоги",
+    active: "Предложи услуги",
+    inactive: "Помоги",
     extra: null,
   },
 ];
@@ -48,12 +46,12 @@ export default function Hero() {
                 <div className={styles.blockBtns}>
                   <a href="#" className="btn btn--primary">
                     <span className={styles.desktopText}>{block.active}</span>
-                    <span className={styles.mobileText}>{block.activeMobile ?? block.active}</span>
                   </a>
+                  {block.inactive && (
                   <a href="#" className="btn btn--white">
                     <span className={styles.desktopText}>{block.inactive}</span>
-                    <span className={styles.mobileText}>{block.inactiveMobile ?? block.inactive}</span>
                   </a>
+                  )}
                   {block.extra && (
                     <a href="#" className="btn btn--white">
                       <span>{block.extra}</span>

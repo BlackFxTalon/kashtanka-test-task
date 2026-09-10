@@ -9,8 +9,9 @@
   height: 24px;
   margin: 40px auto 0;
   display: flex;
+  gap: 25px;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .paginationBullet {
@@ -56,6 +57,11 @@
 
 .paginationBulletActive.paginationBulletFirst::before,
 .paginationBulletActive.paginationBulletLast::after {
+  display: none;
+}
+
+.paginationBulletPairStart::after,
+.paginationBulletPairEnd::before {
   display: none;
 }
 
