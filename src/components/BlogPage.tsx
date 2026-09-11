@@ -1,8 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
-import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import type { Swiper as SwiperInstance } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -11,7 +9,6 @@ import {
   AddStoryLineIcon,
   AddStoryPlusIcon,
   BlogChevronIcon,
-  BreadcrumbBackIcon,
   MaxIcon,
   PagerChevronIcon,
   ProfileIcon,
@@ -19,6 +16,8 @@ import {
   TelegramIcon,
   YoutubeIcon,
 } from "./icons";
+import ArticleCard from "./ArticleCard";
+import Breadcrumbs from "./Breadcrumbs";
 import styles from "./BlogPage.module.css";
 
 const ARTICLE_IMAGES = [
@@ -122,21 +121,6 @@ function Pager() {
   );
 }
 
-function ArticleCard({ image, action }: { image: string; action: string }) {
-  return (
-    <article className={styles.articleCard}>
-      <Image className={styles.articleImage} src={image} alt="Собаки и специалисты проекта" fill sizes="(max-width: 979px) 355px, (max-width: 1239px) 420px, 33vw" />
-      <span className={styles.category}>Категория новости</span>
-      <div className={styles.articleDescription}>
-        <h2>Догситер - почему это популярно и так не просто</h2>
-        <a href="#" className="btn btn--primary">
-          <span>{action}</span>
-        </a>
-      </div>
-    </article>
-  );
-}
-
 function StoryCard({ image }: { image: string }) {
   return (
     <article className={styles.storyCard}>
@@ -197,7 +181,6 @@ function LiveCard({ image, title, role }: (typeof LIVE_ITEMS)[number]) {
 }
 
 export default function BlogPage() {
-  const router = useRouter();
   const storySwiperRef = useRef<SwiperInstance | null>(null);
   const [categoriesOpen, setCategoriesOpen] = useState(false);
   const [tabletStories, setTabletStories] = useState(false);
@@ -226,14 +209,7 @@ export default function BlogPage() {
   return (
     <main className={styles.main}>
       <section className={styles.intro}>
-        <div className={styles.breadcrumbs}>
-          <button type="button" className={styles.breadcrumbBack} onClick={() => router.back()}>
-            <BreadcrumbBackIcon />
-          </button>
-          <Link href="/">Главная</Link>
-          <span>-</span>
-          <strong>Блог</strong>
-        </div>
+        <Breadcrumbs items={[{ label: "Главная", href: "/" }]} current="Блог" />
         <h1>Блог</h1>
         <button type="button" className={`btn btn--primary ${styles.categoryButton}`} onClick={() => setCategoriesOpen(true)}>
           <span>Категории блога</span>
