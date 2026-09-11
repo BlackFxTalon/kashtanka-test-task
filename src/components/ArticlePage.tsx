@@ -7,6 +7,8 @@ import type { Swiper as SwiperInstance } from "swiper";
 import "swiper/css";
 import ArticleSidebar from "./ArticleSidebar";
 import Breadcrumbs from "./Breadcrumbs";
+import LiveSection from "./LiveSection";
+import { LIVE_ITEMS } from "./liveData";
 import OtherArticles from "./OtherArticles";
 import {
   HeartIcon,
@@ -240,6 +242,7 @@ export default function ArticlePage() {
         </div>
       </div>
       <OtherArticles />
+      <LiveSection items={LIVE_ITEMS} variant="article" />
     </main>
   );
 }
