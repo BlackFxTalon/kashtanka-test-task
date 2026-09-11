@@ -1,9 +1,21 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useRef, useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import type { Swiper as SwiperInstance } from "swiper";
+import "swiper/css";
 import Breadcrumbs from "./Breadcrumbs";
-import { HeartIcon } from "./icons";
+import {
+  HeartIcon,
+  InstagramIcon,
+  MaxIcon,
+  PinterestIcon,
+  TelegramIcon,
+  VkIcon,
+  WhatsappIcon,
+  YandexZenIcon,
+} from "./icons";
 import styles from "./ArticlePage.module.css";
 
 const ARTICLE_TITLE = "Как правильно ухаживать за щенком в первые дни рождения";
@@ -18,11 +30,109 @@ const FIRST_DAYS_TEXT = "В первые 2–3 дня важно снизить 
 
 const LIST_ITEMS = ["Строка 1", "Строка 2", "Строка 3", "Строка 4", "Строка 5"];
 
+const SLIDE_IMAGES = [
+  { image: "/images/dogs/slider-1.png", alt: "Щенок немецкой овчарки лежит на зелёной траве" },
+  { image: "/images/dogs/dog-2.png", alt: "Спящий щенок с игрушкой в своём домике" },
+  { image: "/images/dogs/dog-4.png", alt: "Белый щенок сидит среди садовых цветов" },
+];
+
+const SHARE_LINKS = [
+  { label: "Telegram", Icon: TelegramIcon },
+  { label: "Max", Icon: MaxIcon },
+  { label: "WhatsApp", Icon: WhatsappIcon },
+  { label: "VK", Icon: VkIcon },
+  { label: "Instagram", Icon: InstagramIcon },
+  { label: "Яндекс Дзен", Icon: YandexZenIcon },
+  { label: "Pinterest", Icon: PinterestIcon },
+];
+
 function PreparationCopy() {
   return (
     <>
       {PREPARATION_PARAGRAPHS.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
     </>
+  );
+}
+
+function MediaSlider() {
+  const swiperRef = useRef<SwiperInstance | null>(null);
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  return (
+    <div className={styles.mediaSlider}>
+      <Swiper
+        onSwiper={(swiper) => {
+          swiperRef.current = swiper;
+        }}
+        onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
+        spaceBetween={0}
+        slidesPerView={1}
+      >
+        {SLIDE_IMAGES.map((image) => (
+          <SwiperSlide key={image.image}>
+            <div className={styles.mediaSlide}>
+              <Image src={image.image} alt={image.alt} fill sizes="(max-width: 1239px) 420px, 460px" />
+            </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+      <div className={styles.mediaPagination}>
+        {SLIDE_IMAGES.map((image, index) => (
+          <button
+            key={image.image}
+            type="button"
+            className={index === activeIndex ? `${styles.mediaBullet} ${styles.mediaBulletActive}` : styles.mediaBullet}
+            onClick={() => swiperRef.current?.slideTo(index)}
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function ArticleVideo() {
+  const videoRef = useRef<HTMLVideoElement | null>(null);
+  const [playing, setPlaying] = useState(false);
+
+  const start = () => {
+    videoRef.current?.play().then(() => setPlaying(true)).catch(() => {
+      // Источник видео заказчиком не предоставлен: кнопка остаётся на месте.
+    });
+  };
+
+  return (
+    <figure className={styles.videoFigure}>
+      <div className={styles.videoFrame}>
+        <video
+          ref={videoRef}
+          className={styles.video}
+          poster="/images/dogs/video-poster.png"
+          preload="none"
+          controls={playing}
+        />
+        {!playing && (
+          <button type="button" className={styles.playButton} onClick={start}>
+            <Image src="/images/dogs/play.svg" alt="" width={78} height={78} />
+          </button>
+        )}
+      </div>
+      <figcaption>Подпись под видео</figcaption>
+    </figure>
+  );
+}
+
+function Share() {
+  return (
+    <div className={styles.share}>
+      <strong>Поделиться:</strong>
+      <div className={styles.shareLinks}>
+        {SHARE_LINKS.map(({ label, Icon }) => (
+          <a key={label} href="#" aria-label={label}>
+            <Icon />
+          </a>
+        ))}
+      </div>
+    </div>
   );
 }
 
@@ -101,8 +211,8 @@ export default function ArticlePage() {
             <p className={styles.postPhotoCopy}>{FIRST_DAYS_TEXT}</p>
 
             <div className={styles.mediaSlots}>
-              <div className={styles.mediaSlot} />
-              <div className={styles.mediaSlot} />
+              <MediaSlider />
+              <ArticleVideo />
             </div>
 
             <h3 className={styles.finalHeading}>Подготовка к появлению щенка - H3</h3>
@@ -119,7 +229,7 @@ export default function ArticlePage() {
               <a href="#" className={`btn btn--primary ${styles.tag} ${styles.tagActive}`}>Уход</a>
             </div>
 
-            <div className={styles.shareSlot} />
+            <Share />
           </div>
         </article>
       </div>
