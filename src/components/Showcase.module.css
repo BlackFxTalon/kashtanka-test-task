@@ -156,4 +156,8 @@
     justify-content: center;
     gap: 48px;
   }
+
+  .showcaseArticle .grid > :nth-child(n + 3) {
+    display: none;
+  }
 }

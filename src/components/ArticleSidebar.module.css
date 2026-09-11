@@ -70,6 +70,10 @@
     grid-template-columns: 350px;
     gap: 38px;
   }
+
+  .readingGrid > :nth-child(n + 3) {
+    display: none;
+  }
 }
 
 @media (max-width: 1599px) {

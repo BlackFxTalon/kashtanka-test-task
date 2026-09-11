@@ -160,10 +160,6 @@
   display: none;
 }
 
-.article .card:nth-child(n + 5) {
-  display: none;
-}
-
 .bottom .heading > a {
   display: none;
 }
@@ -190,6 +186,10 @@
   .blog .card:nth-child(n + 7) {
     display: none;
   }
+
+  .article .card:nth-child(n + 7) {
+    display: none;
+  }
 }
 
 @media (min-width: 980px) and (max-width: 1239px) {
@@ -203,6 +203,10 @@
   }
 
   .blog .card:nth-child(n + 5) {
+    display: none;
+  }
+
+  .article .card:nth-child(n + 5) {
     display: none;
   }
 }
@@ -225,6 +229,10 @@
   }
 
   .blog .card:nth-child(n + 3) {
+    display: none;
+  }
+
+  .article .card:nth-child(n + 5) {
     display: none;
   }
 
