@@ -11,7 +11,6 @@ import LiveSection from "./LiveSection";
 import { LIVE_ITEMS } from "./liveData";
 import OtherArticles from "./OtherArticles";
 import {
-  HeartIcon,
   InstagramIcon,
   MaxIcon,
   PinterestIcon,
@@ -141,8 +140,6 @@ function Share() {
 }
 
 export default function ArticlePage() {
-  const [favorite, setFavorite] = useState(false);
-
   return (
     <main className={styles.main}>
       <div className={styles.layout}>
@@ -171,13 +168,6 @@ export default function ArticlePage() {
                 sizes="(max-width: 979px) calc(100vw - 40px), 1000px"
               />
               <span className={styles.topic}>Уход за питомцем</span>
-              <button
-                type="button"
-                className={`${styles.favorite}${favorite ? ` ${styles.favoriteActive}` : ""}`}
-                onClick={() => setFavorite((value) => !value)}
-              >
-                <HeartIcon active={favorite} />
-              </button>
             </div>
 
             <div className={styles.copy}>

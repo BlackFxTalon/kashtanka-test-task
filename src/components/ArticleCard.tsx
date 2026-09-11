@@ -15,7 +15,7 @@ export default function ArticleCard({
   action,
   title = "Догситер - почему это популярно и так не просто",
   category = "Категория новости",
-  href = "#",
+  href = "/blog/article",
   imageSizes = "(max-width: 979px) 355px, (max-width: 1239px) 420px, 33vw",
 }: ArticleCardData) {
   return (
