@@ -6,6 +6,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import type { Swiper as SwiperInstance } from "swiper";
 import "swiper/css";
 import Breadcrumbs from "./Breadcrumbs";
+import ArticleSidebar from "./ArticleSidebar";
 import {
   HeartIcon,
   InstagramIcon,
@@ -142,96 +143,100 @@ export default function ArticlePage() {
   return (
     <main className={styles.main}>
       <div className={styles.layout}>
-        <article className={styles.article}>
-          <Breadcrumbs
-            className={styles.breadcrumbs}
-            items={[
-              { label: "Главная", href: "/" },
-              { label: "Блог", href: "/blog" },
-              { label: "Уход за питомцем", href: "#" },
-            ]}
-            current={ARTICLE_TITLE}
-            mobileCurrentRow
-            compact
-          />
-
-          <h1>{ARTICLE_TITLE}</h1>
-
-          <div className={styles.hero}>
-            <Image
-              src="/images/dogs/dog-1.png"
-              alt="Щенок золотистого ретривера лежит на траве"
-              fill
-              priority
-              sizes="(max-width: 979px) calc(100vw - 40px), 1000px"
+        <div className={styles.columns}>
+          <article className={styles.article}>
+            <Breadcrumbs
+              className={styles.breadcrumbs}
+              items={[
+                { label: "Главная", href: "/" },
+                { label: "Блог", href: "/blog" },
+                { label: "Уход за питомцем", href: "#" },
+              ]}
+              current={ARTICLE_TITLE}
+              mobileCurrentRow
+              compact
             />
-            <span className={styles.topic}>Уход за питомцем</span>
-            <button
-              type="button"
-              className={`${styles.favorite}${favorite ? ` ${styles.favoriteActive}` : ""}`}
-              onClick={() => setFavorite((value) => !value)}
-            >
-              <HeartIcon active={favorite} />
-            </button>
-          </div>
 
-          <div className={styles.copy}>
-            <h2>Руководство по уходу за щенком: от первых дней до взросления - H2</h2>
-            <p>Появление в доме маленького щенка — это не просто приобретение питомца, а принятие в семью нового члена, который полностью зависит от вас. Первые месяцы жизни закладывают фундамент здоровья, характера и поведения взрослой собаки, поэтому качественный уход в щенячьем возрасте — это прямая инвестиция в её будущее.</p>
+            <h1>{ARTICLE_TITLE}</h1>
 
-            <div className={styles.initialPreparation}>
-              <h3>Подготовка к появлению щенка - H3</h3>
-              <PreparationCopy />
+            <div className={styles.hero}>
+              <Image
+                src="/images/dogs/dog-1.png"
+                alt="Щенок золотистого ретривера лежит на траве"
+                fill
+                priority
+                sizes="(max-width: 979px) calc(100vw - 40px), 1000px"
+              />
+              <span className={styles.topic}>Уход за питомцем</span>
+              <button
+                type="button"
+                className={`${styles.favorite}${favorite ? ` ${styles.favoriteActive}` : ""}`}
+                onClick={() => setFavorite((value) => !value)}
+              >
+                <HeartIcon active={favorite} />
+              </button>
             </div>
 
-            <h3>Первые дни в новом доме</h3>
-            <p>{FIRST_DAYS_TEXT}</p>
+            <div className={styles.copy}>
+              <h2>Руководство по уходу за щенком: от первых дней до взросления - H2</h2>
+              <p>Появление в доме маленького щенка — это не просто приобретение питомца, а принятие в семью нового члена, который полностью зависит от вас. Первые месяцы жизни закладывают фундамент здоровья, характера и поведения взрослой собаки, поэтому качественный уход в щенячьем возрасте — это прямая инвестиция в её будущее.</p>
 
-            <blockquote>{FIRST_DAYS_TEXT}</blockquote>
-
-            <ul>
-              {LIST_ITEMS.map((item) => <li key={`bullet-${item}`}>{item}</li>)}
-            </ul>
-            <ol>
-              {LIST_ITEMS.map((item) => <li key={`number-${item}`}>{item}</li>)}
-            </ol>
-
-            <figure className={styles.photo}>
-              <div className={styles.photoFrame}>
-                <Image
-                  src="/images/dogs/dog-3.png"
-                  alt="Немецкая овчарка бежит по траве"
-                  fill
-                  sizes="(max-width: 979px) calc(100vw - 40px), 650px"
-                />
+              <div className={styles.initialPreparation}>
+                <h3>Подготовка к появлению щенка - H3</h3>
+                <PreparationCopy />
               </div>
-              <figcaption>Подпись по фото</figcaption>
-            </figure>
 
-            <p className={styles.postPhotoCopy}>{FIRST_DAYS_TEXT}</p>
+              <h3>Первые дни в новом доме</h3>
+              <p>{FIRST_DAYS_TEXT}</p>
 
-            <div className={styles.mediaSlots}>
-              <MediaSlider />
-              <ArticleVideo />
+              <blockquote>{FIRST_DAYS_TEXT}</blockquote>
+
+              <ul>
+                {LIST_ITEMS.map((item) => <li key={`bullet-${item}`}>{item}</li>)}
+              </ul>
+              <ol>
+                {LIST_ITEMS.map((item) => <li key={`number-${item}`}>{item}</li>)}
+              </ol>
+
+              <figure className={styles.photo}>
+                <div className={styles.photoFrame}>
+                  <Image
+                    src="/images/dogs/dog-3.png"
+                    alt="Немецкая овчарка бежит по траве"
+                    fill
+                    sizes="(max-width: 979px) calc(100vw - 40px), 650px"
+                  />
+                </div>
+                <figcaption>Подпись по фото</figcaption>
+              </figure>
+
+              <p className={styles.postPhotoCopy}>{FIRST_DAYS_TEXT}</p>
+
+              <div className={styles.mediaSlots}>
+                <MediaSlider />
+                <ArticleVideo />
+              </div>
+
+              <h3 className={styles.finalHeading}>Подготовка к появлению щенка - H3</h3>
+              <div className={styles.finalPreparation}>
+                <PreparationCopy />
+              </div>
+
+              <div className={styles.separator} />
+
+              <div className={styles.tags}>
+                <strong>Тэги:</strong>
+                <a href="#" className={`btn btn--primary ${styles.tag}`}>Щенки</a>
+                <a href="#" className={`btn btn--primary ${styles.tag}`}>Щенки</a>
+                <a href="#" className={`btn btn--primary ${styles.tag} ${styles.tagActive}`}>Уход</a>
+              </div>
+
+              <Share />
             </div>
+          </article>
 
-            <h3 className={styles.finalHeading}>Подготовка к появлению щенка - H3</h3>
-            <div className={styles.finalPreparation}>
-              <PreparationCopy />
-            </div>
-
-            <div className={styles.separator} />
-
-            <div className={styles.tags}>
-              <strong>Тэги:</strong>
-              <a href="#" className={`btn btn--primary ${styles.tag}`}>Щенки</a>
-              <a href="#" className={`btn btn--primary ${styles.tag}`}>Щенки</a>
-              <a href="#" className={`btn btn--primary ${styles.tag} ${styles.tagActive}`}>Уход</a>
-            </div>
-
-            <Share />
-          </div>
-        </article>
+          <ArticleSidebar />
+        </div>
       </div>
     </main>
   );

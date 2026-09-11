@@ -8,8 +8,15 @@
   padding: 50px 50px 100px;
 }
 
+.columns {
+  display: flex;
+  align-items: flex-start;
+  gap: 50px;
+}
+
 .article {
   /* Высота фрейма Тела статьи из Figma (23:5800); минимальная высота держит фон подложки при narrow-промежуточных ширинах. */
+  flex: 0 0 auto;
   width: 1050px;
   min-height: 3345px;
   padding: 29px 20px 70px;
