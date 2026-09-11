@@ -7,6 +7,7 @@ export interface ArticleCardData {
   title?: string;
   category?: string;
   href?: string;
+  imageSizes?: string;
 }
 
 export default function ArticleCard({
@@ -15,6 +16,7 @@ export default function ArticleCard({
   title = "Догситер - почему это популярно и так не просто",
   category = "Категория новости",
   href = "#",
+  imageSizes = "(max-width: 979px) 355px, (max-width: 1239px) 420px, 33vw",
 }: ArticleCardData) {
   return (
     <article className={styles.card}>
@@ -23,7 +25,7 @@ export default function ArticleCard({
         src={image}
         alt="Собаки и специалисты проекта"
         fill
-        sizes="(max-width: 979px) 355px, (max-width: 1239px) 420px, 33vw"
+        sizes={imageSizes}
       />
       <span className={styles.category}>{category}</span>
       <div className={styles.description}>

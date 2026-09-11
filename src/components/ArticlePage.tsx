@@ -7,6 +7,7 @@ import type { Swiper as SwiperInstance } from "swiper";
 import "swiper/css";
 import ArticleSidebar from "./ArticleSidebar";
 import Breadcrumbs from "./Breadcrumbs";
+import OtherArticles from "./OtherArticles";
 import {
   HeartIcon,
   InstagramIcon,
@@ -238,6 +239,7 @@ export default function ArticlePage() {
           <ArticleSidebar />
         </div>
       </div>
+      <OtherArticles />
     </main>
   );
 }
