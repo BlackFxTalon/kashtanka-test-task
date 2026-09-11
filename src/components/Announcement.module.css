@@ -3,6 +3,20 @@
   border-radius: var(--radius-card);
 }
 
+.announcementArticle .announcement__body {
+  min-height: 226px;
+  margin-top: -95px;
+}
+
+.announcementArticle .announcement__heading {
+  margin-bottom: 24px;
+}
+
+.announcementArticle .announcement__favorite {
+  align-self: flex-start;
+  margin-left: -4px;
+}
+
 .announcement__media {
   position: relative;
   aspect-ratio: 4 / 3;
@@ -75,6 +89,11 @@
 }
 
 @media (hover: hover) {
+  .announcementArticle .announcement__body {
+    opacity: 1;
+    visibility: visible;
+  }
+
   .announcement__body {
     opacity: 0;
     visibility: hidden;

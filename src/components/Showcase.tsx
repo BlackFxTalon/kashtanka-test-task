@@ -1,11 +1,18 @@
-import Announcement from "./Announcement";
+import Announcement, { type AnnouncementData } from "./Announcement";
 import Slider from "./Slider";
 import { ANNOUNCEMENTS } from "./data";
 import styles from "./Showcase.module.css";
 
-export default function Showcase() {
+interface ShowcaseProps {
+  items?: AnnouncementData[];
+  variant?: "home" | "article";
+}
+
+export default function Showcase({ items = ANNOUNCEMENTS, variant = "home" }: ShowcaseProps) {
+  const article = variant === "article";
+
   return (
-    <section className={styles.showcase}>
+    <section className={`${styles.showcase}${article ? ` ${styles.showcaseArticle}` : ""}`}>
       <div className={styles.inner}>
         <div className={styles.head}>
           <h2 className={styles.title}>Новые объявления</h2>
@@ -15,12 +22,12 @@ export default function Showcase() {
         </div>
 
         <div className={styles.grid}>
-          {ANNOUNCEMENTS.map((item) => (
-            <Announcement key={item.id} data={item} />
+          {items.map((item) => (
+            <Announcement key={item.id} data={item} variant={variant} />
           ))}
         </div>
 
-        <Slider items={ANNOUNCEMENTS} />
+        {!article && <Slider items={items} />}
 
         <div className={styles.footer}>
           <a href="#" className="btn btn--primary">

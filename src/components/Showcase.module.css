@@ -118,3 +118,42 @@
     padding-inline: 10px;
   }
 }
+
+/* ARTICLE (article page) variant: постоянная белая подложка и сетка 2×2 из фиксированных колонок */
+.showcaseArticle {
+  padding: 50px 0 60px;
+  border-radius: var(--radius-card);
+}
+
+.showcaseArticle .grid {
+  grid-template-columns: repeat(2, 350px);
+  justify-content: space-between;
+  gap: 48px 20px;
+}
+
+.showcaseArticle .head {
+  margin-bottom: 40px;
+  padding-inline: 40px;
+}
+
+.showcaseArticle .title {
+  font-size: 30px;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.showcaseArticle .footer {
+  margin-top: 30px;
+}
+
+@media (max-width: 1919px) {
+  .showcaseArticle .head > :global(.btn) {
+    display: none;
+  }
+
+  .showcaseArticle .grid {
+    grid-template-columns: 350px;
+    justify-content: center;
+    gap: 48px;
+  }
+}

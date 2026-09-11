@@ -18,17 +18,23 @@ export interface AnnouncementData {
   photo: string;
 }
 
-export default function Announcement({ data }: { data: AnnouncementData }) {
+interface AnnouncementProps {
+  data: AnnouncementData;
+  variant?: "home" | "article";
+}
+
+export default function Announcement({ data, variant = "home" }: AnnouncementProps) {
   const [favorite, setFavorite] = useState(false);
+  const article = variant === "article";
 
   return (
-    <article className={styles.announcement}>
+    <article className={`${styles.announcement}${article ? ` ${styles.announcementArticle}` : ""}`}>
       <div className={styles.announcement__media}>
         <Image
           src={data.photo}
           alt={`${data.title} — ${data.breed}`}
           fill
-          sizes="(max-width: 979px) calc(100vw - 40px), (max-width: 1599px) 450px, 400px"
+          sizes={article ? "(max-width: 1599px) 350px, 350px" : "(max-width: 979px) calc(100vw - 40px), (max-width: 1599px) 450px, 400px"}
           className={styles.announcement__photo}
         />
         <span className={styles.announcement__breed}>{data.breed}</span>

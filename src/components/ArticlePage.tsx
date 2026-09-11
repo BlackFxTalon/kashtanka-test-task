@@ -5,8 +5,8 @@ import { useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import type { Swiper as SwiperInstance } from "swiper";
 import "swiper/css";
-import Breadcrumbs from "./Breadcrumbs";
 import ArticleSidebar from "./ArticleSidebar";
+import Breadcrumbs from "./Breadcrumbs";
 import {
   HeartIcon,
   InstagramIcon,

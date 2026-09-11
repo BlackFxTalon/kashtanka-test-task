@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import ArticleCard, { type ArticleCardData } from "./ArticleCard";
+import type { AnnouncementData } from "./Announcement";
+import Showcase from "./Showcase";
 import { MenuArrowIcon } from "./icons";
 import styles from "./ArticleSidebar.module.css";
 
@@ -22,6 +24,57 @@ const READING_ITEMS: ArticleCardData[] = [
   { image: "/images/blog/live-2.png", action: "Читать статью" },
   { image: "/images/blog/reading-3.png", action: "Читать статью" },
   { image: "/images/blog/story-3.png", action: "Читать статью" },
+];
+
+const ARTICLE_ANNOUNCEMENTS: AnnouncementData[] = [
+  {
+    id: 101,
+    breed: "Золотистый ретривер",
+    title: "Малыши золотистого ретривера",
+    titleLine2: "Вторая строка",
+    price: "50 000 ₽",
+    maleCount: 5,
+    femaleCount: 3,
+    city: "Москва",
+    litterDate: "03.03.2026",
+    photo: "/images/dogs/dog-1.png",
+  },
+  {
+    id: 102,
+    breed: "Золотистый ретривер",
+    title: "Малыши золотистого ретривера",
+    titleLine2: "Вторая строка",
+    price: "50 000 ₽",
+    maleCount: 5,
+    femaleCount: 3,
+    city: "Москва",
+    litterDate: "03.03.2026",
+    photo: "/images/dogs/ad-2.png",
+  },
+  {
+    id: 103,
+    breed: "Золотистый ретривер",
+    title: "Малыши золотистого ретривера",
+    titleLine2: "Вторая строка",
+    price: "50 000 ₽",
+    maleCount: 5,
+    femaleCount: 3,
+    city: "Москва",
+    litterDate: "03.03.2026",
+    photo: "/images/dogs/ad-3.png",
+  },
+  {
+    id: 104,
+    breed: "Золотистый ретривер",
+    title: "Малыши золотистого ретривера",
+    titleLine2: "Вторая строка",
+    price: "50 000 ₽",
+    maleCount: 5,
+    femaleCount: 3,
+    city: "Москва",
+    litterDate: "03.03.2026",
+    photo: "/images/dogs/ad-4.png",
+  },
 ];
 
 export default function ArticleSidebar() {
@@ -54,6 +107,8 @@ export default function ArticleSidebar() {
           ))}
         </div>
       </section>
+
+      <Showcase items={ARTICLE_ANNOUNCEMENTS} variant="article" />
     </aside>
   );
 }
