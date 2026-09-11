@@ -15,13 +15,14 @@ interface BreadcrumbsProps {
   current: string;
   className?: string;
   mobileCurrentRow?: boolean;
+  compact?: boolean;
 }
 
-export default function Breadcrumbs({ items, current, className, mobileCurrentRow = false }: BreadcrumbsProps) {
+export default function Breadcrumbs({ items, current, className, mobileCurrentRow = false, compact = false }: BreadcrumbsProps) {
   const router = useRouter();
 
   return (
-    <div className={`${styles.breadcrumbs}${mobileCurrentRow ? ` ${styles.mobileCurrentRow}` : ""}${className ? ` ${className}` : ""}`}>
+    <div className={`${styles.breadcrumbs}${mobileCurrentRow ? ` ${styles.mobileCurrentRow}` : ""}${compact ? ` ${styles.compact}` : ""}${className ? ` ${className}` : ""}`}>
       <button type="button" className={styles.back} onClick={() => router.back()}>
         <BreadcrumbBackIcon />
       </button>

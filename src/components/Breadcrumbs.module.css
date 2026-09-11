@@ -59,6 +59,11 @@
   font-weight: 500;
 }
 
+.compact a {
+  padding-right: 0;
+  padding-left: 0;
+}
+
 @media (max-width: 979px) {
   .mobileCurrentRow {
     flex-wrap: wrap;
@@ -71,5 +76,17 @@
     height: auto;
     justify-content: flex-start;
     white-space: normal;
+  }
+
+  .compact {
+    column-gap: 8px;
+    row-gap: 4px;
+  }
+
+  .compact .current {
+    min-height: 40px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    line-height: 15px;
   }
 }
