@@ -9,15 +9,11 @@ import {
   AddStoryLineIcon,
   AddStoryPlusIcon,
   BlogChevronIcon,
-  MaxIcon,
   PagerChevronIcon,
-  ProfileIcon,
-  RutubeIcon,
-  TelegramIcon,
-  YoutubeIcon,
 } from "./icons";
 import ArticleCard from "./ArticleCard";
 import Breadcrumbs from "./Breadcrumbs";
+import LiveSection, { type LiveChannel, type LiveItem } from "./LiveSection";
 import styles from "./BlogPage.module.css";
 
 const ARTICLE_IMAGES = [
@@ -46,48 +42,69 @@ type StorySlideData =
   | { key: string; image: string }
   | { key: string; image?: undefined };
 
-const LIVE_ITEMS = [
+const LIVE_CHANNELS: LiveChannel[] = ["youtube", "rutube", "telegram", "max"];
+
+const LIVE_CARD_DETAILS = {
+  imageAlt: "Эфир о собаках",
+  badge: "Живой эфир",
+  timeLabel: "Время эфира",
+  startTime: "18.45 Мск",
+  channels: LIVE_CHANNELS,
+  channelPrompt: "Выберите канал",
+  author: "Марина Авдеева",
+};
+
+const LIVE_ITEMS: LiveItem[] = [
   {
+    ...LIVE_CARD_DETAILS,
     image: "/images/blog/article-1.png",
     title: "Наши озорники, ищут дом - кто хочет себе идеального друга?",
     role: "Заводчик",
   },
   {
+    ...LIVE_CARD_DETAILS,
     image: "/images/blog/live-2.png",
     title: "Как правильно ухаживать за щенком? Приучаем щенка к режиму",
     role: "Заводчик",
   },
   {
+    ...LIVE_CARD_DETAILS,
     image: "/images/blog/live-3.png",
     title: "Вакцинация и прививки - поговорим о постоянном контроле здоровья собак",
     role: "Ветеринар",
   },
   {
+    ...LIVE_CARD_DETAILS,
     image: "/images/blog/live-4.png",
     title: "Наши озорники, ищут дом - кто хочет себе идеального друга?",
     role: "Заводчик",
   },
   {
+    ...LIVE_CARD_DETAILS,
     image: "/images/blog/article-1.png",
     title: "Как правильно ухаживать за щенком? Приучаем щенка к режиму",
     role: "Заводчик",
   },
   {
+    ...LIVE_CARD_DETAILS,
     image: "/images/blog/live-2.png",
     title: "Как правильно ухаживать за щенком - приучаем к месту, правила кормления",
     role: "Ветеринар",
   },
   {
+    ...LIVE_CARD_DETAILS,
     image: "/images/blog/live-3.png",
     title: "Наши озорники, ищут дом - кто хочет себе идеального друга?",
     role: "Заводчик",
   },
   {
+    ...LIVE_CARD_DETAILS,
     image: "/images/blog/live-4.png",
     title: "Как правильно ухаживать за щенком? Приучаем щенка к режиму",
     role: "Заводчик",
   },
 ];
+
 
 const CATEGORY_COLUMNS = Array.from({ length: 3 }, () => [
   "Душевные истории",
@@ -152,33 +169,6 @@ function AddStoryCard() {
   );
 }
 
-function LiveCard({ image, title, role }: (typeof LIVE_ITEMS)[number]) {
-  return (
-    <article className={styles.liveCard}>
-      <Image className={styles.liveImage} src={image} alt="Эфир о собаках" fill sizes="(max-width: 979px) 355px, (max-width: 1239px) 450px, 400px" />
-      <span className={styles.liveBadge}>Живой эфир</span>
-      <span className={styles.liveTime}>Время эфира <i /> 18.45 Мск</span>
-      <div className={styles.liveDescription}>
-        <h3>{title}</h3>
-        <div className={styles.channels}>
-          <YoutubeIcon />
-          <RutubeIcon />
-          <TelegramIcon />
-          <MaxIcon />
-          <i />
-          <span>Выберите канал</span>
-        </div>
-        <div className={styles.author}>
-          <span className={styles.authorAvatar}>
-            <ProfileIcon width={25} height={19} />
-          </span>
-          <span>Марина Авдеева</span>
-          <span className={styles.role}>{role}</span>
-        </div>
-      </div>
-    </article>
-  );
-}
 
 export default function BlogPage() {
   const storySwiperRef = useRef<SwiperInstance | null>(null);
@@ -265,16 +255,7 @@ export default function BlogPage() {
         </div>
       </section>
 
-      <section className={styles.liveSection}>
-        <div className={styles.sectionHeading}>
-          <h2>On Line эфиры</h2>
-          <a href="#" className="btn btn--primary"><span>Смотреть еще</span></a>
-        </div>
-        <div className={styles.liveGrid}>
-          {LIVE_ITEMS.map((item, index) => <LiveCard key={index} {...item} />)}
-        </div>
-        <a href="#" className={`btn btn--primary ${styles.mobileMore}`}><span>Смотреть еще</span></a>
-      </section>
+      <LiveSection items={LIVE_ITEMS} />
     </main>
   );
 }

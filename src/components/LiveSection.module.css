@@ -1,0 +1,271 @@
+.section {
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 95px 80px 0;
+}
+
+.heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.heading h2 {
+  margin: 0;
+  color: var(--color-white);
+  font-size: 26px;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 400px));
+  justify-content: space-between;
+  gap: 60px 40px;
+  margin-top: 56px;
+}
+
+.card {
+  position: relative;
+  height: 420px;
+  border-radius: 30px;
+}
+
+.image {
+  object-fit: cover;
+  border: var(--glass-border);
+  border-radius: 30px;
+}
+
+.badge,
+.time {
+  position: absolute;
+  top: 15px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  border: 2px solid var(--color-white);
+  border-radius: 40px;
+  background: rgba(255, 255, 255, .7);
+  backdrop-filter: blur(var(--glass-blur));
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.badge {
+  left: 15px;
+  width: 120px;
+}
+
+.time {
+  right: 15px;
+  gap: 5px;
+  width: 200px;
+}
+
+.time i,
+.channels i {
+  display: block;
+  width: 1px;
+  height: 20px;
+  background: rgba(0, 0, 0, .3);
+}
+
+.description {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  height: 200px;
+  padding: 20px;
+  border: 1px solid var(--color-white);
+  border-radius: 30px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, .2) 0%, rgba(221, 221, 221, .5) 100%),
+    rgba(255, 255, 255, .6);
+  backdrop-filter: blur(var(--glass-blur));
+}
+
+.description h3 {
+  height: 48px;
+  margin: 0 0 20px;
+  overflow: hidden;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+}
+
+.channels,
+.author {
+  display: flex;
+  align-items: center;
+}
+
+.channels {
+  gap: 8px;
+  height: 32px;
+}
+
+.channels svg {
+  flex: 0 0 32px;
+}
+
+.channels span {
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.author {
+  gap: 10px;
+  margin-top: 17px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.avatar {
+  display: grid;
+  place-items: center;
+  width: 45px;
+  height: 45px;
+  border: 2px solid var(--color-white);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .6);
+  color: var(--color-text);
+}
+
+.avatar svg {
+  width: 25px;
+  height: 19px;
+}
+
+.role {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 74px;
+  height: 40px;
+  margin-left: auto;
+  padding: 0 10px;
+  border-radius: 15px;
+  color: var(--color-white);
+  background: var(--grad-btn);
+  font-size: 12px;
+}
+
+.mobileMore {
+  display: none;
+}
+
+.article .card:nth-child(n + 5) {
+  display: none;
+}
+
+.bottom .heading > a {
+  display: none;
+}
+
+.bottom .mobileMore {
+  display: flex;
+  width: max-content;
+  margin: 40px auto 0;
+}
+
+@media (min-width: 1920px) {
+  .section {
+    padding-right: 100px;
+    padding-left: 100px;
+  }
+
+  .grid {
+    grid-template-columns: repeat(4, 400px);
+    gap: 60px 40px;
+  }
+}
+
+@media (max-width: 1919px) {
+  .blog .card:nth-child(n + 7) {
+    display: none;
+  }
+}
+
+@media (min-width: 980px) and (max-width: 1239px) {
+  .section {
+    padding: 86px 30px 0;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, 450px);
+    gap: 60px 20px;
+  }
+
+  .blog .card:nth-child(n + 5) {
+    display: none;
+  }
+}
+
+@media (max-width: 979px) {
+  .section {
+    padding: 80px 10px 0;
+  }
+
+  .responsive .heading > a,
+  .bottom .heading > a {
+    display: none;
+  }
+
+  .grid {
+    grid-template-columns: minmax(0, 355px);
+    justify-content: center;
+    gap: 60px;
+    margin-top: 60px;
+  }
+
+  .blog .card:nth-child(n + 3) {
+    display: none;
+  }
+
+  .badge {
+    left: 5px;
+  }
+
+  .time {
+    right: 20px;
+  }
+
+  .description {
+    padding: 20px;
+  }
+
+  .channels {
+    gap: 7px;
+  }
+
+  .channels span {
+    font-size: 14px;
+  }
+
+  .responsive .mobileMore,
+  .bottom .mobileMore {
+    display: flex;
+    width: max-content;
+    margin: 40px auto 0;
+  }
+
+  .top .heading > a {
+    display: flex;
+  }
+
+  .top .mobileMore {
+    display: none;
+  }
+}
+
+@media (min-width: 800px) and (max-width: 979px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
