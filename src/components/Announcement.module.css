@@ -14,12 +14,14 @@
 
 .announcementArticle .announcement__row:last-child {
   flex-direction: column-reverse;
-  align-items: flex-end;
+  align-items: center;
   gap: 12px;
 }
 
 .announcementArticle .announcement__date {
   border: 0;
+  background: transparent;
+  backdrop-filter: none;
 }
 
 .announcementArticle .announcement__favorite {
