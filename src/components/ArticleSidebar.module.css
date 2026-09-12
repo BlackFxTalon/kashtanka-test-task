@@ -1,5 +1,6 @@
 .aside {
-  width: 743px;
+  width: 100%;
+  max-width: 743px;
 }
 
 .categories {
@@ -63,7 +64,11 @@
 
 @media (max-width: 1919px) {
   .aside {
-    width: 350px;
+    max-width: 415px;
+  }
+
+  .reading {
+    margin-left: 25px;
   }
 
   .readingGrid {

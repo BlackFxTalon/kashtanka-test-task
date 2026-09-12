@@ -67,6 +67,13 @@
   }
 }
 
+@media (max-width: 1919px) {
+  .header {
+     padding-left: 81px;
+     padding-right: 50px;
+  }
+}
+
 @media (max-width: 1599px) {
   .section {
     margin-top: -20px;
@@ -75,14 +82,11 @@
   .header {
     margin-bottom: 50px;
     padding: 0 30px;
+    padding-left: 61px;
   }
 
   .swiper {
     padding-left: 30px;
-  }
-
-  .slide {
-    width: 420px;
   }
 }
 

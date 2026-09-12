@@ -52,8 +52,7 @@ export default function OtherArticles() {
       <Swiper
         className={styles.swiper}
         slidesPerView="auto"
-        spaceBetween={20}
-        breakpoints={{ 1600: { spaceBetween: 60 } }}
+        spaceBetween={60}
         onSwiper={(swiper) => {
           swiperRef.current = swiper;
           syncControls(swiper);
