@@ -12,6 +12,16 @@
   margin-bottom: 24px;
 }
 
+.announcementArticle .announcement__row:last-child {
+  flex-direction: column-reverse;
+  align-items: flex-end;
+  gap: 12px;
+}
+
+.announcementArticle .announcement__date {
+  border: 0;
+}
+
 .announcementArticle .announcement__favorite {
   position: absolute;
   top: 15px;
