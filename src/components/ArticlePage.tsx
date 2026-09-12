@@ -220,9 +220,9 @@ export default function ArticlePage() {
 
               <div className={styles.tags}>
                 <strong>Тэги:</strong>
-                <a href="#" className={`btn btn--primary ${styles.tag}`}>Щенки</a>
-                <a href="#" className={`btn btn--primary ${styles.tag}`}>Щенки</a>
-                <a href="#" className={`btn btn--primary ${styles.tag} ${styles.tagActive}`}>Уход</a>
+                <a href="#" className={`btn btn--primary ${styles.tag}`}><span>Щенки</span></a>
+                <a href="#" className={`btn btn--primary ${styles.tag}`}><span>Щенки</span></a>
+                <a href="#" className={`btn btn--primary ${styles.tag} ${styles.tagActive}`}><span>Уход</span></a>
               </div>
 
               <Share />
