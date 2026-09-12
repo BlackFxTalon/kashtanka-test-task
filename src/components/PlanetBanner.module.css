@@ -1,0 +1,129 @@
+.banner {
+  position: relative;
+  width: 800px;
+  height: 404px;
+  padding: 66px 40px 55px 30px;
+  background: linear-gradient(90deg, #7a60b9 0%, #586bbe 34.135%);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: var(--radius-btn);
+  overflow: hidden;
+}
+
+.art {
+  position: absolute;
+  left: 30px;
+  top: 45px;
+}
+
+.content {
+  position: relative;
+  margin-left: 389px;
+  color: var(--color-white);
+  font-family: var(--font-logo);
+}
+
+.logo {
+  margin: 0;
+  font-size: 60px;
+  line-height: normal;
+}
+
+.tagline {
+  margin: 8px 0 0;
+  font-size: 20px;
+  letter-spacing: 6.4px;
+}
+
+.support {
+  margin: 23px 0 0;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 30px;
+  letter-spacing: 9.6px;
+  line-height: 60px;
+  white-space: nowrap;
+  position: relative;
+}
+
+.planetLogo {
+  flex: none;
+  margin-left: 100px;
+  margin-top: 0px;
+  margin-bottom: -3px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+/* 1920: баннер 1080px, арт 299×313, «ПОДДЕРЖИ НАС НА» 40px, лого 326×71 (30:7681) */
+.bannerLarge {
+  width: 1080px;
+}
+
+.bannerLarge .art {
+  left: 93px;
+  top: 45px;
+}
+
+.bannerLarge .content {
+  margin-left: 486px;
+}
+
+.bannerLarge .support {
+  font-size: 40px;
+  letter-spacing: 12.8px;
+}
+
+/* 980: баннер 410px, без арта (30:12021) */
+.bannerNoArt {
+  width: 410px;
+  padding: 66px 30px 55px 20px;
+}
+
+.bannerNoArt .content {
+  margin-left: 0;
+}
+
+/* 1600: исходный компактный вариант баннера (30:10079) */
+@media (min-width: 980px) and (max-width: 1679px) {
+  .bannerLarge {
+    width: 800px;
+  }
+
+  .bannerLarge .art {
+    left: 30px;
+  }
+
+  .bannerLarge .content {
+    margin-left: 389px;
+  }
+
+  .bannerLarge .support {
+    font-size: 30px;
+    letter-spacing: 9.6px;
+  }
+
+  .bannerLarge .planetLogo {
+    width: 212px;
+    height: 46px;
+    margin-left: 70px;
+    margin-bottom: 7px;
+  }
+}
+
+/* 980: компактный баннер без арта (30:12021) */
+@media (min-width: 980px) and (max-width: 1279px) {
+  .bannerLarge {
+    width: 410px;
+    padding: 66px 10px 55px 20px;
+  }
+
+  .bannerLarge .art {
+    display: none;
+  }
+
+  .bannerLarge .content {
+    margin-left: 0;
+  }
+}

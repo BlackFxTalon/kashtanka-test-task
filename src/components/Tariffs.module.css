@@ -1,0 +1,57 @@
+.tariffs {
+  margin-top: 50px;
+  padding: 0 20px;
+}
+
+.inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) repeat(4, 250px);
+  gap: 30px;
+  max-width: 1820px;
+  margin: 0 auto;
+}
+
+/* 1600: 3 карточки — скрыт тариф «1800₽ 12 мес» (30:10108); диапазон покрывает саму 1600 */
+@media (min-width: 1280px) and (max-width: 1679px) {
+  .tariffs {
+    margin-top: 30px;
+    padding: 0 30px;
+  }
+
+  .inner {
+    grid-template-columns: minmax(0, 1fr) repeat(3, 250px);
+    max-width: 1440px;
+  }
+
+  .inner > :nth-child(4) {
+    display: none;
+  }
+}
+
+/* 980: 2 карточки — скрыты «1800₽ 12 мес» и «Пожизненно» (30:12034).
+   Без отступов секции: описание 430 вплотную к левому краю, карточки до правого */
+@media (min-width: 980px) and (max-width: 1279px) {
+  .tariffs {
+    margin-top: 30px;
+    padding: 0;
+  }
+
+  .inner {
+    grid-template-columns: 430px repeat(2, 250px);
+    justify-content: space-between;
+    gap: 25px;
+    max-width: 980px;
+  }
+
+  .inner > :nth-child(4),
+  .inner > :nth-child(5) {
+    display: none;
+  }
+}
+
+/* Блок скрыт на 375–979 */
+@media (max-width: 979px) {
+  .tariffs {
+    display: none;
+  }
+}

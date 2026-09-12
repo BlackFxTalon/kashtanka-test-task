@@ -1,0 +1,162 @@
+.section {
+  max-width: 1920px;
+  margin: 50px auto 0;
+  padding: 0 20px;
+}
+
+.inner {
+  max-width: 1820px;
+  margin: 0 auto;
+}
+
+.heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.heading h2 {
+  margin: 0;
+  color: var(--color-white);
+  font-size: 26px;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+/* Стрелки-навигация слайдера (1600/980): 40×40, серая/синяя */
+.nav {
+  display: none;
+  gap: 10px;
+}
+
+.navButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: 1px solid #c2bdbd;
+  border-radius: var(--radius-btn);
+  background: var(--color-gray-bg);
+  color: var(--color-text);
+}
+
+.navButtonRight {
+  background: #6681f9;
+  color: var(--color-white);
+}
+
+@media (hover: hover) {
+  .navButton:hover {
+    opacity: 0.85;
+  }
+}
+
+/* 1920: статичная сетка 3×2 */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 500px);
+  justify-content: space-between;
+  gap: 80px 60px;
+  margin-top: 40px;
+}
+
+.slider {
+  display: none;
+}
+
+.bottom {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+/* 1600: слайдер, 3 видимых слайда 500px, стрелки + «Смотреть еще» в шапке.
+   Слайдер тянется до правого края экрана (правая карточка срезается вьюпортом, 30:10332) */
+@media (min-width: 1280px) and (max-width: 1679px) {
+  .section {
+    margin-top: 30px;
+    padding: 0 0 0 30px;
+    overflow: hidden;
+  }
+
+  .inner {
+    max-width: none;
+  }
+
+  .nav {
+    display: flex;
+  }
+
+  .grid {
+    display: none;
+  }
+
+  .heading {
+    margin-left: 40px;
+  }
+
+  .controls {
+    margin-right: 40px;
+  }
+
+  .slider {
+    display: block;
+    margin-top: 40px;
+    margin-right: -30px;
+    margin-left: 40px;
+    overflow: hidden;
+  }
+
+  .slider :global(.swiper-slide) {
+    width: 500px;
+  }
+}
+
+/* Нижняя кнопка видна только на 1920; на 1600 скрыта (граница покрывает саму 1600) */
+@media (min-width: 980px) and (max-width: 1679px) {
+  .bottom {
+    display: none;
+  }
+}
+
+/* 980: слайдер с 2 видимыми слайдами, стрелки + «Смотреть еще» в шапке (30:12219) */
+@media (min-width: 980px) and (max-width: 1279px) {
+  .section {
+    margin-top: 30px;
+    padding: 0 30px;
+    overflow: hidden;
+  }
+
+  .nav {
+    display: flex;
+  }
+
+  .grid {
+    display: none;
+  }
+
+  .slider {
+    display: block;
+    margin-top: 40px;
+    overflow: hidden;
+  }
+
+  .slider :global(.swiper-slide) {
+    width: 500px;
+  }
+}
+
+/* 375–979: блок скрыт */
+@media (max-width: 979px) {
+  .section {
+    display: none;
+  }
+}

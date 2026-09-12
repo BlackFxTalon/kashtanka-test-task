@@ -10,7 +10,7 @@
   align-items: center;
   justify-content: space-between;
   min-height: 100px;
-  padding: 0 20px;
+  padding: 0 40px;
   max-width: 1920px;
   margin: 0 auto;
 }
@@ -668,9 +668,19 @@
   }
 }
 
+@media (max-width: 1919px) {
+  .inner {
+    padding: 0 50px;
+  }
+}
+
 @media (max-width: 1601px) {
   .nav {
      gap: 30px;
+  }
+
+  .inner {
+    padding: 0 30px;
   }
 }
 

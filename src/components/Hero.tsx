@@ -21,7 +21,7 @@ const BLOCKS = [
     title: "Вы любите животных, помогите",
     titleMobile: "Любишь животных",
     active: "Предложи услуги",
-    inactive: "Помоги",
+    inactive: "Помочь проекту",
     extra: null,
   },
 ];

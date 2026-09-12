@@ -1,0 +1,75 @@
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 250px;
+  height: 550px;
+  padding: 26px 0 25px;
+  background: var(--color-white);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: var(--radius-btn);
+}
+
+/* План-чип (первый .btn в карточке) */
+.card > .btn:first-child {
+  width: 130px;
+  padding-inline: 10px;
+}
+
+.price {
+  margin: 25px 0 0;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 25.2px;
+  color: #2344d4;
+  white-space: nowrap;
+}
+
+.features {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 100%;
+  margin: 25px 0 0;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+}
+
+.feature {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  line-height: 25.2px;
+}
+
+.featureName {
+  font-weight: 700;
+}
+
+.featureValue {
+  font-weight: 500;
+}
+
+/* CTA — 151×41, лежит на нижнем крае карточки (26px внутри, 15px наружу) */
+.card > .cta {
+  position: absolute;
+  left: 50%;
+  bottom: -15px;
+  transform: translateX(-50%);
+  width: 151px;
+  height: 41px;
+  font-size: 14px;
+}
+
+/* Ховер: активный градиент + белый текст (Figma 30:7840) */
+.card > .cta::after {
+  background: var(--grad-btn-active);
+}
+
+.card > .cta:hover {
+  color: var(--color-btn-text);
+  border-color: rgba(255, 255, 255, 0.5);
+}

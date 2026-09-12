@@ -162,3 +162,22 @@ button {
 .btn--sale::after {
   background: var(--grad-btn-white);
 }
+
+.container {
+   width: 100%;
+   max-width: 100%;
+   padding: 0 10px;
+}
+
+@media (min-width: 980px) {
+  .container {
+    padding: 0 30px;
+  }
+}
+
+@media (min-width: 1920px) {
+  .container {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+}

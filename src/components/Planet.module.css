@@ -1,0 +1,68 @@
+.planet {
+  margin-top: 50px;
+  padding: 0 20px;
+}
+
+.inner {
+  display: grid;
+  grid-template-columns: 650px minmax(0, 1fr);
+  gap: 40px 40px;
+  max-width: 1820px;
+  margin: 0 auto;
+}
+
+/* DescriptionBlock в этом блоке 404px высотой, без ограничения 550 */
+.inner > :first-child {
+  height: 404px;
+}
+
+/* В Планете CTA идёт за текстом, с 18px по макету, а не прижимается к низу. */
+.inner > :first-child :global([class*="ctaWrap"]) {
+  margin-top: 18px;
+  padding-top: 0;
+}
+
+/* 1600: описание 650 + баннер 800 (30:10079) */
+@media (min-width: 1280px) and (max-width: 1679px) {
+  .planet {
+    margin-top: 30px;
+    padding: 0 30px;
+  }
+
+  .inner {
+    grid-template-columns: 650px 800px;
+    justify-content: space-between;
+    max-width: 1520px;
+  }
+}
+
+/* 980: описание 550 + баннер 410 без арта; блок вплотную к краям (30:12006) */
+@media (min-width: 980px) and (max-width: 1279px) {
+  .planet {
+    margin-top: 30px;
+    padding: 0;
+  }
+
+  .inner {
+    grid-template-columns: 550px 410px;
+    justify-content: space-between;
+    max-width: 980px;
+    gap: 20px;
+  }
+
+  /* Заголовок 20px, как в 30:12011 */
+  .inner > :first-child {
+    height: 404px;
+  }
+
+  .inner > :first-child :global(h2) {
+    font-size: 20px;
+  }
+}
+
+/* 375–979: блок скрыт */
+@media (max-width: 979px) {
+  .planet {
+    display: none;
+  }
+}

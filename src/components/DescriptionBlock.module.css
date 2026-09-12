@@ -1,0 +1,61 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  height: 550px;
+  padding: 30px;
+  background: var(--color-white);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: var(--radius-card);
+}
+
+.title {
+  margin: 20px 0 0;
+  font-size: 26px;
+  font-weight: 500;
+  line-height: normal;
+  color: var(--color-text);
+}
+
+.body {
+  margin-top: 21px;
+  font-size: 14px;
+  line-height: 25.2px;
+}
+
+.body p {
+  margin: 0;
+}
+
+.body strong {
+  font-weight: 700;
+}
+
+/* Кнопка прижата к низу карточки; отступ сверху 40px держит обёртка */
+.card > .ctaWrap {
+  margin-top: auto;
+  padding-top: 40px;
+}
+
+/* 980: заголовок 20px (30:12039), карточка 430×638, паддинги 30 (30:12035) */
+@media (min-width: 980px) and (max-width: 1279px) {
+  .card {
+    height: 638px;
+  }
+
+  .title {
+    font-size: 20px;
+  }
+
+  .card > .ctaWrap {
+     padding-top: 10px;
+  }
+}
+
+/* Бейдж «О подписке» на всех ширинах: 12px (30:7794/30:10116/30:12042), чип 100×40 */
+.badge {
+  width: 100px;
+  min-height: 40px;
+  padding-inline: 10px;
+  font-size: 12px;
+}

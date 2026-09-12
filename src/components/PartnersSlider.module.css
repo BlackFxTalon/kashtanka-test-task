@@ -1,0 +1,224 @@
+.section {
+  position: relative;
+  margin-top: 50px;
+  overflow: hidden;
+}
+
+.title {
+  width: min(1658px, calc(100% - 140px));
+  margin: 0 auto;
+  font-size: 26px;
+  font-weight: 500;
+  line-height: normal;
+  color: var(--color-white);
+}
+
+.sliderArea {
+  position: relative;
+  margin-top: 47px;
+}
+
+.slider {
+  width: 1640px;
+  overflow: hidden;
+}
+
+.slide {
+  width: 300px;
+}
+
+/* Swiper вычисляет slideSize по .swiper-slide, поэтому ширину задаём через его класс. */
+.slider :global(.swiper-slide) {
+  width: 300px;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  height: 150px;
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+.yellow {
+  background: #ffdd2d;
+}
+
+.white {
+  background: var(--color-white);
+}
+
+.logo {
+  object-fit: contain;
+}
+
+.logoYellow {
+  width: 221px;
+  height: 68px;
+}
+
+.logoWhite {
+  width: 207px;
+  height: 82px;
+}
+
+.navButton {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: 1px solid #c2bdbd;
+  border-radius: 15px;
+  color: var(--color-text);
+  transform: translateY(-50%);
+  transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+}
+
+.navButtonPrev {
+  left: 70px;
+  background: #edeae9;
+}
+
+.navButtonNext {
+  right: 70px;
+  background: #edeae9;
+}
+
+.navButton svg {
+  width: 30px;
+  height: 30px;
+}
+
+@media (hover: hover) {
+  .navButton:hover {
+    color: var(--color-white);
+    background: #6681f9;
+  }
+}
+
+@media (min-width: 1280px) and (max-width: 1679px) {
+  .section {
+    margin-top: 30px;
+  }
+
+  .title {
+    width: min(1438px, calc(100% - 120px));
+  }
+
+  .slider {
+    width: 1360px;
+  }
+
+  .navButtonPrev {
+    left: 60px;
+  }
+
+  .navButtonNext {
+    right: 60px;
+  }
+}
+
+@media (min-width: 980px) and (max-width: 1279px) {
+  .section {
+    margin-top: 30px;
+  }
+
+  .title {
+    width: calc(100% - 60px);
+  }
+
+  .sliderArea {
+    margin-top: 60px;
+  }
+
+  .slider {
+    width: 800px;
+  }
+
+  .slider :global(.swiper-slide) {
+    width: 240px;
+  }
+
+  .slide,
+  .card {
+    width: 240px;
+  }
+
+  .card {
+    height: 120px;
+  }
+
+  .logoYellow {
+    width: 176.8px;
+    height: 54.4px;
+  }
+
+  .logoWhite {
+    width: 165.6px;
+    height: 65.6px;
+  }
+
+  .navButtonPrev {
+    left: 30px;
+  }
+
+  .navButtonNext {
+    right: 29px;
+  }
+}
+
+@media (max-width: 979px) {
+  .section {
+    margin-top: 30px;
+  }
+
+  .title {
+    width: max-content;
+  }
+
+  .sliderArea {
+    margin-top: 62px;
+  }
+
+  .slider {
+    width: 240px;
+  }
+
+  .slider :global(.swiper-slide) {
+    width: 240px;
+  }
+
+  .slide,
+  .card {
+    width: 240px;
+  }
+
+  .card {
+    height: 120px;
+  }
+
+  .logoYellow {
+    width: 176.8px;
+    height: 54.4px;
+  }
+
+  .logoWhite {
+    width: 165.6px;
+    height: 65.6px;
+  }
+
+  .navButtonPrev {
+    left: 10px;
+  }
+
+  .navButtonNext {
+    right: 10px;
+  }
+}

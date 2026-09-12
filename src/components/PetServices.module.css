@@ -1,0 +1,164 @@
+
+
+.petServices {
+  margin-top: 50px;
+  padding: 50px 20px 80px;
+  background: var(--color-white);
+  border: 1px solid var(--color-primary);
+  border-radius: 60px 60px 0 0;
+}
+
+.inner {
+  max-width: 1720px;
+  margin: 0 auto;
+}
+
+.head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 60px;
+}
+
+.title {
+  margin: 0;
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 37px;
+  color: var(--color-text);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 60px 40px;
+  align-items: start;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 44px;
+}
+
+
+
+@media (min-width: 980px) and (max-width: 1679px) {
+  .inner {
+    max-width: 1440px;
+  }
+
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 60px 105px;
+  }
+}
+
+
+
+@media (min-width: 980px) and (max-width: 1119px) {
+  .inner {
+    max-width: 920px;
+  }
+}
+
+@media (max-width: 1599px) {
+  .petServices {
+    margin-top: 30px;
+    padding: 50px 30px 60px;
+    border-radius: 30px 30px 0 0;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 60px 20px;
+  }
+}
+
+
+
+@media (max-width: 979px) {
+  .petServices {
+    position: relative;
+    margin-top: 30px;
+    padding: 39px 9px 49px;
+    border-radius: 30px;
+  }
+
+  .head {
+    justify-content: center;
+    margin-bottom: 40px;
+  }
+
+  .head :global(.btn) {
+    display: none;
+  }
+
+  .title {
+    font-size: 24px;
+    line-height: 29px;
+  }
+
+  .grid {
+    display: none;
+  }
+
+  .footer {
+    position: absolute;
+    z-index: 1;
+    left: 50%;
+    bottom: -20px;
+    margin: 0;
+    transform: translateX(-50%);
+  }
+
+  .footer :global(.btn) {
+    width: 140px;
+    padding-inline: 10px;
+  }
+}
+
+/* ARTICLE (article page) variant: постоянная белая подложка и сетка 2×2 из фиксированных колонок */
+.petServicesArticle {
+  padding: 50px 0 60px;
+  border-radius: var(--radius-card);
+}
+
+.petServicesArticle .grid {
+  grid-template-columns: repeat(2, 350px);
+  justify-content: space-between;
+  gap: 48px 20px;
+}
+
+.petServicesArticle .head {
+  margin-bottom: 40px;
+  padding-inline: 40px;
+}
+
+.petServicesArticle .title {
+  font-size: 30px;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.petServicesArticle .footer {
+  margin-top: 30px;
+}
+
+@media (max-width: 1919px) {
+  .petServicesArticle .head > :global(.btn) {
+    display: none;
+  }
+
+  .petServicesArticle .grid {
+    grid-template-columns: 350px;
+    justify-content: center;
+    gap: 48px;
+  }
+
+  .petServicesArticle .grid > :nth-child(n + 3) {
+    display: none;
+  }
+}
