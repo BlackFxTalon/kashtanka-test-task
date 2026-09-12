@@ -16,14 +16,24 @@ interface BreadcrumbsProps {
   className?: string;
   mobileCurrentRow?: boolean;
   compact?: boolean;
+  currentVariant?: "default" | "blog";
 }
 
-export default function Breadcrumbs({ items, current, className, mobileCurrentRow = false, compact = false }: BreadcrumbsProps) {
+export default function Breadcrumbs({
+  items,
+  current,
+  className,
+  mobileCurrentRow = false,
+  compact = false,
+  currentVariant = "default",
+}: BreadcrumbsProps) {
   const router = useRouter();
+  const isBlogCurrent = currentVariant === "blog";
+  const currentClassName = `${styles.current}${isBlogCurrent ? ` ${styles.currentBlog}` : ""}`;
 
   return (
     <div className={`${styles.breadcrumbs}${mobileCurrentRow ? ` ${styles.mobileCurrentRow}` : ""}${compact ? ` ${styles.compact}` : ""}${className ? ` ${className}` : ""}`}>
-      <button type="button" className={styles.back} onClick={() => router.back()}>
+      <button type="button" className={`${styles.back}${isBlogCurrent ? ` ${styles.backBlog}` : ""}`} onClick={() => router.back()}>
         <BreadcrumbBackIcon />
       </button>
       {items.map((item) => (
@@ -32,7 +42,7 @@ export default function Breadcrumbs({ items, current, className, mobileCurrentRo
           <span>-</span>
         </span>
       ))}
-      <strong className={styles.current}>{current}</strong>
+      <strong className={currentClassName}>{current}</strong>
     </div>
   );
 }

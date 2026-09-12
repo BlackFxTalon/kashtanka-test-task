@@ -155,6 +155,7 @@ export default function ArticlePage() {
               current={ARTICLE_TITLE}
               mobileCurrentRow
               compact
+              currentVariant="blog"
             />
 
             <h1>{ARTICLE_TITLE}</h1>

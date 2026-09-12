@@ -42,6 +42,11 @@
   color: #2344d4;
 }
 
+.backBlog,
+.backBlog:hover {
+  color: #2344d4;
+}
+
 .breadcrumbs a:hover {
   color: var(--color-text);
   background: var(--color-white);
@@ -57,6 +62,11 @@
   color: var(--color-text);
   background: var(--color-white);
   font-weight: 500;
+}
+
+.breadcrumbs .currentBlog {
+  color: var(--color-white);
+  background: #6168bd;
 }
 
 .compact a {

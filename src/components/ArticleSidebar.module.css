@@ -1,5 +1,5 @@
 .aside {
-  width: 720px;
+  width: 743px;
 }
 
 .categories {
@@ -45,7 +45,7 @@
   margin-top: 70px;
 }
 
-.reading h2 {
+.reading > h2 {
   margin: 0;
   color: var(--color-white);
   font-size: 26px;

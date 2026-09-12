@@ -325,6 +325,7 @@
 
 .tags .tag {
   min-width: 76px;
+  color: var(--color-btn-text);
 }
 
 .tags .tagActive::before {

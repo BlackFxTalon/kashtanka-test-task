@@ -2,6 +2,7 @@
   position: relative;
   height: 418px;
   border-radius: 30px;
+  color: var(--color-text);
 }
 
 .image {
@@ -27,6 +28,7 @@
   backdrop-filter: blur(var(--glass-blur));
   font-size: 12px;
   font-weight: 500;
+  color: var(--color-text);
 }
 
 .description {
@@ -51,6 +53,7 @@
   font-size: 16px;
   font-weight: 500;
   line-height: 24px;
+  color: var(--color-text);
 }
 
 @media (max-width: 979px) {
