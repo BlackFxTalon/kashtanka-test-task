@@ -122,6 +122,7 @@
 
 /* ARTICLE (article page) variant: постоянная белая подложка и сетка 2×2 из фиксированных колонок */
 .showcaseArticle {
+  position: relative;
   padding: 50px 0 60px;
   border-radius: var(--radius-card);
 }
@@ -145,7 +146,7 @@
 }
 
 .showcaseArticle .footer {
-  margin-top: 30px;
+  display: none;
 }
 
 @media (max-width: 1919px) {
@@ -161,5 +162,15 @@
 
   .showcaseArticle .grid > :nth-child(n + 3) {
     display: none;
+  }
+
+  .showcaseArticle .footer {
+    position: absolute;
+    z-index: 1;
+    bottom: -20px;
+    left: 50%;
+    display: flex;
+    margin: 0;
+    transform: translateX(-50%);
   }
 }

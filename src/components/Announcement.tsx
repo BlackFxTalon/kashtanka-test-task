@@ -38,6 +38,13 @@ export default function Announcement({ data, variant = "home" }: AnnouncementPro
           className={styles.announcement__photo}
         />
         <span className={styles.announcement__breed}>{data.breed}</span>
+        <button
+          type="button"
+          className={`${styles.announcement__favorite}${favorite ? ` ${styles.announcement__favoriteActive}` : ""}`}
+          onClick={() => setFavorite((v) => !v)}
+        >
+          <HeartIcon active={favorite} />
+        </button>
       </div>
 
       <div className={styles.announcement__body}>
@@ -47,13 +54,6 @@ export default function Announcement({ data, variant = "home" }: AnnouncementPro
             <br />
             {data.titleLine2}
           </h3>
-          <button
-            type="button"
-            className={`${styles.announcement__favorite}${favorite ? ` ${styles.announcement__favoriteActive}` : ""}`}
-            onClick={() => setFavorite((v) => !v)}
-          >
-            <HeartIcon active={favorite} />
-          </button>
         </div>
 
         <div className={styles.announcement__row}>

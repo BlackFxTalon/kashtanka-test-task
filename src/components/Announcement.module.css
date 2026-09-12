@@ -13,8 +13,10 @@
 }
 
 .announcementArticle .announcement__favorite {
-  align-self: flex-start;
-  margin-left: -4px;
+  position: absolute;
+  top: 15px;
+  right: 17px;
+  z-index: 1;
 }
 
 .announcement__media {
