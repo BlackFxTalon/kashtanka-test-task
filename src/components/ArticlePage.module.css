@@ -437,6 +437,32 @@
   }
 }
 
+@media (min-width: 600px) and (max-width: 979px) {
+  .photo {
+    width: 100%;
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+  .photoFrame,
+  .mediaSlider,
+  .videoFigure,
+  .mediaSlide,
+  .videoFrame {
+    width: 100%;
+  }
+
+  .mediaSlots {
+    height: auto;
+  }
+
+  .mediaSlide,
+  .videoFrame {
+    aspect-ratio: 460 / 270;
+    height: auto;
+  }
+}
+
 @media (max-width: 979px) {
   .mediaSlots {
     grid-template-columns: repeat(2, minmax(0, 1fr));
