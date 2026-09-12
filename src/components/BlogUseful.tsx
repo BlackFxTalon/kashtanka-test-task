@@ -54,8 +54,8 @@ export default function BlogUseful() {
         </div>
 
         <div className={styles.grid}>
-          {ARTICLES.map((article) => (
-            <ArticleCard key={article.image} {...article} imageSizes="500px" />
+          {ARTICLES.map((article, index) => (
+            <ArticleCard key={`${article.image}-${index}`} {...article} imageSizes="500px" />
           ))}
         </div>
 
@@ -67,8 +67,8 @@ export default function BlogUseful() {
             swiperRef.current = swiper;
           }}
         >
-          {ARTICLES.map((article) => (
-            <SwiperSlide key={article.image}>
+          {ARTICLES.map((article, index) => (
+            <SwiperSlide key={`${article.image}-${index}`}>
               <ArticleCard {...article} imageSizes="500px" />
             </SwiperSlide>
           ))}
