@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import AboutService from "@/components/AboutService";
 import Hero from "@/components/Hero";
 import Showcase from "@/components/Showcase";
+import Stories from "@/components/Stories";
 import { TOP_ANNOUNCEMENTS } from "@/components/data";
 import BuySlot from "@/components/BuySlot";
 
@@ -15,6 +16,7 @@ export default function Home() {
         <Showcase />
         <AboutService />
         <Showcase title="Топ объявления" items={TOP_ANNOUNCEMENTS} buySlot={<BuySlot />} />
+        <Stories />
       </main>
       <Footer />
     </>

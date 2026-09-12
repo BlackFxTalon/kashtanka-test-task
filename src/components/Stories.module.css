@@ -1,0 +1,229 @@
+.stories {
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 100px 70px 0 80px;
+}
+
+.stories h2 {
+  margin: 0;
+  color: var(--color-white);
+  font-size: 26px;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.storyRow {
+  position: relative;
+  display: flex;
+  gap: 30px;
+  height: 523px;
+  margin-top: 61px;
+}
+
+.storySwiper {
+  flex: 1 1 auto;
+  min-width: 0;
+  height: 523px;
+  overflow: hidden;
+}
+
+.storySlide {
+  width: 200px !important;
+  height: 523px !important;
+}
+
+.storyButton:hover {
+  color: var(--color-white);
+  border-color: rgba(255, 255, 255, .5);
+}
+
+.storyButton::after {
+  background: var(--grad-btn);
+}
+
+.storyCard {
+  position: relative;
+  flex: 0 0 200px;
+  height: 514px;
+  color: var(--color-white);
+  display: flex;
+  flex-direction: column;
+}
+
+.storyCard > img {
+  height: 400px !important;
+  object-fit: cover;
+  border: var(--glass-border);
+  border-radius: 15px;
+}
+
+.storyInfo {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.storyInfo h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+}
+
+.addStory {
+  position: relative;
+  width: 200px;
+  height: 523px;
+  display: flex;
+  flex-direction: column;
+  color: var(--color-white);
+}
+
+.addStoryBlock {
+   height: 400px;
+  overflow: visible;
+  border: var(--glass-border);
+  border-radius: 15px;
+  background: #364fb9;
+}
+
+.addStoryBlock > img {
+  position: absolute;
+  top: 126px;
+  left: 50%;
+  object-fit: cover;
+  object-position: center;
+  transform: translateX(-50%);
+}
+
+.addStoryAction {
+  display: flex;
+  align-items: center;
+  margin-top: auto;
+  position: relative;
+}
+
+.addStoryAction button {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  flex: 0 0 93px;
+  place-items: center;
+  width: 93px;
+  height: 93px;
+  padding: 0;
+  color: var(--color-primary);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .6);
+  border: none;
+  transition: color .3s ease-in-out, background-color .3s ease-in-out, border-color .3s ease-in-out;
+}
+
+.addStoryAction button::before {
+  content: "";
+  width: 58px;
+  height: 58px;
+  border: 1px dashed #7a60b9;
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: color .3s ease-in-out, background-color .3s ease-in-out, border-color .3s ease-in-out;
+  transform: translate(17px, 17px);
+}
+
+.addStoryAction button > svg {
+  position: relative;
+  z-index: 2;
+}
+
+.addStoryAction button:hover,
+.addStoryAction button:active {
+  color: var(--color-white);
+}
+
+.addStoryAction button:hover::before,
+.addStoryAction button:active::before {
+  border-color: var(--color-white);
+  color: var(--color-white);
+  background: #364fb9;
+}
+
+.addStoryAction > svg {
+  position: absolute;
+  top: 33px;
+  left: 58px;
+  width: 69px;
+  height: 47px;
+  color: var(--color-white);
+}
+
+.addStoryAction span {
+  position: relative;
+  z-index: 1;
+  margin-left: 23px;
+  font-size: 16px;
+  font-weight: 600;
+  font-style: italic;
+  line-height: 24px;
+  white-space: nowrap;
+}
+
+.storyControls button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: 1px solid #c2bdbd;
+  border-radius: 15px;
+  background: var(--color-gray-bg);
+  color: var(--color-text);
+  font-size: 18px;
+  font-weight: 500;
+  transition: color .3s ease-in-out, background-color .3s ease-in-out, border-color .3s ease-in-out;
+}
+
+.storyControls button:hover,
+.storyControls button:active {
+  color: var(--color-white);
+  background: #6681f9;
+}
+
+.storyControls {
+  align-self: center;
+  display: flex;
+  gap: 10px;
+  margin-left: -20px;
+  margin-bottom: 8rem;
+}
+
+@media (min-width: 1920px) {
+  .stories {
+    padding-left: 105px;
+    padding-right: 105px;
+  }
+
+  .storyRow {
+    margin-top: 61px;
+  }
+}
+
+@media (min-width: 980px) and (max-width: 1239px) {
+  .storyControls {
+    position: absolute;
+    top: -97px;
+    right: 0;
+    z-index: 2;
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 979px) {
+  .stories {
+    display: none;
+  }
+}
