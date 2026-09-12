@@ -52,6 +52,11 @@
   background: var(--color-white);
 }
 
+.blog a:hover {
+  color: var(--color-white);
+  background: #6168bd;
+}
+
 .breadcrumbs strong {
   display: inline-flex;
   align-items: center;

@@ -32,7 +32,7 @@ export default function Breadcrumbs({
   const currentClassName = `${styles.current}${isBlogCurrent ? ` ${styles.currentBlog}` : ""}`;
 
   return (
-    <div className={`${styles.breadcrumbs}${mobileCurrentRow ? ` ${styles.mobileCurrentRow}` : ""}${compact ? ` ${styles.compact}` : ""}${className ? ` ${className}` : ""}`}>
+    <div className={`${styles.breadcrumbs}${isBlogCurrent ? ` ${styles.blog}` : ""}${mobileCurrentRow ? ` ${styles.mobileCurrentRow}` : ""}${compact ? ` ${styles.compact}` : ""}${className ? ` ${className}` : ""}`}>
       <button type="button" className={`${styles.back}${isBlogCurrent ? ` ${styles.backBlog}` : ""}`} onClick={() => router.back()}>
         <BreadcrumbBackIcon />
       </button>
