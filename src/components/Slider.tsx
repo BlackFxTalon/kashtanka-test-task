@@ -1,13 +1,19 @@
 "use client";
 
 import { useRef, useState } from "react";
+import type { ReactNode } from "react";
 import type { Swiper as SwiperInstance } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import Announcement, { type AnnouncementData } from "./Announcement";
 import styles from "./Slider.module.css";
 
-export default function Slider({ items }: { items: AnnouncementData[] }) {
+interface SliderProps {
+  items: AnnouncementData[];
+  buySlot?: ReactNode;
+}
+
+export default function Slider({ items, buySlot }: SliderProps) {
   const swiperRef = useRef<SwiperInstance | null>(null);
   const [activeIndex, setActiveIndex] = useState(0);
   const [slidesInView, setSlidesInView] = useState(1);
@@ -16,6 +22,8 @@ export default function Slider({ items }: { items: AnnouncementData[] }) {
     setActiveIndex(swiper.activeIndex);
     setSlidesInView(Number(swiper.params.slidesPerView) || 1);
   };
+
+  const slidesCount = items.length + (buySlot ? 1 : 0);
 
   return (
     <div className={styles.slider}>
@@ -31,7 +39,7 @@ export default function Slider({ items }: { items: AnnouncementData[] }) {
          breakpoints={{
           768: {
             slidesPerView: 2,
-            spaceBetween: 20, 
+            spaceBetween: 20,
           },
           980: {
             slidesPerView: 1,
@@ -44,12 +52,13 @@ export default function Slider({ items }: { items: AnnouncementData[] }) {
             <Announcement data={item} />
           </SwiperSlide>
         ))}
+        {buySlot ? <SwiperSlide>{buySlot}</SwiperSlide> : null}
       </Swiper>
 
       <div className={styles.pagination}>
-        {items.map((item, index) => (
+        {Array.from({ length: slidesCount }, (_, index) => (
           <button
-            key={item.id}
+            key={index}
             type="button"
             className={[
               styles.paginationBullet,
@@ -57,7 +66,7 @@ export default function Slider({ items }: { items: AnnouncementData[] }) {
                 ? styles.paginationBulletActive
                 : "",
               index === 0 ? styles.paginationBulletFirst : "",
-              index === items.length - 1 ? styles.paginationBulletLast : "",
+              index === slidesCount - 1 ? styles.paginationBulletLast : "",
               slidesInView > 1 && index === activeIndex
                 ? styles.paginationBulletPairStart
                 : "",

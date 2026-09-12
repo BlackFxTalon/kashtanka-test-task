@@ -33,6 +33,7 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 60px 40px;
+  align-items: start;
 }
 
 .footer {
