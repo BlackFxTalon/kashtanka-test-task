@@ -21,7 +21,7 @@ export default function Showcase({
   const article = variant === "article";
 
   return (
-    <section className={`${styles.showcase}${article ? ` ${styles.showcaseArticle}` : ""}`}>
+    <section className={`${styles.showcase}${article ? ` ${styles.showcaseArticle}` : ` ${styles.showcaseHome}`}`}>
       <div className={styles.inner}>
         <div className={styles.head}>
           <h2 className={styles.title}>{title}</h2>

@@ -162,8 +162,10 @@
   align-items: center;
   gap: 10px;
   height: 17px;
+  color: inherit;
   font-size: 17px;
   line-height: 17px;
+  text-decoration: none;
   white-space: nowrap;
 }
 
@@ -605,7 +607,9 @@
   padding: 10px 30px;
   background: rgba(122, 96, 185, 0.08);
   border-radius: 15px;
+  color: inherit;
   font-size: 17px;
+  text-decoration: none;
 }
 
 
@@ -687,8 +691,9 @@
 
 
 @media (max-width: 1599px) {
-  .logo {
-    left: 30px;
+.logo {
+  text-decoration: none;
+  left: 30px;
     top: 22px;
     transform: scale(0.85);
     transform-origin: left top;

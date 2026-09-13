@@ -80,15 +80,17 @@ interface LiveSectionProps {
   items: LiveItem[];
   variant?: "blog" | "article";
   moreButtonPlacement?: "responsive" | "top" | "bottom";
+  home?: boolean;
 }
 
 export default function LiveSection({
   items,
   variant = "blog",
   moreButtonPlacement = "responsive",
+  home = false,
 }: LiveSectionProps) {
   return (
-    <section className={`${styles.section} ${styles[variant]} ${styles[moreButtonPlacement]}`}>
+    <section className={`${styles.section} ${styles[variant]} ${styles[moreButtonPlacement]}${home ? ` ${styles.home}` : ""}`}>
       <div className={styles.heading}>
         <h2>On Line эфиры</h2>
         <a href="#" className="btn btn--primary"><span>Смотреть еще</span></a>

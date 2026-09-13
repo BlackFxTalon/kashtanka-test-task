@@ -29,7 +29,7 @@ const MENU: { label: string; wide: "xl" | "md" | "all" | "1920"; trigger?: boole
   { label: "О проекте", wide: "xl" },
   { label: "Щенки", wide: "all" },
   { label: "Услуги", wide: "all" },
-  { label: "Тарифы", wide: "1920" },
+  { label: "Тарифы", wide: "1920", href: "/tariffs" },
   { label: "Социальные проекты", wide: "1920" },
   { label: "Блог", wide: "1920", href: "/blog" },
   { label: "База пород", wide: "xl" },
@@ -52,15 +52,15 @@ const USER_MENU: { label: string; icon: "gear" | "profile" | "heart" | "doc" | "
   { label: "Выход", icon: "door" },
 ];
 
-const MOBILE_MENU = [
-  "О проекте",
-  "Щенки",
-  "Услуги",
-  "Тарифы",
-  "Породы собак",
-  "Базы пород",
-  "Социальные проекты",
-  "Сбор средств на «Планете»",
+const MOBILE_MENU: { label: string; href?: string }[] = [
+  { label: "О проекте" },
+  { label: "Щенки" },
+  { label: "Услуги" },
+  { label: "Тарифы", href: "/tariffs" },
+  { label: "Породы собак" },
+  { label: "Базы пород" },
+  { label: "Социальные проекты" },
+  { label: "Сбор средств на «Планете»" },
 ];
 
 function UserMenuIcon({ name }: { name: (typeof USER_MENU)[number]["icon"] }) {
@@ -107,9 +107,9 @@ export default function Header() {
           <BurgerIcon />
         </button>
 
-        <div className={styles.logo}>
+        <Link href="/" className={styles.logo} aria-label="На главную страницу">
           <Logo />
-        </div>
+        </Link>
 
         <button type="button" className={styles.homeBtn}>
           <HomeIcon className={styles.homeIcon} />
@@ -170,21 +170,27 @@ export default function Header() {
               <ProfileIcon />
             </a>
             <div className={`${styles.submenu}${submenuOpen ? ` ${styles.submenuOpen}` : ""}`}>
-              {COLLAPSED_MENU.map((item) => (
-                <span
-                  key={item.label}
-                  className={`${styles.submenuItem} ${
-                    item.wide === "xl"
-                      ? styles.submenuItemBelow1800
-                      : item.wide === "md"
-                        ? styles.submenuItemBelow1240
-                        : styles.submenuItemBelow1600
-                  }`}
-                >
-                  <MenuArrowIcon />
-                  {item.label}
-                </span>
-              ))}
+              {COLLAPSED_MENU.map((item) => {
+                const className = `${styles.submenuItem} ${
+                  item.wide === "xl"
+                    ? styles.submenuItemBelow1800
+                    : item.wide === "md"
+                      ? styles.submenuItemBelow1240
+                      : styles.submenuItemBelow1600
+                }`;
+
+                return item.href ? (
+                  <Link key={item.label} href={item.href} className={className}>
+                    <MenuArrowIcon />
+                    {item.label}
+                  </Link>
+                ) : (
+                  <span key={item.label} className={className}>
+                    <MenuArrowIcon />
+                    {item.label}
+                  </span>
+                );
+              })}
               {SUBMENU.map((label) => (
                 <span key={label} className={styles.submenuItem}>
                   <MenuArrowIcon />
@@ -245,12 +251,19 @@ export default function Header() {
           <span>Продажа щенка</span>
           <ProfileIcon color="white"/>
         </a>
-        {MOBILE_MENU.map((label) => (
-          <span key={label} className={styles.mobileMenuItem}>
-            <MenuArrowIcon />
-            {label}
-          </span>
-        ))}
+        {MOBILE_MENU.map((item) =>
+          item.href ? (
+            <Link key={item.label} href={item.href} className={styles.mobileMenuItem}>
+              <MenuArrowIcon />
+              {item.label}
+            </Link>
+          ) : (
+            <span key={item.label} className={styles.mobileMenuItem}>
+              <MenuArrowIcon />
+              {item.label}
+            </span>
+          ),
+        )}
       </div>
     </header>
   );

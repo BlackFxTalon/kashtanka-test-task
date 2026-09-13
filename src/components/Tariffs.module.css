@@ -1,5 +1,5 @@
 .tariffs {
-  margin-top: 50px;
+  margin-top: 100px;
   padding: 0 20px;
 }
 
@@ -14,7 +14,7 @@
 /* 1600: 3 карточки — скрыт тариф «1800₽ 12 мес» (30:10108); диапазон покрывает саму 1600 */
 @media (min-width: 1280px) and (max-width: 1679px) {
   .tariffs {
-    margin-top: 30px;
+    margin-top: 155px;
     padding: 0 30px;
   }
 
@@ -32,7 +32,7 @@
    Без отступов секции: описание 430 вплотную к левому краю, карточки до правого */
 @media (min-width: 980px) and (max-width: 1279px) {
   .tariffs {
-    margin-top: 30px;
+    margin-top: 100px;
     padding: 0;
   }
 

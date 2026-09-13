@@ -1,0 +1,153 @@
+.main {
+  overflow: hidden;
+  padding-top: 71px;
+}
+
+.intro {
+  max-width: none;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.intro h1 {
+  margin: 25px 30px 12px;
+  color: var(--color-white);
+  font-size: 26px;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.tariffs {
+  position: relative;
+  max-width: none;
+  margin: 140px auto 80px;
+  padding: 0 70px 15px;
+}
+
+.slider {
+  overflow: hidden;
+  padding-bottom: 15px;
+}
+
+.slider :global(.swiper-slide),
+.slide {
+  width: 250px;
+}
+
+.controls {
+  position: absolute;
+  z-index: 2;
+  top: -90px;
+  right: 70px;
+  display: flex;
+  gap: 10px;
+}
+
+.controls button {
+  display: grid;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  place-items: center;
+  border: 1px solid #c2bdbd;
+  border-radius: 15px;
+  color: var(--color-text);
+  background: var(--color-gray-bg);
+  transition: color .3s ease, background-color .3s ease;
+}
+
+.controls svg {
+  width: 30px;
+  height: 30px;
+}
+
+.next {
+  color: var(--color-white) !important;
+  background: #6681f9 !important;
+}
+
+@media (hover: hover) {
+  .controls button:hover {
+    color: var(--color-white);
+    background: #6681f9;
+  }
+}
+
+@media (min-width: 1280px) and (max-width: 1679px) {
+  .main {
+    padding-top: 81px;
+  }
+
+  .intro {
+    padding: 0 50px;
+  }
+
+  .intro h1 {
+    margin: 15px 0 12px;
+  }
+
+  .tariffs {
+    margin-top: 120px;
+    padding: 0 50px 15px;
+  }
+
+  .controls {
+    top: -90px;
+    right: 50px;
+  }
+}
+
+@media (min-width: 980px) and (max-width: 1279px) {
+  .main {
+    padding-top: 78px;
+  }
+
+  .intro {
+    padding: 0 30px;
+  }
+
+  .intro h1 {
+    margin: 15px 0 12px;
+    font-size: 26px;
+  }
+
+  .tariffs {
+    margin: 130px 0 80px;
+    padding: 0 30px 15px;
+  }
+
+  .controls {
+    top: -90px;
+    right: 30px;
+  }
+}
+
+@media (max-width: 979px) {
+  .main {
+    padding-top: 32px;
+  }
+
+  .intro {
+    padding: 0 10px;
+  }
+
+  .intro h1 {
+    margin: 28px 0 40px;
+    font-size: 26px;
+  }
+
+  .tariffs {
+    margin: 40px 0 80px;
+    padding: 70px 0 15px;
+  }
+
+  .slider {
+    width: 250px;
+    margin: 0 auto;
+  }
+
+  .controls {
+    top: 0;
+    right: 10px;
+  }
+}

@@ -59,3 +59,39 @@
   padding-inline: 10px;
   font-size: 12px;
 }
+
+.tariffs {
+  height: 278px;
+}
+
+.tariffs .body {
+  margin-top: 21px;
+}
+
+@media (max-width: 979px) {
+  .tariffs {
+    height: 692px;
+    padding: 30px 10px;
+  }
+
+  .tariffs .title {
+    margin-top: 22px;
+    font-size: 24px;
+  }
+
+  .tariffs .body {
+    margin-top: 27px;
+  }
+}
+
+@media (min-width: 1280px) and (max-width: 1679px) {
+  .tariffs {
+    height: 308px;
+  }
+}
+
+@media (min-width: 980px) and (max-width: 1279px) {
+  .tariffs {
+    height: 379px;
+  }
+}

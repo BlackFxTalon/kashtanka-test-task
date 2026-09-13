@@ -8,6 +8,17 @@
   border-radius: 60px 60px 0 0;
 }
 
+.showcaseHome {
+  margin-top: 32px;
+  padding-bottom: 36px;
+}
+
+@media (max-width: 1919px) {
+  .showcaseHome {
+    padding-bottom: 35px;
+  }
+}
+
 .inner {
   max-width: 1720px;
   margin: 0 auto;
@@ -77,6 +88,12 @@
   }
 }
 
+@media (min-width: 980px) and (max-width: 1599px) {
+  .showcaseHome {
+    margin-top: 66px;
+  }
+}
+
 
 
 @media (max-width: 979px) {
@@ -85,6 +102,10 @@
     margin-top: 30px;
     padding: 39px 9px 49px;
     border-radius: 30px;
+  }
+
+  .showcaseHome {
+    margin-top: 50px;
   }
 
   .head {

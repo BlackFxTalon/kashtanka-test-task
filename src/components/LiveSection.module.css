@@ -4,6 +4,10 @@
   padding: 95px 80px 0;
 }
 
+.home {
+  padding-bottom: 50px;
+}
+
 .heading {
   display: flex;
   align-items: center;
@@ -214,6 +218,10 @@
 @media (max-width: 979px) {
   .section {
     padding: 80px 10px 0;
+  }
+
+  .home {
+    padding-bottom: 10px;
   }
 
   .responsive .heading > a,

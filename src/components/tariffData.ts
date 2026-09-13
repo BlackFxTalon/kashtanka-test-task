@@ -58,6 +58,86 @@ export const TARIFFS: TariffCardData[] = [
   },
 ];
 
+export const PAGE_TARIFFS: TariffCardData[] = [
+  {
+    id: 1,
+    plan: "Бесплатно",
+    price: "0 ₽",
+    cta: "Ваш тариф",
+    features: BASE_FEATURES("до 5 штук", "ограничено"),
+  },
+  {
+    id: 2,
+    plan: "Премиум",
+    price: "300 ₽ в мес",
+    cta: "Купить подписку",
+    features: PREMIUM_FEATURES,
+  },
+  {
+    id: 3,
+    plan: "Премиум",
+    price: "850₽ 3 мес",
+    cta: "Купить подписку",
+    features: PREMIUM_FEATURES,
+  },
+  {
+    id: 4,
+    plan: "Премиум",
+    price: "1700₽ 6 мес",
+    cta: "Купить подписку",
+    features: PREMIUM_FEATURES,
+  },
+  {
+    id: 5,
+    plan: "Премиум",
+    price: "3400₽ 12 мес",
+    cta: "Купить подписку",
+    features: PREMIUM_FEATURES,
+  },
+  {
+    id: 6,
+    plan: "Пожизненно",
+    price: "10 000₽",
+    cta: "Купить подписку",
+    features: PREMIUM_FEATURES,
+  },
+  {
+    id: 7,
+    plan: "Премиум",
+    price: "300 ₽ в мес",
+    cta: "Купить подписку",
+    features: PREMIUM_FEATURES,
+  },
+  {
+    id: 8,
+    plan: "Премиум",
+    price: "850₽ 3 мес",
+    cta: "Купить подписку",
+    features: PREMIUM_FEATURES,
+  },
+  {
+    id: 9,
+    plan: "Премиум",
+    price: "1700₽ 6 мес",
+    cta: "Купить подписку",
+    features: PREMIUM_FEATURES,
+  },
+  {
+    id: 10,
+    plan: "Премиум",
+    price: "3400₽ 12 мес",
+    cta: "Купить подписку",
+    features: PREMIUM_FEATURES,
+  },
+  {
+    id: 11,
+    plan: "Пожизненно",
+    price: "10 000₽",
+    cta: "Купить подписку",
+    features: PREMIUM_FEATURES,
+  },
+];
+
 export const TARIFF_DESCRIPTION = {
   badge: "О подписке",
   title: "Продавцам и заводчикам",

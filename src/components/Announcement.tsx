@@ -26,6 +26,16 @@ interface AnnouncementProps {
 export default function Announcement({ data, variant = "home" }: AnnouncementProps) {
   const [favorite, setFavorite] = useState(false);
   const article = variant === "article";
+  const favoriteButton = (
+    <button
+      type="button"
+      className={`${styles.announcement__favorite}${favorite ? ` ${styles.announcement__favoriteActive}` : ""}`}
+      onClick={() => setFavorite((value) => !value)}
+      aria-label={favorite ? "Убрать из избранного" : "Добавить в избранное"}
+    >
+      <HeartIcon active={favorite} />
+    </button>
+  );
 
   return (
     <article className={`${styles.announcement}${article ? ` ${styles.announcementArticle}` : ""}`}>
@@ -38,13 +48,7 @@ export default function Announcement({ data, variant = "home" }: AnnouncementPro
           className={styles.announcement__photo}
         />
         <span className={styles.announcement__breed}>{data.breed}</span>
-        <button
-          type="button"
-          className={`${styles.announcement__favorite}${favorite ? ` ${styles.announcement__favoriteActive}` : ""}`}
-          onClick={() => setFavorite((v) => !v)}
-        >
-          <HeartIcon active={favorite} />
-        </button>
+        {article && favoriteButton}
       </div>
 
       <div className={styles.announcement__body}>
@@ -54,6 +58,7 @@ export default function Announcement({ data, variant = "home" }: AnnouncementPro
             <br />
             {data.titleLine2}
           </h3>
+          {!article && favoriteButton}
         </div>
 
         <div className={styles.announcement__row}>

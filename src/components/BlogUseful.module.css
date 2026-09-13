@@ -1,6 +1,6 @@
 .section {
   max-width: 1920px;
-  margin: 50px auto 0;
+  margin: 100px auto 0;
   padding: 0 20px;
 }
 
@@ -78,11 +78,20 @@
   margin-top: 40px;
 }
 
+@media (min-width: 1600px) and (max-width: 1920px) {
+  .grid,
+  .heading {
+    max-width: 1639px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
 /* 1600: слайдер, 3 видимых слайда 500px, стрелки + «Смотреть еще» в шапке.
    Слайдер тянется до правого края экрана (правая карточка срезается вьюпортом, 30:10332) */
 @media (min-width: 1280px) and (max-width: 1679px) {
   .section {
-    margin-top: 30px;
+    margin-top: 100px;
     padding: 0 0 0 30px;
     overflow: hidden;
   }
@@ -130,7 +139,7 @@
 /* 980: слайдер с 2 видимыми слайдами, стрелки + «Смотреть еще» в шапке (30:12219) */
 @media (min-width: 980px) and (max-width: 1279px) {
   .section {
-    margin-top: 30px;
+    margin-top: 100px;
     padding: 0 30px;
     overflow: hidden;
   }
@@ -158,5 +167,6 @@
 @media (max-width: 979px) {
   .section {
     display: none;
+    margin-top: 60px;
   }
 }

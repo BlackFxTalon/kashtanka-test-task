@@ -1,5 +1,5 @@
 .planet {
-  margin-top: 50px;
+  margin-top: 100px;
   padding: 0 20px;
 }
 
@@ -25,7 +25,7 @@
 /* 1600: описание 650 + баннер 800 (30:10079) */
 @media (min-width: 1280px) and (max-width: 1679px) {
   .planet {
-    margin-top: 30px;
+    margin-top: 100px;
     padding: 0 30px;
   }
 
@@ -39,7 +39,7 @@
 /* 980: описание 550 + баннер 410 без арта; блок вплотную к краям (30:12006) */
 @media (min-width: 980px) and (max-width: 1279px) {
   .planet {
-    margin-top: 30px;
+    margin-top: 82px;
     padding: 0;
   }
 
@@ -64,5 +64,6 @@
 @media (max-width: 979px) {
   .planet {
     display: none;
+    margin-top: 60px;
   }
 }
