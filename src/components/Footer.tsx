@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Logo from "./Logo";
 import styles from "./Footer.module.css";
 import {
@@ -88,7 +89,7 @@ export default function Footer() {
               <ul className={styles.linkList}>
                 {section.links.map((link) => (
                   <li key={link}>
-                    <a href="#">{link}</a>
+                    {link === "О проекте" ? <Link href="/about">{link}</Link> : <a href="#">{link}</a>}
                   </li>
                 ))}
               </ul>

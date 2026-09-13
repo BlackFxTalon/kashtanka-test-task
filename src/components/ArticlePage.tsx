@@ -10,6 +10,7 @@ import Breadcrumbs from "./Breadcrumbs";
 import LiveSection from "./LiveSection";
 import { LIVE_ITEMS } from "./liveData";
 import OtherArticles from "./OtherArticles";
+import Planet from "./Planet";
 import {
   InstagramIcon,
   MaxIcon,
@@ -139,9 +140,16 @@ function Share() {
   );
 }
 
-export default function ArticlePage() {
+interface ArticlePageProps {
+  variant?: "article" | "about";
+}
+
+export default function ArticlePage({ variant = "article" }: ArticlePageProps) {
+  const about = variant === "about";
+  const title = about ? "История проекта" : ARTICLE_TITLE;
+
   return (
-    <main className={styles.main}>
+    <main className={`${styles.main}${about ? ` ${styles.about}` : ""}`}>
       <div className={styles.layout}>
         <div className={styles.columns}>
           <article className={styles.article}>
@@ -149,16 +157,15 @@ export default function ArticlePage() {
               className={styles.breadcrumbs}
               items={[
                 { label: "Главная", href: "/" },
-                { label: "Блог", href: "/blog" },
-                { label: "Уход за питомцем", href: "#" },
+                ...(about ? [] : [{ label: "Блог", href: "/blog" }, { label: "Уход за питомцем", href: "#" }]),
               ]}
-              current={ARTICLE_TITLE}
+              current={title}
               mobileCurrentRow
               compact
               currentVariant="blog"
             />
 
-            <h1>{ARTICLE_TITLE}</h1>
+            <h1>{title}</h1>
 
             <div className={styles.hero}>
               <Image
@@ -168,7 +175,7 @@ export default function ArticlePage() {
                 priority
                 sizes="(max-width: 979px) calc(100vw - 40px), 1000px"
               />
-              <span className={styles.topic}>Уход за питомцем</span>
+              {!about && <span className={styles.topic}>Уход за питомцем</span>}
             </div>
 
             <div className={styles.copy}>
@@ -229,11 +236,10 @@ export default function ArticlePage() {
             </div>
           </article>
 
-          <ArticleSidebar />
+          <ArticleSidebar variant={about ? "about" : "article"} />
         </div>
       </div>
-      <OtherArticles />
-      <LiveSection items={LIVE_ITEMS} variant="article" />
+      {about ? <Planet keepVisible /> : <><OtherArticles /><LiveSection items={LIVE_ITEMS} variant="article" /></>}
     </main>
   );
 }

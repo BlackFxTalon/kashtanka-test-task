@@ -36,6 +36,20 @@
   }
 }
 
+/* В промежуточном диапазоне фиксированные 650px + 800px выходили за
+   контейнер. На странице «О проекте» блоки переходят в одну колонку. */
+@media (min-width: 1280px) and (max-width: 1542px),
+  (min-width: 1680px) and (max-width: 1802px) {
+  .keepVisible .inner {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+  }
+
+  .keepVisible .mobileBanner {
+    width: 100%;
+  }
+}
+
 /* 980: описание 550 + баннер 410 без арта; блок вплотную к краям (30:12006) */
 @media (min-width: 980px) and (max-width: 1279px) {
   .planet {
@@ -62,8 +76,73 @@
 
 /* 375–979: блок скрыт */
 @media (max-width: 979px) {
-  .planet {
+  .planet:not(.keepVisible) {
     display: none;
     margin-top: 60px;
   }
+
+  .keepVisible {
+    display: block;
+    margin-top: 60px;
+    padding: 0 10px;
+  }
+
+  .keepVisible .inner {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 60px;
+  }
+
+  .keepVisible .mobileBanner {
+    order: 1;
+    height: 330px;
+  }
+
+  .keepVisible .inner > :first-child {
+    order: 2;
+    height: auto;
+    padding: 30px 10px;
+  }
+
+  .keepVisible .inner > :first-child h2 {
+    font-size: 20px;
+  }
+
+  .keepVisible .mobileBanner {
+    width: 100%;
+    padding: 46px 20px;
+  }
+
+  .keepVisible .mobileBanner > img {
+    display: none;
+  }
+
+  .keepVisible .mobileBanner > div {
+    margin-left: 0;
+  }
+
+  .keepVisible .mobileBanner > div > p:first-child {
+    font-size: 50px;
+  }
+
+  .keepVisible .mobileBanner > div > p:nth-child(2) {
+    font-size: 16px;
+    letter-spacing: 4px;
+  }
+
+  .keepVisible .mobileBanner > div > p:last-child {
+    font-size: 30px;
+    letter-spacing: 5px;
+    line-height: 35px;
+  }
+
+  .keepVisible .mobileBanner > div > p:last-child img {
+    width: 180px;
+    height: auto;
+    margin-left: 60px;
+  }
+}
+
+/* Отступ страницы «О проекте» одинаков на всех макетах. */
+.keepVisible {
+  margin-top: 40px;
 }

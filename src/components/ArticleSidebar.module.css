@@ -82,7 +82,20 @@
 }
 
 @media (max-width: 1599px) {
-  .aside {
+  .aside:not(.about) {
+    display: none;
+  }
+
+  .about {
+    display: block;
+    max-width: 720px;
+  }
+}
+
+/* На планшетных и компактных десктопных макетах «Новые объявления» для
+   страницы «О проекте» не выводятся. */
+@media (max-width: 1599px) {
+  .about > :last-child {
     display: none;
   }
 }

@@ -78,6 +78,24 @@
   margin-top: 40px;
 }
 
+/* Компактный вариант размещается в правой колонке страницы «О проекте». */
+.sidebar {
+  width: 720px;
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar .inner {
+  max-width: none;
+}
+
+.sidebar .grid {
+  grid-template-columns: repeat(2, 350px);
+  justify-content: initial;
+  gap: 50px 20px;
+  margin-top: 40px;
+}
+
 @media (min-width: 1600px) and (max-width: 1920px) {
   .grid,
   .heading {
@@ -163,10 +181,66 @@
   }
 }
 
-/* 375–979: блок скрыт */
+/* В сайдбаре страницы «О проекте» слайдер не используется: карточки всегда
+   остаются видимой сеткой, в том числе на промежуточных брейкпоинтах. */
+@media (min-width: 1280px) and (max-width: 1679px) {
+  .sidebar {
+    width: 720px;
+    margin: 0;
+    padding: 0;
+    overflow: visible;
+  }
+
+  .sidebar .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 350px);
+    justify-content: initial;
+    gap: 50px 20px;
+  }
+}
+
+@media (min-width: 980px) and (max-width: 1279px) {
+  .sidebar {
+    width: 720px;
+    margin: 0;
+    padding: 0;
+    overflow: visible;
+  }
+
+  .sidebar .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 350px);
+    justify-content: initial;
+    gap: 50px 20px;
+  }
+}
+
+/* Этот блок расположен после общих правил слайдера, чтобы сохранить
+   одноколоночную сетку именно в узком сайдбаре 1600–1919. */
+@media (min-width: 1600px) and (max-width: 1919px) {
+  .sidebar {
+    width: 350px;
+  }
+
+  .sidebar .grid {
+    grid-template-columns: 350px;
+    justify-content: initial;
+    gap: 50px;
+  }
+}
+
+/* Обычный блок скрыт на мобильных, а сайдбарный вариант страницы «О проекте»
+   появляется только с 1600px. */
 @media (max-width: 979px) {
   .section {
     display: none;
     margin-top: 60px;
+  }
+
+}
+
+@media (max-width: 1599px) {
+  .sidebar {
+    display: none;
   }
 }

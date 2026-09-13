@@ -3,6 +3,7 @@
 import { useState } from "react";
 import ArticleCard, { type ArticleCardData } from "./ArticleCard";
 import type { AnnouncementData } from "./Announcement";
+import BlogUseful from "./BlogUseful";
 import Showcase from "./Showcase";
 import { MenuArrowIcon } from "./icons";
 import styles from "./ArticleSidebar.module.css";
@@ -77,12 +78,17 @@ const ARTICLE_ANNOUNCEMENTS: AnnouncementData[] = [
   },
 ];
 
-export default function ArticleSidebar() {
+interface ArticleSidebarProps {
+  variant?: "article" | "about";
+}
+
+export default function ArticleSidebar({ variant = "article" }: ArticleSidebarProps) {
   const [activeCategory, setActiveCategory] = useState(0);
+  const about = variant === "about";
 
   return (
-    <aside className={styles.aside}>
-      <nav className={styles.categories}>
+    <aside className={`${styles.aside}${about ? ` ${styles.about}` : ""}`}>
+      {!about && <nav className={styles.categories}>
         {CATEGORIES.map((label, index) => (
           <a
             key={label}
@@ -97,16 +103,16 @@ export default function ArticleSidebar() {
             {label}
           </a>
         ))}
-      </nav>
+      </nav>}
 
-      <section className={styles.reading}>
+      {about ? <BlogUseful variant="sidebar" /> : <section className={styles.reading}>
         <h2>Сейчас читают</h2>
         <div className={styles.readingGrid}>
           {READING_ITEMS.map((item) => (
             <ArticleCard key={item.image} {...item} />
           ))}
         </div>
-      </section>
+      </section>}
 
       <Showcase items={ARTICLE_ANNOUNCEMENTS} variant="article" />
     </aside>

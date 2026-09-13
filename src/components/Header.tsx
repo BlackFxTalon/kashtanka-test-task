@@ -26,7 +26,7 @@ import styles from "./Header.module.css";
 
 
 const MENU: { label: string; wide: "xl" | "md" | "all" | "1920"; trigger?: boolean; href?: string }[] = [
-  { label: "О проекте", wide: "xl" },
+  { label: "О проекте", wide: "xl", href: "/about" },
   { label: "Щенки", wide: "all" },
   { label: "Услуги", wide: "all" },
   { label: "Тарифы", wide: "1920", href: "/tariffs" },
@@ -53,7 +53,7 @@ const USER_MENU: { label: string; icon: "gear" | "profile" | "heart" | "doc" | "
 ];
 
 const MOBILE_MENU: { label: string; href?: string }[] = [
-  { label: "О проекте" },
+  { label: "О проекте", href: "/about" },
   { label: "Щенки" },
   { label: "Услуги" },
   { label: "Тарифы", href: "/tariffs" },

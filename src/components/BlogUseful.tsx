@@ -22,15 +22,28 @@ const ARTICLES = IMAGES.map((image, index) => ({
   action: index % 3 === 1 ? "Смотреть видео" : "Читать статью",
 }));
 
-export default function BlogUseful() {
+const SIDEBAR_ARTICLES = [
+  "/images/blog/article-1.png",
+  "/images/blog/live-2.png",
+  "/images/blog/reading-3.png",
+  "/images/blog/story-3.png",
+].map((image) => ({ image, action: "Читать статью" }));
+
+interface BlogUsefulProps {
+  variant?: "default" | "sidebar";
+}
+
+export default function BlogUseful({ variant = "default" }: BlogUsefulProps) {
   const swiperRef = useRef<SwiperInstance | null>(null);
+  const sidebar = variant === "sidebar";
+  const articles = sidebar ? SIDEBAR_ARTICLES : ARTICLES;
 
   return (
-    <section className={styles.section}>
+    <section className={`${styles.section}${sidebar ? ` ${styles.sidebar}` : ""}`}>
       <div className={styles.inner}>
         <div className={styles.heading}>
           <h2>Блог с пользой</h2>
-          <div className={styles.controls}>
+          {!sidebar && <div className={styles.controls}>
             <div className={styles.nav}>
               <button
                 type="button"
@@ -50,16 +63,16 @@ export default function BlogUseful() {
             <a href="#" className="btn btn--primary">
               <span>Смотреть еще</span>
             </a>
-          </div>
+          </div>}
         </div>
 
         <div className={styles.grid}>
-          {ARTICLES.map((article, index) => (
-            <ArticleCard key={`${article.image}-${index}`} {...article} imageSizes="500px" />
+          {articles.map((article, index) => (
+            <ArticleCard key={`${article.image}-${index}`} {...article} imageSizes={sidebar ? "350px" : "500px"} />
           ))}
         </div>
 
-        <Swiper
+        {!sidebar && <Swiper
           className={styles.slider}
           slidesPerView="auto"
           spaceBetween={30}
@@ -72,13 +85,13 @@ export default function BlogUseful() {
               <ArticleCard {...article} imageSizes="500px" />
             </SwiperSlide>
           ))}
-        </Swiper>
+        </Swiper>}
 
-        <div className={styles.bottom}>
+        {!sidebar && <div className={styles.bottom}>
           <a href="#" className="btn btn--primary">
             <span>Смотреть еще</span>
           </a>
-        </div>
+        </div>}
       </div>
     </section>
   );
