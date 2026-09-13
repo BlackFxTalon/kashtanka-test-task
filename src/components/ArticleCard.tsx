@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import styles from "./ArticleCard.module.css";
 
 export interface ArticleCardData {
@@ -39,10 +40,10 @@ export default function ArticleCard({
       <div className={styles.description}>
         <h2>{title}</h2>
         <div className={styles.actions}>
-          <a href={href} className={`btn btn--primary${mobileAction ? ` ${styles.primaryAction}` : ""}`}>
+          <Link href={href} className={`btn btn--primary${mobileAction ? ` ${styles.primaryAction}` : ""}`}>
             <span className={styles.actionDesktop}>{action}</span>
             {mobileAction && <span className={styles.actionMobile}>{mobileAction}</span>}
-          </a>
+          </Link>
           {secondaryAction && (
             <a href={secondaryHref} className="btn btn--white">
               <span>{secondaryAction}</span>

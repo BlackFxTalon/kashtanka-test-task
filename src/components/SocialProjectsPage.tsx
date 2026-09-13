@@ -31,7 +31,7 @@ const PROJECTS: ArticleCardData[] = Array.from({ length: 15 }, (_, index) => ({
   category: "",
   mobileAction: "Подробнее",
   variant: "social",
-  href: "#",
+  href: "/social-projects/project",
   imageSizes: "(max-width: 979px) 355px, (max-width: 1919px) 460px, 550px",
 }));
 

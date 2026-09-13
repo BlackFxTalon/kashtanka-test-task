@@ -142,11 +142,12 @@ function Share() {
 
 interface ArticlePageProps {
   variant?: "article" | "about";
+  title?: string;
 }
 
-export default function ArticlePage({ variant = "article" }: ArticlePageProps) {
+export default function ArticlePage({ variant = "article", title: titleOverride }: ArticlePageProps) {
   const about = variant === "about";
-  const title = about ? "История проекта" : ARTICLE_TITLE;
+  const title = titleOverride ?? (about ? "История проекта" : ARTICLE_TITLE);
 
   return (
     <main className={`${styles.main}${about ? ` ${styles.about}` : ""}`}>

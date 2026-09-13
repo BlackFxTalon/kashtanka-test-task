@@ -24,7 +24,9 @@
 }
 
 .segment {
-  display: contents;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .breadcrumbs a {
