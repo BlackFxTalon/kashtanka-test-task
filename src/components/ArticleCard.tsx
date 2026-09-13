@@ -6,6 +6,10 @@ export interface ArticleCardData {
   action: string;
   title?: string;
   category?: string;
+  secondaryAction?: string;
+  secondaryHref?: string;
+  mobileAction?: string;
+  variant?: "default" | "social";
   href?: string;
   imageSizes?: string;
 }
@@ -15,11 +19,15 @@ export default function ArticleCard({
   action,
   title = "Догситер - почему это популярно и так не просто",
   category = "Категория новости",
+  secondaryAction,
+  secondaryHref = "#",
+  mobileAction,
+  variant = "default",
   href = "/blog/article",
   imageSizes = "(max-width: 979px) 355px, (max-width: 1239px) 420px, 33vw",
 }: ArticleCardData) {
   return (
-    <article className={styles.card}>
+    <article className={`${styles.card}${variant === "social" ? ` ${styles.socialCard}` : ""}`}>
       <Image
         className={styles.image}
         src={image}
@@ -27,12 +35,20 @@ export default function ArticleCard({
         fill
         sizes={imageSizes}
       />
-      <span className={styles.category}>{category}</span>
+      {category && <span className={styles.category}>{category}</span>}
       <div className={styles.description}>
         <h2>{title}</h2>
-        <a href={href} className="btn btn--primary">
-          <span>{action}</span>
-        </a>
+        <div className={styles.actions}>
+          <a href={href} className={`btn btn--primary${mobileAction ? ` ${styles.primaryAction}` : ""}`}>
+            <span className={styles.actionDesktop}>{action}</span>
+            {mobileAction && <span className={styles.actionMobile}>{mobileAction}</span>}
+          </a>
+          {secondaryAction && (
+            <a href={secondaryHref} className="btn btn--white">
+              <span>{secondaryAction}</span>
+            </a>
+          )}
+        </div>
       </div>
     </article>
   );

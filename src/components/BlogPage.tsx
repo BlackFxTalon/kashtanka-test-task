@@ -30,9 +30,9 @@ const CATEGORY_COLUMNS = Array.from({ length: 3 }, () => [
   "Вакцинация",
 ]);
 
-function Pager() {
+export function Pager({ className }: { className?: string }) {
   return (
-    <div className={styles.pager}>
+    <div className={`${styles.pager}${className ? ` ${className}` : ""}`}>
       <button type="button" className={styles.pagerButton}>
         <PagerChevronIcon direction="left" />
       </button>

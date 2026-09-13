@@ -56,9 +56,52 @@
   color: var(--color-text);
 }
 
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.actions > a {
+  flex-shrink: 0;
+}
+
+.actionMobile {
+  display: none;
+}
+
 @media (max-width: 979px) {
   .description {
     padding-right: 18px;
     padding-left: 18px;
+  }
+
+  .primaryAction {
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+
+  .primaryAction .actionDesktop {
+    display: none;
+  }
+
+  .primaryAction .actionMobile {
+    display: inline;
+  }
+}
+
+@media (min-width: 980px) and (max-width: 1552px) {
+  .socialCard .primaryAction {
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+
+  .socialCard .actionDesktop {
+    display: none;
+  }
+
+  .socialCard .actionMobile {
+    display: inline;
   }
 }

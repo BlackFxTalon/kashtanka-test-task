@@ -19,6 +19,7 @@ const SECTIONS: { title: string; links: string[] }[] = [
     links: [
       "Главная",
       "О проекте",
+      "Социальные проекты",
       "Блог проекта",
       "Душевные истории",
       "Ссылка 1",
@@ -89,7 +90,13 @@ export default function Footer() {
               <ul className={styles.linkList}>
                 {section.links.map((link) => (
                   <li key={link}>
-                    {link === "О проекте" ? <Link href="/about">{link}</Link> : <a href="#">{link}</a>}
+                    {link === "О проекте" ? (
+                      <Link href="/about">{link}</Link>
+                    ) : link === "Социальные проекты" ? (
+                      <Link href="/social-projects">{link}</Link>
+                    ) : (
+                      <a href="#">{link}</a>
+                    )}
                   </li>
                 ))}
               </ul>

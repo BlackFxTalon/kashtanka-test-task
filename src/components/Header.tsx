@@ -30,7 +30,7 @@ const MENU: { label: string; wide: "xl" | "md" | "all" | "1920"; trigger?: boole
   { label: "Щенки", wide: "all" },
   { label: "Услуги", wide: "all" },
   { label: "Тарифы", wide: "1920", href: "/tariffs" },
-  { label: "Социальные проекты", wide: "1920" },
+  { label: "Социальные проекты", wide: "1920", href: "/social-projects" },
   { label: "Блог", wide: "1920", href: "/blog" },
   { label: "База пород", wide: "xl" },
   { label: "Другое", wide: "all", trigger: true },
@@ -59,7 +59,7 @@ const MOBILE_MENU: { label: string; href?: string }[] = [
   { label: "Тарифы", href: "/tariffs" },
   { label: "Породы собак" },
   { label: "Базы пород" },
-  { label: "Социальные проекты" },
+  { label: "Социальные проекты", href: "/social-projects" },
   { label: "Сбор средств на «Планете»" },
 ];
 
