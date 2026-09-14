@@ -22,9 +22,40 @@ const supportProjects = Array.from({ length: 6 }, (_, index) => ({
   name: "Название проекта",
 }));
 
-export default function AboutService() {
+export function Supporters({ variant = "default" }: { variant?: "default" | "planet" }) {
   const supporterSwiper = useRef<SwiperInstance | null>(null);
 
+  return (
+    <div className={`${styles.supporters}${variant === "planet" ? ` ${styles.supportersPlanet}` : ""}`}>
+      {variant !== "planet" && <h2>Нас поддерживают</h2>}
+      <div className={styles.supporterSlider}>
+        <Swiper
+          onSwiper={(swiper) => { supporterSwiper.current = swiper; }}
+          slidesPerView={variant === "planet" ? "auto" : 2}
+          spaceBetween={20}
+          breakpoints={variant === "planet" ? undefined : { 1400: { slidesPerView: 3 }, 1600: { slidesPerView: 4 } }}
+        >
+          {supportProjects.map((project) => (
+            <SwiperSlide className={styles.supporterSlide} key={project.id}>
+              <article className={styles.supporterCard}>
+                <div className={styles.supporterImage}>
+                  <Image src="/images/blog/story-add.png" alt="Плейсхолдер проекта" sizes="120px" width={70} height={70}/>
+                </div>
+                <span>{variant === "planet" ? <>Название<br />проекта</> : project.name}</span>
+              </article>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+        <div className={styles.sliderControls}>
+          <button type="button" onClick={() => supporterSwiper.current?.slidePrev()}><PagerChevronIcon direction="left" /></button>
+          <button type="button" onClick={() => supporterSwiper.current?.slideNext()}><PagerChevronIcon /></button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default function AboutService() {
   return (
     <section className={styles.section}>
       <div className={styles.aboutInner}>
@@ -42,39 +73,7 @@ export default function AboutService() {
             </div>
           </article>
 
-          <div className={styles.supporters}>
-            <h2>Нас поддерживают</h2>
-            <div className={styles.supporterSlider}>
-              <Swiper
-              onSwiper={(swiper) => { supporterSwiper.current = swiper; }}
-              slidesPerView={2}
-              spaceBetween={20}
-              breakpoints={{
-                1400: {
-                  slidesPerView: 3
-                },
-                1600: {
-                  slidesPerView: 4
-                },
-              }}
-              >
-                {supportProjects.map((project) => (
-                  <SwiperSlide className={styles.supporterSlide} key={project.id}>
-                    <article className={styles.supporterCard}>
-                      <div className={styles.supporterImage}>
-                        <Image src="/images/blog/story-add.png" alt="Плейсхолдер проекта" sizes="120px" width={70} height={70}/>
-                      </div>
-                      <span>{project.name}</span>
-                    </article>
-                  </SwiperSlide>
-                ))}
-              </Swiper>
-              <div className={styles.sliderControls}>
-                <button type="button" onClick={() => supporterSwiper.current?.slidePrev()}><PagerChevronIcon direction="left" /></button>
-                <button type="button" onClick={() => supporterSwiper.current?.slideNext()}><PagerChevronIcon /></button>
-              </div>
-            </div>
-          </div>
+          <Supporters />
         </div>
 
         <div className={styles.projects}>

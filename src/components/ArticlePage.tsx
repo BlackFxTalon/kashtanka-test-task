@@ -11,6 +11,8 @@ import LiveSection from "./LiveSection";
 import { LIVE_ITEMS } from "./liveData";
 import OtherArticles from "./OtherArticles";
 import Planet from "./Planet";
+import PlanetSupport from "./PlanetSupport";
+import LogoOverlay from "./LogoOverlay";
 import {
   InstagramIcon,
   MaxIcon,
@@ -141,16 +143,17 @@ function Share() {
 }
 
 interface ArticlePageProps {
-  variant?: "article" | "about";
+  variant?: "article" | "about" | "planet";
   title?: string;
 }
 
 export default function ArticlePage({ variant = "article", title: titleOverride }: ArticlePageProps) {
   const about = variant === "about";
-  const title = titleOverride ?? (about ? "История проекта" : ARTICLE_TITLE);
+  const planet = variant === "planet";
+  const title = titleOverride ?? (planet ? "Каштанка на Планете" : about ? "История проекта" : ARTICLE_TITLE);
 
   return (
-    <main className={`${styles.main}${about ? ` ${styles.about}` : ""}`}>
+    <main className={`${styles.main}${about || planet ? ` ${styles.about}` : ""}${planet ? ` ${styles.planetPage}` : ""}`}>
       <div className={styles.layout}>
         <div className={styles.columns}>
           <article className={styles.article}>
@@ -158,7 +161,7 @@ export default function ArticlePage({ variant = "article", title: titleOverride 
               className={styles.breadcrumbs}
               items={[
                 { label: "Главная", href: "/" },
-                ...(about ? [] : [{ label: "Блог", href: "/blog" }, { label: "Уход за питомцем", href: "#" }]),
+                ...(about || planet ? [] : [{ label: "Блог", href: "/blog" }, { label: "Уход за питомцем", href: "#" }]),
               ]}
               current={title}
               mobileCurrentRow
@@ -169,14 +172,14 @@ export default function ArticlePage({ variant = "article", title: titleOverride 
             <h1>{title}</h1>
 
             <div className={styles.hero}>
-              <Image
+              {planet ? <><Image src="/images/planet/hero-photo.png" alt="Щенки играют в саду" fill priority sizes="(max-width: 979px) calc(100vw - 40px), 1000px" /><LogoOverlay /></> : <Image
                 src="/images/dogs/dog-1.png"
                 alt="Щенок золотистого ретривера лежит на траве"
                 fill
                 priority
                 sizes="(max-width: 979px) calc(100vw - 40px), 1000px"
-              />
-              {!about && <span className={styles.topic}>Уход за питомцем</span>}
+              />}
+              {!about && !planet && <span className={styles.topic}>Уход за питомцем</span>}
             </div>
 
             <div className={styles.copy}>
@@ -237,10 +240,10 @@ export default function ArticlePage({ variant = "article", title: titleOverride 
             </div>
           </article>
 
-          <ArticleSidebar variant={about ? "about" : "article"} />
+          <ArticleSidebar variant={planet ? "planet" : about ? "about" : "article"} />
         </div>
       </div>
-      {about ? <Planet keepVisible /> : <><OtherArticles /><LiveSection items={LIVE_ITEMS} variant="article" /></>}
+      {planet ? <PlanetSupport /> : about ? <Planet keepVisible /> : <><OtherArticles /><LiveSection items={LIVE_ITEMS} variant="article" /></>}
     </main>
   );
 }

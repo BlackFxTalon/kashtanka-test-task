@@ -220,6 +220,108 @@
   background: #6681f9;
 }
 
+/* Внизу страницы «Планета» используется та же сущность, но с крупными
+   карточками медиа и навигацией из отдельного макета. */
+.supportersPlanet {
+  margin-top: 0;
+  padding-bottom: 0;
+}
+
+.supportersPlanet .supporterSlider {
+  max-width: none;
+  align-items: flex-end;
+}
+
+.supportersPlanet .supporterSlider :global(.swiper) {
+  /* 4 карточки по 190px и три промежутка по 20px на макете 1920. */
+  width: min(820px, calc(100% - 168px));
+}
+
+.supportersPlanet .supporterSlide { width: 190px !important; }
+.supportersPlanet .supporterCard { height: auto; }
+.supportersPlanet .supporterImage { height: 190px; }
+.supportersPlanet .supporterImage > img {
+  width: 120px;
+  height: 120px;
+  margin: 35px auto;
+  object-fit: contain;
+}
+.supportersPlanet .supporterCard span { padding-top: 31px; }
+.supportersPlanet .sliderControls { margin-bottom: 70px; }
+.supportersPlanet .sliderControls button { width: 64px; height: 65px; }
+
+/* На макетах 1600–1919 рядом с описанием помещаются три карточки. */
+@media (min-width: 1600px) and (max-width: 1919px) {
+  .supportersPlanet .supporterSlider :global(.swiper) {
+    width: min(610px, calc(100% - 168px));
+  }
+}
+
+@media (min-width: 980px) and (max-width: 1919px) {
+   .supportersPlanet .sliderControls {  margin-bottom: 80px; }
+}
+
+/* Планшетная версия блока СМИ на странице «Планета». */
+@media (min-width: 980px) and (max-width: 1599px) {
+  .supportersPlanet .supporterSlider {
+    align-items: center;
+    gap: 27px;
+    width: 380px;
+  }
+
+  .supportersPlanet .supporterSlider :global(.swiper) {
+    width: 308px;
+    overflow: visible;
+  }
+
+  .supportersPlanet .supporterSlider :global(.swiper-wrapper) {
+    display: grid;
+    grid-template-columns: repeat(2, 124px);
+    gap: 21px 60px;
+    height: auto;
+    transform: none !important;
+  }
+
+  .supportersPlanet .supporterSlide {
+    width: 124px !important;
+    margin-right: 0 !important;
+  }
+
+  .supportersPlanet .supporterSlide:nth-child(n + 5) {
+    display: none;
+  }
+
+  .supportersPlanet .supporterCard {
+    height: 196px;
+  }
+
+  .supportersPlanet .supporterImage {
+    height: 126px;
+  }
+
+  .supportersPlanet .supporterImage > img {
+    width: 80px;
+    height: 80px;
+    margin: 23px auto;
+  }
+
+  .supportersPlanet .supporterCard span {
+    padding-top: 20px;
+  }
+
+  .supportersPlanet .sliderControls {
+    flex-direction: column;
+    gap: 22px;
+    margin-bottom: 0;
+    transform: translateY(-17px);
+  }
+
+  .supportersPlanet .sliderControls button {
+    width: 45px;
+    height: 46px;
+  }
+}
+
 @media (min-width: 980px) and (max-width: 1679px) {
   .aboutInner { grid-template-columns: 650px 1fr; max-width: 1440px; gap: 130px; }
   .projectGrid { grid-template-columns: 500px; }
@@ -262,4 +364,43 @@
   .supporterCard { height: 188px; }
   .sliderControls { gap: 9px; }
   .sliderControls button { width: 36px; height: 36px; }
+  /* Мобильный макет «Планеты»: четыре СМИ в сетке 2×2 и навигация снизу. */
+  .supportersPlanet .supporterSlider {
+    flex-direction: column;
+    align-items: center;
+    gap: 38px;
+    width: 308px;
+    margin: 0 auto;
+  }
+  .supportersPlanet .supporterSlider :global(.swiper) {
+    width: 308px;
+    overflow: visible;
+  }
+  .supportersPlanet .supporterSlider :global(.swiper-wrapper) {
+    display: grid;
+    grid-template-columns: repeat(2, 124px);
+    gap: 21px 60px;
+    height: auto;
+    transform: none !important;
+  }
+  .supportersPlanet .supporterSlide {
+    width: 124px !important;
+    margin-right: 0 !important;
+  }
+  .supportersPlanet .supporterSlide:nth-child(n + 5) { display: none; }
+  .supportersPlanet .supporterCard { height: 196px; }
+  .supportersPlanet .supporterImage { height: 126px; }
+  .supportersPlanet .supporterImage > img {
+    width: 80px;
+    height: 80px;
+    margin: 23px auto;
+  }
+  .supportersPlanet .supporterCard span { padding-top: 20px; }
+  .supportersPlanet .sliderControls {
+    flex-direction: row;
+    gap: 40px;
+    margin-bottom: 0;
+    transform: none;
+  }
+  .supportersPlanet .sliderControls button { width: 45px; height: 45px; }
 }

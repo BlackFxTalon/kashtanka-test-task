@@ -82,13 +82,28 @@
 }
 
 @media (max-width: 1599px) {
-  .aside:not(.about) {
+  .aside:not(.about):not(.planet) {
     display: none;
   }
 
   .about {
     display: block;
     max-width: 720px;
+  }
+
+  .planet {
+    display: block;
+    max-width: 720px;
+  }
+
+  .planet > :last-child {
+    display: none;
+  }
+}
+
+@media (min-width: 980px) and (max-width: 1599px) {
+  .planet {
+    max-width: 100%;
   }
 }
 

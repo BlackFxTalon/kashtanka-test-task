@@ -388,7 +388,9 @@
   }
 
   .mediaSlots {
-    grid-template-columns: repeat(2, 420px);
+    /* При 980px рабочая область может быть уже 880px из-за скроллбара.
+       Гибкие колонки не дают videoFrame выйти за край статьи. */
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     align-items: start;
     gap: 40px;
     height: 340px;
@@ -398,11 +400,13 @@
 
   .mediaSlider,
   .videoFigure {
-    width: 420px;
+    width: 100%;
+    min-width: 0;
   }
 
   .mediaSlide,
   .videoFrame {
+    width: 100%;
     aspect-ratio: auto;
     height: 270px;
   }
@@ -478,6 +482,10 @@
 }
 
 @media (max-width: 979px) {
+  .planetPage .columns {
+    gap: 100px;
+  }
+
   .mediaSlots {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 20px;

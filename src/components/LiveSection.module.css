@@ -30,6 +30,15 @@
   margin-top: 56px;
 }
 
+.page .grid {
+  margin-top: 0;
+  row-gap: 100px;
+}
+
+.section.page {
+  padding-top: 0;
+}
+
 .card {
   position: relative;
   height: 420px;
@@ -194,6 +203,14 @@
   .article .card:nth-child(n + 7) {
     display: none;
   }
+
+  .page .card:nth-child(n) {
+    display: block;
+  }
+
+  .page .card:nth-child(n + 19) {
+    display: none;
+  }
 }
 
 @media (min-width: 980px) and (max-width: 1239px) {
@@ -211,6 +228,14 @@
   }
 
   .article .card:nth-child(n + 5) {
+    display: none;
+  }
+
+  .page .card:nth-child(n) {
+    display: block;
+  }
+
+  .page .card:nth-child(n + 13) {
     display: none;
   }
 }
@@ -241,6 +266,18 @@
   }
 
   .article .card:nth-child(n + 5) {
+    display: none;
+  }
+
+  .page .card:nth-child(n) {
+    display: block;
+  }
+
+  .page .grid {
+    row-gap: 60px;
+  }
+
+  .page .card:nth-child(n + 7) {
     display: none;
   }
 

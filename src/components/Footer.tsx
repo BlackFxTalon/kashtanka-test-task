@@ -24,7 +24,7 @@ const SECTIONS: { title: string; links: string[] }[] = [
       "Душевные истории",
       "Ссылка 1",
       "Ссылка 2",
-      "Ссылка 3",
+      "On Line эфиры",
     ],
   },
   {
@@ -94,6 +94,8 @@ export default function Footer() {
                       <Link href="/about">{link}</Link>
                     ) : link === "Социальные проекты" ? (
                       <Link href="/social-projects">{link}</Link>
+                    ) : link === "On Line эфиры" ? (
+                      <Link href="/online-broadcasts">{link}</Link>
                     ) : (
                       <a href="#">{link}</a>
                     )}

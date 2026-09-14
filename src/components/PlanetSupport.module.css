@@ -1,0 +1,38 @@
+.section { margin-top: 40px; padding: 0 20px 70px; }
+.inner { display: grid; grid-template-columns: 650px minmax(0, 1fr); gap: 40px; max-width: 1820px; margin: 0 auto; }
+.inner > :first-child { height: 404px; }
+.inner > :first-child :global([class*="ctaWrap"]) { margin-top: 18px; padding-top: 0; }
+.inner > :last-child { margin: 0; padding: 0; }
+.inner > :last-child h2 { text-align: left; }
+
+@media (min-width: 1600px) and (max-width: 1919px) {
+  .section { padding-left: 40px; }
+}
+
+@media (max-width: 1279px) { .inner { grid-template-columns: 400px minmax(0, 1fr); } }
+
+/* Планшетный макет «Планеты»: карточка описания и блок СМИ образуют
+   компактную композицию шириной 920px. */
+@media (min-width: 980px) and (max-width: 1599px) {
+  .inner {
+    grid-template-columns: 520px 380px;
+    gap: 20px;
+    max-width: 920px;
+  }
+
+  .inner > :first-child {
+    height: 404px;
+  }
+
+  .inner > :first-child :global([class*="title"]) {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 979px) {
+  .section { margin-top: 60px; padding: 0 10px 30px; }
+  .inner { grid-template-columns: 1fr; gap: 40px; }
+  .inner > :first-child { height: 503px; padding: 30px 10px; }
+  .inner > :first-child h2 { font-size: 20px; }
+  .inner > :last-child h2 { text-align: center; }
+}

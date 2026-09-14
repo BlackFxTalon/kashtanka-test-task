@@ -4,6 +4,7 @@ import { useState } from "react";
 import ArticleCard, { type ArticleCardData } from "./ArticleCard";
 import type { AnnouncementData } from "./Announcement";
 import BlogUseful from "./BlogUseful";
+import PlanetRewards from "./PlanetRewards";
 import Showcase from "./Showcase";
 import { MenuArrowIcon } from "./icons";
 import styles from "./ArticleSidebar.module.css";
@@ -79,16 +80,17 @@ const ARTICLE_ANNOUNCEMENTS: AnnouncementData[] = [
 ];
 
 interface ArticleSidebarProps {
-  variant?: "article" | "about";
+  variant?: "article" | "about" | "planet";
 }
 
 export default function ArticleSidebar({ variant = "article" }: ArticleSidebarProps) {
   const [activeCategory, setActiveCategory] = useState(0);
   const about = variant === "about";
+  const planet = variant === "planet";
 
   return (
-    <aside className={`${styles.aside}${about ? ` ${styles.about}` : ""}`}>
-      {!about && <nav className={styles.categories}>
+    <aside className={`${styles.aside}${about ? ` ${styles.about}` : ""}${planet ? ` ${styles.planet}` : ""}`}>
+      {!about && !planet && <nav className={styles.categories}>
         {CATEGORIES.map((label, index) => (
           <a
             key={label}
@@ -105,7 +107,7 @@ export default function ArticleSidebar({ variant = "article" }: ArticleSidebarPr
         ))}
       </nav>}
 
-      {about ? <BlogUseful variant="sidebar" /> : <section className={styles.reading}>
+      {planet ? <PlanetRewards /> : about ? <BlogUseful variant="sidebar" /> : <section className={styles.reading}>
         <h2>Сейчас читают</h2>
         <div className={styles.readingGrid}>
           {READING_ITEMS.map((item) => (

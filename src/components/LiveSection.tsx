@@ -78,9 +78,11 @@ function LiveCard({
 
 interface LiveSectionProps {
   items: LiveItem[];
-  variant?: "blog" | "article";
+  variant?: "blog" | "article" | "page";
   moreButtonPlacement?: "responsive" | "top" | "bottom";
   home?: boolean;
+  showHeading?: boolean;
+  showMoreButton?: boolean;
 }
 
 export default function LiveSection({
@@ -88,17 +90,21 @@ export default function LiveSection({
   variant = "blog",
   moreButtonPlacement = "responsive",
   home = false,
+  showHeading = true,
+  showMoreButton = true,
 }: LiveSectionProps) {
   return (
     <section className={`${styles.section} ${styles[variant]} ${styles[moreButtonPlacement]}${home ? ` ${styles.home}` : ""}`}>
-      <div className={styles.heading}>
-        <h2>On Line эфиры</h2>
-        <a href="#" className="btn btn--primary"><span>Смотреть еще</span></a>
-      </div>
+      {showHeading && (
+        <div className={styles.heading}>
+          <h2>On Line эфиры</h2>
+          {showMoreButton && <a href="#" className="btn btn--primary"><span>Смотреть еще</span></a>}
+        </div>
+      )}
       <div className={styles.grid}>
         {items.map((item, index) => <LiveCard key={`${item.image}-${index}`} {...item} />)}
       </div>
-      <a href="#" className={`btn btn--primary ${styles.mobileMore}`}><span>Смотреть еще</span></a>
+      {showMoreButton && <a href="#" className={`btn btn--primary ${styles.mobileMore}`}><span>Смотреть еще</span></a>}
     </section>
   );
 }

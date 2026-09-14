@@ -1,0 +1,73 @@
+.overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 40.7%;
+  height: 100%;
+  isolation: isolate;
+  pointer-events: none;
+}
+
+.panel {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.panelFill {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, #7a60b9 0%, #586bbe 34%, #586bbe 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 6.21%, 100% 100%, 92.63% 100%, 23.77% 100%);
+}
+
+.brand {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  width: 100%;
+  height: 100%;
+  color: var(--color-white);
+  transform: translateX(8%);
+}
+
+.dog { width: 170px; height: 127px; }
+
+.copy {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: var(--font-logo);
+  font-weight: 500;
+}
+
+.name { font-size: 50px; line-height: 1; letter-spacing: .04em; }
+.tagline { margin-top: 5px; font-size: 14px; letter-spacing: 4.48px; white-space: nowrap; }
+
+@media (max-width: 979px) {
+  /* На мобильном hero логотип расположен на сплошной бренд-подложке,
+     а не на правой части фотографии. */
+  .overlay {
+    right: 0;
+    width: 100%;
+    border-radius: inherit;
+  }
+  .panelFill {
+    clip-path: none;
+    border-radius: inherit;
+  }
+  .panel { display: none; }
+  .brand { gap: 8px; transform: none; }
+  .dog { width: 148px; height: 110px; }
+  .name { font-size: 30px; }
+  .tagline { font-size: 8px; letter-spacing: 2.56px; }
+}
+
+@media (min-width:980px) and (max-width: 1599px) {
+    .overlay { width: 51%; }
+}

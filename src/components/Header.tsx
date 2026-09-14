@@ -36,7 +36,11 @@ const MENU: { label: string; wide: "xl" | "md" | "all" | "1920"; trigger?: boole
   { label: "Другое", wide: "all", trigger: true },
 ];
 
-const SUBMENU = ["Профили собак", "Сбор средств на «Планете»"];
+const SUBMENU: { label: string; href?: string }[] = [
+  { label: "Профили собак" },
+  { label: "Сбор средств на «Планете»" },
+  { label: "On Line эфиры", href: "/online-broadcasts" },
+];
 
 const COLLAPSED_MENU = MENU.filter(
   (item) => !item.trigger && item.wide !== "all",
@@ -60,6 +64,7 @@ const MOBILE_MENU: { label: string; href?: string }[] = [
   { label: "Породы собак" },
   { label: "Базы пород" },
   { label: "Социальные проекты", href: "/social-projects" },
+  { label: "On Line эфиры", href: "/online-broadcasts" },
   { label: "Сбор средств на «Планете»" },
 ];
 
@@ -191,12 +196,19 @@ export default function Header() {
                   </span>
                 );
               })}
-              {SUBMENU.map((label) => (
-                <span key={label} className={styles.submenuItem}>
-                  <MenuArrowIcon />
-                  {label}
-                </span>
-              ))}
+              {SUBMENU.map((item) =>
+                item.href ? (
+                  <Link key={item.label} href={item.href} className={styles.submenuItem}>
+                    <MenuArrowIcon />
+                    {item.label}
+                  </Link>
+                ) : (
+                  <span key={item.label} className={styles.submenuItem}>
+                    <MenuArrowIcon />
+                    {item.label}
+                  </span>
+                ),
+              )}
               <button type="button" className={styles.submenuClose} onClick={() => setSubmenuOpen(false)}>
                 <CloseIcon />
               </button>
