@@ -40,6 +40,7 @@ const SUBMENU: { label: string; href?: string }[] = [
   { label: "Профили собак" },
   { label: "Сбор средств на «Планете»" },
   { label: "On Line эфиры", href: "/online-broadcasts" },
+  { label: "Блогерам", href: "/bloggers" },
 ];
 
 const COLLAPSED_MENU = MENU.filter(
@@ -66,6 +67,7 @@ const MOBILE_MENU: { label: string; href?: string }[] = [
   { label: "Социальные проекты", href: "/social-projects" },
   { label: "On Line эфиры", href: "/online-broadcasts" },
   { label: "Сбор средств на «Планете»" },
+  { label: "Блогерам", href: "/bloggers" },
 ];
 
 function UserMenuIcon({ name }: { name: (typeof USER_MENU)[number]["icon"] }) {

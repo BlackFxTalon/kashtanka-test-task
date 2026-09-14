@@ -1,0 +1,65 @@
+.main { overflow: hidden; padding-top: 50px; }
+.top { width: min(1802px, calc(100% - 80px)); margin: 0 auto; }
+.article { width: 100%; min-height: 0; padding-bottom: 60px; }
+.heroRow { display: grid; grid-template-columns: minmax(0,1000px) minmax(0,722px); align-items: start; gap: 43px; }
+.hero { margin-left: 0; }
+.hero :global([class*="panelFill"]) { opacity: .9; }
+.formWrap { margin-top: 23px; }
+.mobileForm { display: none; }
+.tagsSeparator { width: min(1000px, 100%); margin-top: 30px; border-top: .5px dashed var(--color-text); }
+.supporters { width: min(1720px, calc(100% - 200px)); margin: 100px auto 0; color: var(--color-white); }
+.supporters > h2 { margin: 0; font-size: 26px; font-weight: 500; line-height: 32px; }
+@media (min-width: 1600px) and (max-width: 1919px) {
+  .top { width: calc(100% - 100px); }
+
+  .article {
+    position: relative;
+    min-height: 1337px;
+  }
+
+  .heroRow { display: block; }
+
+  .formWrap {
+    position: absolute;
+    top: 39px;
+    right: 17px;
+    width: 415px;
+    margin-top: 0;
+  }
+
+  .supporters {
+    width: 1500px;
+    max-width: calc(100% - 100px);
+  }
+
+  .supporters > h2 {
+    margin-left: 50px;
+  }
+}
+@media (min-width: 980px) and (max-width: 1599px) {
+  .main { padding-top: 50px; }
+  .top { width: 920px; max-width: calc(100% - 60px); }
+  .heroRow { grid-template-columns: 1fr; }
+  .formWrap { display: none; }
+  .mobileForm { display: block; width: 920px; max-width: calc(100% - 60px); margin: 100px auto 0; }
+  .mobileForm > h2 { margin: 0 0 30px; color: var(--color-white); font-size: 26px; font-weight: 500; line-height: 32px; }
+  .supporters { width: 920px; max-width: calc(100% - 60px); margin-top: 100px; }
+  .supporters > h2 { margin: 0; text-align: left; }
+}
+@media (min-width: 1240px) and (max-width: 1599px) {
+  .hero {
+    width: 100%;
+    height: 483px;
+    aspect-ratio: auto;
+  }
+}
+@media (max-width: 979px) {
+  .main { padding-top: 40px; padding-bottom: 20px; }
+  .top { width: calc(100% - 20px); }
+  .heroRow { grid-template-columns: 1fr; }
+  .formWrap { display: none; }
+  .mobileForm { display: block; width: calc(100% - 20px); margin: 60px auto 0; }
+  .mobileForm > h2 { margin: 0 0 30px; color: var(--color-white); font-size: 24px; font-weight: 500; line-height: 29px; text-align: center; }
+  .supporters { width: calc(100% - 20px); margin-top: 60px; }
+  .supporters > h2 { margin: 0; font-size: 24px; line-height: 29px; text-align: center; }
+}

@@ -96,6 +96,10 @@ export default function Footer() {
                       <Link href="/social-projects">{link}</Link>
                     ) : link === "On Line эфиры" ? (
                       <Link href="/online-broadcasts">{link}</Link>
+                    ) : link === "Я блогер - вам к нам!" ? (
+                      <Link href="/bloggers">{link}</Link>
+                    ) : link === "Инвесторам" ? (
+                      <Link href="/investors">{link}</Link>
                     ) : (
                       <a href="#">{link}</a>
                     )}

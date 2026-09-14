@@ -127,7 +127,7 @@ function ArticleVideo() {
   );
 }
 
-function Share() {
+export function ArticleShare() {
   return (
     <div className={styles.share}>
       <strong>Поделиться:</strong>
@@ -236,7 +236,7 @@ export default function ArticlePage({ variant = "article", title: titleOverride 
                 <a href="#" className={`btn btn--primary ${styles.tag} ${styles.tagActive}`}><span>Уход</span></a>
               </div>
 
-              <Share />
+              <ArticleShare />
             </div>
           </article>
 

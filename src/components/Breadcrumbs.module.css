@@ -8,6 +8,12 @@
   font-weight: 500;
 }
 
+/* Вариант для белой подложки ArticlePage: обычные сегменты и разделитель
+   остаются тёмными, а активный элемент получает собственную синюю плашку. */
+.breadcrumbs.blog {
+  color: var(--color-text);
+}
+
 .breadcrumbs svg {
   margin-right: 3px;
 }

@@ -447,6 +447,10 @@
 }
 
 @media (min-width: 1600px) and (max-width: 1919px) {
+  .copy {
+    max-width: 1005px;
+  }
+
   .layout {
     padding-right: 50px;
   }

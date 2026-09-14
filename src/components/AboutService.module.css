@@ -250,8 +250,59 @@
 .supportersPlanet .sliderControls { margin-bottom: 70px; }
 .supportersPlanet .sliderControls button { width: 64px; height: 65px; }
 
+/* Лента блогеров: карточки и кнопки используют те же supporterCard и
+   storyControls, но их геометрия соответствует отдельному макету. */
+.supportersBloggers .supporterSlider {
+  position: relative;
+  display: block;
+  max-width: none;
+  width: 1720px;
+  margin-left: -60px;
+}
+
+.supportersBloggers .supporterSlider :global(.swiper) {
+  width: 1720px;
+  margin-top: 73px;
+}
+
+.supportersBloggers .supporterSlide { width: 190px !important; }
+.supportersBloggers .supporterCard { height: auto; }
+.supportersBloggers .supporterImage { height: 190px; }
+.supportersBloggers .supporterImage > img {
+  width: 120px;
+  height: 120px;
+  margin: 35px auto;
+  object-fit: contain;
+}
+.supportersBloggers .supporterCard span { padding-top: 31px; }
+.supportersBloggers .sliderControls {
+  position: absolute;
+  top: -122px;
+  right: 30px;
+  z-index: 1;
+  gap: 16px;
+  margin: 0;
+}
+.supportersBloggers .sliderControls button { width: 64px; height: 65px; }
+.supportersBloggers .sliderControls button:last-child { color: var(--color-white); background: #6681f9; }
+
 /* На макетах 1600–1919 рядом с описанием помещаются три карточки. */
 @media (min-width: 1600px) and (max-width: 1919px) {
+  .supportersBloggers .supporterSlider {
+    width: 1500px;
+    max-width: 100%;
+    margin-left: 0;
+  }
+
+  .supportersBloggers .supporterSlider :global(.swiper) {
+    width: 1500px;
+    max-width: 100%;
+  }
+
+  .supportersBloggers .sliderControls {
+    right: 40px;
+  }
+
   .supportersPlanet .supporterSlider :global(.swiper) {
     width: min(610px, calc(100% - 168px));
   }
@@ -263,6 +314,31 @@
 
 /* Планшетная версия блока СМИ на странице «Планета». */
 @media (min-width: 980px) and (max-width: 1599px) {
+  .supportersBloggers .supporterSlider {
+    width: 870px;
+    margin-left: 50px;
+  }
+
+  .supportersBloggers .supporterSlider :global(.swiper) {
+    width: 870px;
+    margin-top: 29px;
+  }
+
+  .supportersBloggers .supporterSlide { width: 124px !important; }
+  .supportersBloggers .supporterImage { height: 126px; }
+  .supportersBloggers .supporterImage > img {
+    width: 80px;
+    height: 80px;
+    margin: 23px auto;
+  }
+  .supportersBloggers .supporterCard span { padding-top: 20px; }
+  .supportersBloggers .sliderControls {
+    top: -56px;
+    right: 20px;
+    gap: 40px;
+  }
+  .supportersBloggers .sliderControls button { width: 45px; height: 45px; }
+
   .supportersPlanet .supporterSlider {
     align-items: center;
     gap: 27px;
@@ -403,4 +479,64 @@
     transform: none;
   }
   .supportersPlanet .sliderControls button { width: 45px; height: 45px; }
+
+  .supportersBloggers .supporterSlider {
+    width: 308px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .supportersBloggers .supporterSlider :global(.swiper) {
+    width: 308px;
+    margin-top: 10px;
+    overflow: visible;
+  }
+  .supportersBloggers .supporterSlider :global(.swiper-wrapper) {
+    display: grid;
+    grid-template-columns: repeat(2, 124px);
+    gap: 20px 60px;
+    height: auto;
+    transform: none !important;
+  }
+  .supportersBloggers .supporterSlide {
+    width: 124px !important;
+    margin-right: 0 !important;
+    display: none;
+  }
+  .supportersBloggers .supporterSlider[data-mobile-page="0"] .supporterSlide:nth-child(-n + 4),
+  .supportersBloggers .supporterSlider[data-mobile-page="1"] .supporterSlide:nth-child(n + 5):nth-child(-n + 8),
+  .supportersBloggers .supporterSlider[data-mobile-page="2"] .supporterSlide:nth-child(n + 9):nth-child(-n + 12) {
+    display: block;
+    animation: bloggers-slide-in .32s ease-out both;
+  }
+  .supportersBloggers .supporterCard { height: 197px; }
+  .supportersBloggers .supporterImage { height: 126px; }
+  .supportersBloggers .supporterImage > img {
+    width: 80px;
+    height: 80px;
+    margin: 23px auto;
+  }
+  .supportersBloggers .supporterCard span { padding-top: 20px; }
+  .supportersBloggers .sliderControls {
+    position: static;
+    gap: 40px;
+    width: max-content;
+    margin: 37px auto 0;
+  }
+  .supportersBloggers .sliderControls button { width: 45px; height: 45px; }
+}
+
+@keyframes bloggers-slide-in {
+  from {
+    opacity: 0;
+    transform: translateX(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .supportersBloggers .supporterSlide { animation: none; }
 }

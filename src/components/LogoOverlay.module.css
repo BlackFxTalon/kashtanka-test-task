@@ -50,22 +50,7 @@
 .tagline { margin-top: 5px; font-size: 14px; letter-spacing: 4.48px; white-space: nowrap; }
 
 @media (max-width: 979px) {
-  /* На мобильном hero логотип расположен на сплошной бренд-подложке,
-     а не на правой части фотографии. */
-  .overlay {
-    right: 0;
-    width: 100%;
-    border-radius: inherit;
-  }
-  .panelFill {
-    clip-path: none;
-    border-radius: inherit;
-  }
-  .panel { display: none; }
-  .brand { gap: 8px; transform: none; }
-  .dog { width: 148px; height: 110px; }
-  .name { font-size: 30px; }
-  .tagline { font-size: 8px; letter-spacing: 2.56px; }
+  .overlay { display: none; }
 }
 
 @media (min-width:980px) and (max-width: 1599px) {

@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import type { Swiper as SwiperInstance } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -22,33 +22,67 @@ const supportProjects = Array.from({ length: 6 }, (_, index) => ({
   name: "Название проекта",
 }));
 
-export function Supporters({ variant = "default" }: { variant?: "default" | "planet" }) {
+export function Supporters({ variant = "default" }: { variant?: "default" | "planet" | "bloggers" }) {
   const supporterSwiper = useRef<SwiperInstance | null>(null);
+  const touchStartX = useRef<number | null>(null);
+  const bloggers = variant === "bloggers";
+  const supporterProjectsForVariant = bloggers ? Array.from({ length: 12 }, (_, index) => ({ id: index + 1, name: "Название проекта" })) : supportProjects;
+  const [bloggerMobilePage, setBloggerMobilePage] = useState(0);
+  const mobileBloggers = () => bloggers && typeof window !== "undefined" && window.innerWidth < 980;
+
+  function moveBloggers(direction: "next" | "previous") {
+    if (!mobileBloggers()) {
+      if (direction === "next") {
+        supporterSwiper.current?.slideNext();
+      } else {
+        supporterSwiper.current?.slidePrev();
+      }
+      return;
+    }
+
+    const pages = Math.ceil(supporterProjectsForVariant.length / 4);
+    setBloggerMobilePage((page) => (page + (direction === "next" ? 1 : pages - 1)) % pages);
+  }
 
   return (
-    <div className={`${styles.supporters}${variant === "planet" ? ` ${styles.supportersPlanet}` : ""}`}>
-      {variant !== "planet" && <h2>Нас поддерживают</h2>}
-      <div className={styles.supporterSlider}>
+    <div className={`${styles.supporters}${variant === "planet" ? ` ${styles.supportersPlanet}` : ""}${bloggers ? ` ${styles.supportersBloggers}` : ""}`}>
+      {variant === "default" && <h2>Нас поддерживают</h2>}
+      <div
+        className={styles.supporterSlider}
+        data-mobile-page={bloggerMobilePage}
+        onTouchStart={(event) => {
+          if (mobileBloggers()) touchStartX.current = event.touches[0]?.clientX ?? null;
+        }}
+        onTouchEnd={(event) => {
+          if (!mobileBloggers() || touchStartX.current === null) return;
+
+          const distance = event.changedTouches[0].clientX - touchStartX.current;
+          touchStartX.current = null;
+
+          if (Math.abs(distance) < 30) return;
+          moveBloggers(distance < 0 ? "next" : "previous");
+        }}
+      >
         <Swiper
           onSwiper={(swiper) => { supporterSwiper.current = swiper; }}
-          slidesPerView={variant === "planet" ? "auto" : 2}
-          spaceBetween={20}
-          breakpoints={variant === "planet" ? undefined : { 1400: { slidesPerView: 3 }, 1600: { slidesPerView: 4 } }}
+          slidesPerView={variant === "planet" || bloggers ? "auto" : 2}
+          spaceBetween={bloggers ? 65 : 20}
+          breakpoints={bloggers ? { 980: { spaceBetween: 50 }, 1600: { spaceBetween: 72 }, 1920: { spaceBetween: 65 } } : variant === "planet" ? undefined : { 1400: { slidesPerView: 3 }, 1600: { slidesPerView: 4 } }}
         >
-          {supportProjects.map((project) => (
+          {supporterProjectsForVariant.map((project) => (
             <SwiperSlide className={styles.supporterSlide} key={project.id}>
               <article className={styles.supporterCard}>
                 <div className={styles.supporterImage}>
                   <Image src="/images/blog/story-add.png" alt="Плейсхолдер проекта" sizes="120px" width={70} height={70}/>
                 </div>
-                <span>{variant === "planet" ? <>Название<br />проекта</> : project.name}</span>
+                <span>{variant === "planet" || bloggers ? <>Название<br />проекта</> : project.name}</span>
               </article>
             </SwiperSlide>
           ))}
         </Swiper>
         <div className={styles.sliderControls}>
-          <button type="button" onClick={() => supporterSwiper.current?.slidePrev()}><PagerChevronIcon direction="left" /></button>
-          <button type="button" onClick={() => supporterSwiper.current?.slideNext()}><PagerChevronIcon /></button>
+          <button type="button" onClick={() => moveBloggers("previous")}><PagerChevronIcon direction="left" /></button>
+          <button type="button" onClick={() => moveBloggers("next")}><PagerChevronIcon /></button>
         </div>
       </div>
     </div>
