@@ -10,6 +10,10 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 
 ## Agent skills
 
+## CSS formatting
+
+Keep authored CSS and CSS Modules in readable, formatted form. Do not minify stylesheet source files unless the user explicitly asks to re-enable minification.
+
 ### Issue tracker
 
 Issues live as local markdown files under `.scratch/<feature-slug>/` — spec per feature, one file per issue, `Status:` line for triage state. See `docs/agents/issue-tracker.md`.

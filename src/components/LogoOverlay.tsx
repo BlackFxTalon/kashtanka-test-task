@@ -2,9 +2,9 @@ import Image from "next/image";
 import styles from "./LogoOverlay.module.css";
 
 /** Reusable brand substrate for imagery used in promotional blocks. */
-export default function LogoOverlay() {
+export default function LogoOverlay({ side = "right" }: { side?: "left" | "right" }) {
   return (
-    <div className={styles.overlay} aria-label="KASHTANKA — заведи пушистого друга">
+    <div className={`${styles.overlay} ${side === "left" ? styles.left : ""}`} aria-label="KASHTANKA — заведи пушистого друга">
       <div className={styles.panelFill} aria-hidden="true" />
       <svg className={styles.panel} viewBox="0 0 407 483" preserveAspectRatio="none" aria-hidden="true">
         <path d="M377 .5C393.292.5 406.5 13.7076 406.5 30V453C406.5 469.292 393.292 482.5 377 482.5H97.1631L.610352.5H377Z" fill="none" stroke="white" strokeOpacity=".5" />

@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import type { Swiper as SwiperInstance } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -48,9 +49,9 @@ function AddStoryCard() {
         <Image src="/images/blog/story-add.png" alt="" width={146} height={149} />
       </div>
       <div className={styles.addStoryAction}>
-        <button type="button">
+        <Link href="/story-request" aria-label="Разместить свою историю">
           <AddStoryPlusIcon />
-        </button>
+        </Link>
         <AddStoryLineIcon />
         <span>Размести<br />свою<br />историю</span>
       </div>

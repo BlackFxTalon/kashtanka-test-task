@@ -20,12 +20,13 @@ export interface AnnouncementData {
 
 interface AnnouncementProps {
   data: AnnouncementData;
-  variant?: "home" | "article";
+  variant?: "home" | "article" | "litter";
 }
 
 export default function Announcement({ data, variant = "home" }: AnnouncementProps) {
   const [favorite, setFavorite] = useState(false);
   const article = variant === "article";
+  const litter = variant === "litter";
   const favoriteButton = (
     <button
       type="button"
@@ -64,11 +65,11 @@ export default function Announcement({ data, variant = "home" }: AnnouncementPro
         <div className={styles.announcement__row}>
           <span className={styles.announcement__price}>{data.price}</span>
           <span className={styles.announcement__sex}>
-            <span className={`${styles.announcement__sexMark} ${styles.announcement__sexMarkMale}`}>
+            {!litter && <><span className={`${styles.announcement__sexMark} ${styles.announcement__sexMarkMale}`}>
               <MaleIcon />
             </span>
             <span className={styles.announcement__sexCount}>{data.maleCount}</span>
-            <span className={styles.announcement__sexDivider} />
+            <span className={styles.announcement__sexDivider} /></>}
             <span className={`${styles.announcement__sexMark} ${styles.announcement__sexMarkFemale}`}>
               <FemaleIcon />
             </span>

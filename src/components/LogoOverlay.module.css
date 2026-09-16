@@ -8,6 +8,16 @@
   pointer-events: none;
 }
 
+.left {
+  right: auto;
+  left: 0;
+  transform: scaleX(-1);
+}
+
+.left .brand {
+  transform: translateX(8%) scaleX(-1);
+}
+
 .panel {
   position: absolute;
   inset: 0;

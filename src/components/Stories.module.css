@@ -105,7 +105,7 @@
   position: relative;
 }
 
-.addStoryAction button {
+.addStoryAction a {
   position: relative;
   z-index: 1;
   display: grid;
@@ -121,7 +121,7 @@
   transition: color .3s ease-in-out, background-color .3s ease-in-out, border-color .3s ease-in-out;
 }
 
-.addStoryAction button::before {
+.addStoryAction a::before {
   content: "";
   width: 58px;
   height: 58px;
@@ -134,18 +134,18 @@
   transform: translate(17px, 17px);
 }
 
-.addStoryAction button > svg {
+.addStoryAction a > svg {
   position: relative;
   z-index: 2;
 }
 
-.addStoryAction button:hover,
-.addStoryAction button:active {
+.addStoryAction a:hover,
+.addStoryAction a:active {
   color: var(--color-white);
 }
 
-.addStoryAction button:hover::before,
-.addStoryAction button:active::before {
+.addStoryAction a:hover::before,
+.addStoryAction a:active::before {
   border-color: var(--color-white);
   color: var(--color-white);
   background: #364fb9;
