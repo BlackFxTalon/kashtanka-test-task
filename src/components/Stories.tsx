@@ -67,7 +67,7 @@ export default function Stories({ title = "Душевные истории" }: S
   const storySwiperRef = useRef<SwiperInstance | null>(null);
 
   return (
-    <section className={styles.stories}>
+    <section id="stories" className={styles.stories}>
       <h2>{title}</h2>
       <div className={styles.storyRow}>
         <Swiper

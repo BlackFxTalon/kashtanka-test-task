@@ -82,14 +82,26 @@ export default function Footer() {
                   <li key={link}>
                     {link === "О проекте" ? (
                       <Link href="/about">{link}</Link>
+                    ) : link === "Главная" ? (
+                      <Link href="/">{link}</Link>
                     ) : link === "Социальные проекты" ? (
                       <Link href="/social-projects">{link}</Link>
+                    ) : link === "Блог проекта" ? (
+                      <Link href="/blog">{link}</Link>
+                    ) : link === "Душевные истории" ? (
+                      <Link href="/#stories">{link}</Link>
                     ) : link === "On Line эфиры" ? (
                       <Link href="/online-broadcasts">{link}</Link>
                     ) : link === "Я блогер - вам к нам!" ? (
                       <Link href="/bloggers">{link}</Link>
                     ) : link === "Инвесторам" ? (
                       <Link href="/investors">{link}</Link>
+                    ) : link === "Тарифы" ? (
+                      <Link href="/tariffs">{link}</Link>
+                    ) : link === "Купить щенка" ? (
+                      <Link href="/puppies">{link}</Link>
+                    ) : link === "Поддержка на Планете" ? (
+                      <Link href="/planet">{link}</Link>
                     ) : (
                       <a href="#">{link}</a>
                     )}

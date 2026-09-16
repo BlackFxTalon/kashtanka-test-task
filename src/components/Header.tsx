@@ -27,7 +27,7 @@ import styles from "./Header.module.css";
 
 const MENU: { label: string; wide: "xl" | "md" | "all" | "1920"; trigger?: boolean; href?: string }[] = [
   { label: "О проекте", wide: "xl", href: "/about" },
-  { label: "Щенки", wide: "all" },
+  { label: "Щенки", wide: "all", href: "/puppies" },
   { label: "Услуги", wide: "all" },
   { label: "Тарифы", wide: "1920", href: "/tariffs" },
   { label: "Социальные проекты", wide: "1920", href: "/social-projects" },
@@ -38,7 +38,7 @@ const MENU: { label: string; wide: "xl" | "md" | "all" | "1920"; trigger?: boole
 
 const SUBMENU: { label: string; href?: string }[] = [
   { label: "Профили собак" },
-  { label: "Сбор средств на «Планете»" },
+  { label: "Сбор средств на «Планете»", href: "/planet" },
   { label: "On Line эфиры", href: "/online-broadcasts" },
   { label: "Блогерам", href: "/bloggers" },
 ];
@@ -59,14 +59,14 @@ const USER_MENU: { label: string; icon: "gear" | "profile" | "heart" | "doc" | "
 
 const MOBILE_MENU: { label: string; href?: string }[] = [
   { label: "О проекте", href: "/about" },
-  { label: "Щенки" },
+  { label: "Щенки", href: "/puppies" },
   { label: "Услуги" },
   { label: "Тарифы", href: "/tariffs" },
   { label: "Породы собак" },
   { label: "Базы пород" },
   { label: "Социальные проекты", href: "/social-projects" },
   { label: "On Line эфиры", href: "/online-broadcasts" },
-  { label: "Сбор средств на «Планете»" },
+  { label: "Сбор средств на «Планете»", href: "/planet" },
   { label: "Блогерам", href: "/bloggers" },
 ];
 
