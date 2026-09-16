@@ -90,11 +90,13 @@
 }
 
 .navLink:hover {
-  color: var(--color-accent);
+  color: #2344D4;
+  font-weight: 500;
 }
 
 .navLinkOpen {
-  color: var(--color-accent);
+  color: #2344D4;
+  font-weight: 500;
 }
 
 .navLinkXl {

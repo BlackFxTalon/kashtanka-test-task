@@ -1,17 +1,7 @@
 import Link from "next/link";
 import Logo from "./Logo";
+import SocialIcon, { type SocialNetwork } from "./SocialIcon";
 import styles from "./Footer.module.css";
-import {
-  InstagramIcon,
-  MaxIcon,
-  PinterestIcon,
-  RutubeIcon,
-  TelegramIcon,
-  VkIcon,
-  WhatsappIcon,
-  YandexZenIcon,
-  YoutubeIcon,
-} from "./icons";
 
 const SECTIONS: { title: string; links: string[] }[] = [
   {
@@ -54,16 +44,16 @@ const SECTIONS: { title: string; links: string[] }[] = [
 ];
 
 const SOCIALS = [
-  { name: "youtube", Icon: YoutubeIcon },
-  { name: "rutube", Icon: RutubeIcon },
-  { name: "telegram", Icon: TelegramIcon },
-  { name: "max", Icon: MaxIcon },
-  { name: "whatsapp", Icon: WhatsappIcon },
-  { name: "vk", Icon: VkIcon },
-  { name: "instagram", Icon: InstagramIcon },
-  { name: "Дзен", Icon: YandexZenIcon },
-  { name: "pinterest", Icon: PinterestIcon },
-];
+  { name: "youtube", network: "youtube" },
+  { name: "rutube", network: "rutube" },
+  { name: "telegram", network: "telegram" },
+  { name: "max", network: "max" },
+  { name: "whatsapp", network: "whatsapp" },
+  { name: "vk", network: "vk" },
+  { name: "instagram", network: "instagram" },
+  { name: "Дзен", network: "zen" },
+  { name: "pinterest", network: "pinterest" },
+] satisfies { name: string; network: SocialNetwork }[];
 
 export default function Footer() {
   return (
@@ -112,9 +102,9 @@ export default function Footer() {
           <div className={styles.col}>
             <span className={styles.colTitle}>РЕСУРСЫ</span>
             <div className={styles.socials}>
-              {SOCIALS.map(({ name, Icon }) => (
+              {SOCIALS.map(({ name, network }) => (
                 <a key={name} href="#">
-                  <Icon />
+                  <SocialIcon network={network} />
                 </a>
               ))}
             </div>
@@ -127,7 +117,9 @@ export default function Footer() {
         <p className={styles.copyRight}>
           <span className={styles.copyWant}>ХОЧЕШЬ ТАК ЖЕ?</span>
           {" - "}
-          <span className={styles.copyDuos}>DUOS DIGITAL STUDIO</span>
+          <a className={styles.copyDuos} href="https://duos.website/">
+            DUOS DIGITAL STUDIO
+          </a>
         </p>
       </div>
     </footer>

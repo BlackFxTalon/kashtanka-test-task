@@ -306,6 +306,7 @@
 }
 
 .favorite:hover {
+  color: #364fb9;
   transform: scale(1.08);
 }
 

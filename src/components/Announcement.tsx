@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { CityIcon, FemaleIcon, HeartIcon, MaleIcon } from "./icons";
 import styles from "./Announcement.module.css";
 
@@ -41,13 +42,19 @@ export default function Announcement({ data, variant = "home" }: AnnouncementPro
   return (
     <article className={`${styles.announcement}${article ? ` ${styles.announcementArticle}` : ""}`}>
       <div className={styles.announcement__media}>
-        <Image
-          src={data.photo}
-          alt={`${data.title} — ${data.breed}`}
-          fill
-          sizes={article ? "(max-width: 1599px) 350px, 350px" : "(max-width: 979px) calc(100vw - 40px), (max-width: 1599px) 450px, 400px"}
-          className={styles.announcement__photo}
-        />
+        <Link
+          href="/puppies"
+          className={styles.announcement__mediaLink}
+          aria-label={`Открыть объявление: ${data.title}`}
+        >
+          <Image
+            src={data.photo}
+            alt={`${data.title} — ${data.breed}`}
+            fill
+            sizes={article ? "(max-width: 1599px) 350px, 350px" : "(max-width: 979px) calc(100vw - 40px), (max-width: 1599px) 450px, 400px"}
+            className={styles.announcement__photo}
+          />
+        </Link>
         <span className={styles.announcement__breed}>{data.breed}</span>
         {article && favoriteButton}
       </div>
@@ -55,9 +62,11 @@ export default function Announcement({ data, variant = "home" }: AnnouncementPro
       <div className={styles.announcement__body}>
         <div className={styles.announcement__heading}>
           <h3 className={styles.announcement__title}>
-            {data.title}
-            <br />
-            {data.titleLine2}
+            <Link href="/puppies" className={styles.announcement__titleLink}>
+              {data.title}
+              <br />
+              {data.titleLine2}
+            </Link>
           </h3>
           {!article && favoriteButton}
         </div>
@@ -68,12 +77,16 @@ export default function Announcement({ data, variant = "home" }: AnnouncementPro
             {!litter && <><span className={`${styles.announcement__sexMark} ${styles.announcement__sexMarkMale}`}>
               <MaleIcon />
             </span>
-            <span className={styles.announcement__sexCount}>{data.maleCount}</span>
+            <span className={`${styles.announcement__sexCount} ${styles.announcement__sexCountMale}`}>
+              {data.maleCount}
+            </span>
             <span className={styles.announcement__sexDivider} /></>}
             <span className={`${styles.announcement__sexMark} ${styles.announcement__sexMarkFemale}`}>
               <FemaleIcon />
             </span>
-            <span className={styles.announcement__sexCount}>{data.femaleCount}</span>
+            <span className={`${styles.announcement__sexCount} ${styles.announcement__sexCountFemale}`}>
+              {data.femaleCount}
+            </span>
           </span>
         </div>
 

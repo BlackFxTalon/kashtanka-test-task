@@ -1,0 +1,33 @@
+.socialIcon {
+  position: relative;
+  display: block;
+  width: 32px;
+  height: 32px;
+}
+
+.over,
+.hover {
+  transition: opacity .15s ease-in-out;
+}
+
+.over {
+  opacity: 1;
+}
+
+.hover {
+  opacity: 0;
+}
+
+.hover {
+  object-fit: contain;
+}
+
+@media (hover: hover) {
+  .socialIcon:hover .over {
+    opacity: 0;
+  }
+
+  .socialIcon:hover .hover {
+    opacity: 1;
+  }
+}

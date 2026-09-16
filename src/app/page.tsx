@@ -26,7 +26,7 @@ export default function Home() {
         <AboutService />
         <Showcase title="Топ объявления" items={TOP_ANNOUNCEMENTS} buySlot={<BuySlot />} />
         <Stories />
-        <Showcase title="Часто смотрят" items={TOP_ANNOUNCEMENTS} buySlot={<BuySlot />} />
+        <Showcase title="Часто смотрят" items={TOP_ANNOUNCEMENTS} />
         <LiveSection items={LIVE_ITEMS} variant="blog" home />
         <PetServices />
         <Tariffs />

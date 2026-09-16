@@ -176,7 +176,7 @@ export function BellIcon({ width = 19, height = 20, className }: SvgIconProps) {
 export function HeartIcon({ active, width = 38, height = 38, className }: SvgIconProps & { active: boolean }) {
   return (
     <svg width={width} height={height} viewBox="0 0 38 38" fill="none" className={className}>
-      <path d="M11.3314 19.0474L19 27L26.6686 19.0474C27.5211 18.1633 28 16.9643 28 15.714C28 13.1105 25.9648 11 23.4543 11C22.2487 11 21.0925 11.4967 20.24 12.3807L19 13.6667L17.76 12.3807C16.9075 11.4967 15.7513 11 14.5457 11C12.0352 11 10 13.1106 10 15.714C10 16.9643 10.4789 18.1633 11.3314 19.0474Z" stroke={active ? "#364FB9" : "black"} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M11.3314 19.0474L19 27L26.6686 19.0474C27.5211 18.1633 28 16.9643 28 15.714C28 13.1105 25.9648 11 23.4543 11C22.2487 11 21.0925 11.4967 20.24 12.3807L19 13.6667L17.76 12.3807C16.9075 11.4967 15.7513 11 14.5457 11C12.0352 11 10 13.1106 10 15.714C10 16.9643 10.4789 18.1633 11.3314 19.0474Z" stroke={active ? "#364FB9" : "currentColor"} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
 }

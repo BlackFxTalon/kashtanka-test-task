@@ -39,6 +39,11 @@
   overflow: hidden;
 }
 
+.announcement__mediaLink {
+  position: absolute;
+  inset: 0;
+}
+
 .announcement__photo {
   object-fit: cover;
 }
@@ -80,6 +85,7 @@
 }
 
 .announcement__favorite:hover {
+  color: #364fb9;
   transform: scale(1.08);
 }
 
@@ -115,6 +121,11 @@
   font-size: 16px;
   font-weight: 500;
   line-height: 24px;
+}
+
+.announcement__titleLink {
+  color: inherit;
+  text-decoration: none;
 }
 
 .announcement__row {
@@ -164,6 +175,14 @@
 .announcement__sexCount {
   font-size: 14px;
   line-height: 1;
+}
+
+.announcement__sexCountMale {
+  color: #15b1ff;
+}
+
+.announcement__sexCountFemale {
+  color: #ff0d6e;
 }
 
 .announcement__sexDivider {

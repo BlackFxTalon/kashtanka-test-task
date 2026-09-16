@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
 import type { Swiper as SwiperInstance } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -20,13 +20,13 @@ const STORY_IMAGES = [
   "/images/blog/story-3.png",
   "/images/blog/story-4.png",
   "/images/blog/story-3.png",
+  "/images/blog/story-1.png",
+  "/images/blog/story-2.png",
+  "/images/blog/story-4.png",
+  "/images/blog/story-3.png",
+  "/images/blog/story-1.png",
+  "/images/blog/story-2.png",
 ];
-
-const ADD_STORY_SLIDES = 7;
-
-type StorySlideData =
-  | { key: string; image: string }
-  | { key: string; image?: undefined };
 
 function StoryCard({ image }: { image: string }) {
   return (
@@ -65,28 +65,6 @@ interface StoriesProps {
 
 export default function Stories({ title = "Душевные истории" }: StoriesProps) {
   const storySwiperRef = useRef<SwiperInstance | null>(null);
-  const [tabletStories, setTabletStories] = useState(false);
-
-  useEffect(() => {
-    const media = window.matchMedia("(min-width: 980px) and (max-width: 1239px)");
-    const syncTabletStories = () => setTabletStories(media.matches);
-
-    syncTabletStories();
-    media.addEventListener("change", syncTabletStories);
-    return () => media.removeEventListener("change", syncTabletStories);
-  }, []);
-
-  const imageStorySlides: StorySlideData[] = STORY_IMAGES.map((image, index) => ({ key: `story-${index}`, image }));
-  const addStorySlides: StorySlideData[] = Array.from({ length: ADD_STORY_SLIDES }, (_, index) => ({ key: `add-story-${index}` }));
-  const [firstAddStorySlide, ...remainingAddStorySlides] = addStorySlides;
-  const storySlides = tabletStories && firstAddStorySlide
-    ? [
-        ...imageStorySlides.slice(0, 3),
-        firstAddStorySlide,
-        ...imageStorySlides.slice(3),
-        ...remainingAddStorySlides,
-      ]
-    : [...imageStorySlides, ...addStorySlides];
 
   return (
     <section className={styles.stories}>
@@ -100,12 +78,13 @@ export default function Stories({ title = "Душевные истории" }: S
           slidesPerView="auto"
           spaceBetween={30}
         >
-          {storySlides.map((slide) => (
-            <SwiperSlide key={slide.key} className={styles.storySlide}>
-              {slide.image ? <StoryCard image={slide.image} /> : <AddStoryCard />}
+          {STORY_IMAGES.map((image, index) => (
+            <SwiperSlide key={`story-${index}`} className={styles.storySlide}>
+              <StoryCard image={image} />
             </SwiperSlide>
           ))}
         </Swiper>
+        <AddStoryCard />
         <div className={styles.storyControls}>
           <button type="button" onClick={() => storySwiperRef.current?.slidePrev()}>
             <PagerChevronIcon direction="left" />

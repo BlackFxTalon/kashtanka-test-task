@@ -34,7 +34,7 @@
 
 .storyButton:hover {
   color: var(--color-white);
-  border-color: rgba(255, 255, 255, .5);
+  border-color: transparent;
 }
 
 .storyButton::after {
@@ -209,10 +209,20 @@
 
   .storyRow {
     margin-top: 61px;
+    margin-right: 32px;
   }
 }
 
 @media (min-width: 980px) and (max-width: 1239px) {
+  .storyRow {
+    margin-right: -2px;
+  }
+
+  .stories {
+    padding-left: 30px;
+    padding-right: 60px;
+  }
+
   .storyControls {
     position: absolute;
     top: -97px;

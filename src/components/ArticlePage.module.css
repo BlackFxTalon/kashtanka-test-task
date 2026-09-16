@@ -300,14 +300,6 @@
 
 .shareLinks a {
   display: inline-flex;
-  transition: transform .3s ease-in-out, filter .3s ease-in-out;
-}
-
-@media (hover: hover) {
-  .shareLinks a:hover {
-    transform: scale(1.1);
-    filter: brightness(1.1);
-  }
 }
 
 .tags {

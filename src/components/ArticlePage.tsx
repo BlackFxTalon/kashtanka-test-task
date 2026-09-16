@@ -13,15 +13,7 @@ import OtherArticles from "./OtherArticles";
 import Planet from "./Planet";
 import PlanetSupport from "./PlanetSupport";
 import LogoOverlay from "./LogoOverlay";
-import {
-  InstagramIcon,
-  MaxIcon,
-  PinterestIcon,
-  TelegramIcon,
-  VkIcon,
-  WhatsappIcon,
-  YandexZenIcon,
-} from "./icons";
+import SocialIcon, { type SocialNetwork } from "./SocialIcon";
 import styles from "./ArticlePage.module.css";
 
 const ARTICLE_TITLE = "Как правильно ухаживать за щенком в первые дни рождения";
@@ -43,14 +35,14 @@ const SLIDE_IMAGES = [
 ];
 
 const SHARE_LINKS = [
-  { label: "Telegram", Icon: TelegramIcon },
-  { label: "Max", Icon: MaxIcon },
-  { label: "WhatsApp", Icon: WhatsappIcon },
-  { label: "VK", Icon: VkIcon },
-  { label: "Instagram", Icon: InstagramIcon },
-  { label: "Яндекс Дзен", Icon: YandexZenIcon },
-  { label: "Pinterest", Icon: PinterestIcon },
-];
+  { label: "Telegram", network: "telegram" },
+  { label: "Max", network: "max" },
+  { label: "WhatsApp", network: "whatsapp" },
+  { label: "VK", network: "vk" },
+  { label: "Instagram", network: "instagram" },
+  { label: "Яндекс Дзен", network: "zen" },
+  { label: "Pinterest", network: "pinterest" },
+] satisfies { label: string; network: SocialNetwork }[];
 
 function PreparationCopy() {
   return (
@@ -132,9 +124,9 @@ export function ArticleShare() {
     <div className={styles.share}>
       <strong>Поделиться:</strong>
       <div className={styles.shareLinks}>
-        {SHARE_LINKS.map(({ label, Icon }) => (
+        {SHARE_LINKS.map(({ label, network }) => (
           <a key={label} href="#" aria-label={label}>
-            <Icon />
+            <SocialIcon network={network} />
           </a>
         ))}
       </div>
