@@ -460,8 +460,8 @@ export default function PuppyAnnouncementPage() {
               breakpoints={{
                 0: { slidesPerView: 1, spaceBetween: 0 },
                 980: { slidesPerView: "auto", spaceBetween: 47 },
-                1600: { slidesPerView: 3 },
-                1920: { slidesPerView: "auto" },
+                1600: { slidesPerView: 3, spaceBetween: 47 },
+                1920: { slidesPerView: "auto", spaceBetween: 47 },
               }}
               className={styles.litterSlider}
             >
