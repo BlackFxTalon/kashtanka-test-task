@@ -36,7 +36,7 @@
   width: max-content;
   height: 40px;
   padding: 10px;
-  border: var(--glass-border);
+  border: 1px solid transparent;
   border-radius: var(--radius-btn);
   color: var(--color-white);
   font-size: 12px;
