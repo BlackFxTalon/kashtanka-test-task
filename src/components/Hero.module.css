@@ -234,3 +234,28 @@
     max-width: 100%;
   }
 }
+
+/* 1280–1599: раскладка макета 1600 — три инфоблока в одну строку и текст справа от слогана */
+@media (min-width: 1280px) and (max-width: 1599px) {
+  .blocks {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 40px;
+  }
+
+  .blocks > .block:nth-child(3) {
+    display: block;
+  }
+
+  .block:nth-child(3) .blockBtns {
+    flex-wrap: wrap;
+  }
+
+  .text {
+    display: block;
+  }
+
+  .bottom {
+    grid-template-columns: 400px 1fr;
+    gap: 40px;
+  }
+}
