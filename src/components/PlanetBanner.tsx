@@ -12,7 +12,13 @@ interface PlanetBannerProps {
 
 export default function PlanetBanner({ large = false, noArt = false, className }: PlanetBannerProps) {
   return (
-    <div className={`${styles.banner}${large ? ` ${styles.bannerLarge}` : ""}${noArt ? ` ${styles.bannerNoArt}` : ""}${className ? ` ${className}` : ""}`}>
+    <a
+      href="https://planeta.ru/campaigns/kashtanka-portal"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Поддержи нас на Планете"
+      className={`${styles.banner}${large ? ` ${styles.bannerLarge}` : ""}${noArt ? ` ${styles.bannerNoArt}` : ""}${className ? ` ${className}` : ""}`}
+    >
       {!noArt && (
         <Image
           src="/images/tariffs/planet-art.svg"
@@ -36,6 +42,6 @@ export default function PlanetBanner({ large = false, noArt = false, className }
           />
         </p>
       </div>
-    </div>
+    </a>
   );
 }
