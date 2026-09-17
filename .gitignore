@@ -43,3 +43,7 @@ next-env.d.ts
 # local agent workspace (not committed per decision)
 /.scratch/
 /docs/
+
+# client edits workspace (not committed)
+/_pravki/
+/_review/
