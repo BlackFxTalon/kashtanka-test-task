@@ -68,7 +68,7 @@
   margin-top: 40px;
 }
 
-.slider {
+.inner .slider {
   display: none;
 }
 
@@ -134,7 +134,7 @@
     margin-right: 40px;
   }
 
-  .slider {
+  .inner .slider {
     display: block;
     margin-top: 40px;
     margin-right: -30px;
@@ -142,7 +142,7 @@
     overflow: hidden;
   }
 
-  .slider :global(.swiper-slide) {
+  .inner .slider :global(.swiper-slide) {
     width: 500px;
   }
 }
@@ -170,13 +170,13 @@
     display: none;
   }
 
-  .slider {
+  .inner .slider {
     display: block;
     margin-top: 40px;
     overflow: hidden;
   }
 
-  .slider :global(.swiper-slide) {
+  .inner .slider :global(.swiper-slide) {
     width: 500px;
   }
 }
