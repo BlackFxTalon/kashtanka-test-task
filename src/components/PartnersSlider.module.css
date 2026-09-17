@@ -222,3 +222,36 @@
     right: 10px;
   }
 }
+
+/* Стрелки вплотную к ряду логотипов, с тем же зазором, что между карточками */
+@media (min-width: 980px) {
+  .sliderArea {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 35px;
+  }
+
+  .navButton {
+    position: static;
+    flex: none;
+    transform: none;
+  }
+
+  .sliderArea .slider {
+    flex: none;
+    margin: 0;
+  }
+}
+
+@media (min-width: 1280px) and (max-width: 1679px) {
+  .sliderArea {
+    gap: 53px;
+  }
+}
+
+@media (min-width: 980px) and (max-width: 1279px) {
+  .sliderArea {
+    gap: 41px;
+  }
+}
