@@ -578,7 +578,7 @@
   .photo {
     width: 332px;
     max-width: 100%;
-    margin: 57px 0 40px 3px;
+    margin: 57px auto 40px;
   }
 
   .photoFrame {
