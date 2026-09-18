@@ -96,7 +96,8 @@
   }
 
   .header {
-    margin-bottom: 40px;
+    /* 375: от верха заголовка до карточки 92px по макету */
+    margin-bottom: 60px;
     padding: 0 10px;
   }
 
