@@ -19,7 +19,7 @@ export default function Planet({ keepVisible = false }: PlanetProps) {
         <DescriptionBlock badge={DESCRIPTION.badge} title={DESCRIPTION.title} cta="Поддержать Каштанку">
           <p>{DESCRIPTION.text}</p>
         </DescriptionBlock>
-        <PlanetBanner large className={keepVisible ? styles.mobileBanner : undefined} />
+        <PlanetBanner className={keepVisible ? styles.mobileBanner : undefined} />
       </div>
     </section>
   );

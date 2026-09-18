@@ -94,7 +94,7 @@
 
   .keepVisible .mobileBanner {
     order: 1;
-    height: 330px;
+    width: 100%;
   }
 
   .keepVisible .inner > :first-child {
@@ -105,40 +105,6 @@
 
   .keepVisible .inner > :first-child h2 {
     font-size: 20px;
-  }
-
-  .keepVisible .mobileBanner {
-    width: 100%;
-    padding: 46px 20px;
-  }
-
-  .keepVisible .mobileBanner > img {
-    display: none;
-  }
-
-  .keepVisible .mobileBanner > div {
-    margin-left: 0;
-  }
-
-  .keepVisible .mobileBanner > div > p:first-child {
-    font-size: 50px;
-  }
-
-  .keepVisible .mobileBanner > div > p:nth-child(2) {
-    font-size: 16px;
-    letter-spacing: 4px;
-  }
-
-  .keepVisible .mobileBanner > div > p:last-child {
-    font-size: 30px;
-    letter-spacing: 5px;
-    line-height: 35px;
-  }
-
-  .keepVisible .mobileBanner > div > p:last-child img {
-    width: 180px;
-    height: auto;
-    margin-left: 60px;
   }
 }
 
