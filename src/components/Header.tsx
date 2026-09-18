@@ -92,7 +92,6 @@ function UserMenuIcon({ name }: { name: (typeof USER_MENU)[number]["icon"] }) {
 export default function Header() {
   const [submenuOpen, setSubmenuOpen] = useState(false);
   const [userMenuOpen, setUserMenuOpen] = useState(false);
-  const [signedIn, setSignedIn] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [bySite, setBySite] = useState(true);
@@ -218,18 +217,11 @@ export default function Header() {
             </div>
           </div>
 
-        <div className={`${styles.profileNav} ${signedIn ? styles.signedIn : styles.guest}`}>
+        <div className={styles.profileNav}>
           <button type="button" className={styles.iconBtn} onClick={() => setSearchOpen(true)}>
             <SearchIcon className={styles.searchFlip} />
           </button>
-          <a
-            href="#"
-            className={styles.login}
-            onClick={(event) => {
-              event.preventDefault();
-              setSignedIn(true);
-            }}
-          >
+          <a href="#" className={styles.login}>
             <LoginIcon />
             <span>Вход</span>
           </a>
@@ -252,16 +244,7 @@ export default function Header() {
                 <CloseIcon width={12} height={12} />
               </button>
               {USER_MENU.map((item) => (
-                <a
-                  key={item.label}
-                  href="#"
-                  className={styles.userMenuItem}
-                  onClick={item.icon === "door" ? (event) => {
-                    event.preventDefault();
-                    setUserMenuOpen(false);
-                    setSignedIn(false);
-                  } : undefined}
-                >
+                <a key={item.label} href="#" className={styles.userMenuItem}>
                   <span className={styles.userMenuIcon}>
                     <UserMenuIcon name={item.icon} />
                   </span>

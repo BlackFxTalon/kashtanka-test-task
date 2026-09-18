@@ -317,22 +317,6 @@
 }
 
 
-/* Два режима Верха: гость — кнопка «Вход»; вошедший — сообщения, уведомления и меню пользователя */
-.profileNav.guest .messageBtn,
-.profileNav.guest .notificationBtn,
-.profileNav.signedIn .login {
-  display: none;
-}
-
-@media (min-width: 980px) {
-  .profileNav.guest .login {
-    display: inline-flex;
-  }
-
-  .profileNav.guest .userWrap {
-    display: none;
-  }
-}
 
 
 
@@ -655,6 +639,12 @@
 @media (min-width: 1600px) {
   .homeBtn {
     display: flex;
+  }
+}
+
+@media (min-width: 980px) and (max-width: 1239px) {
+  .userWrap {
+    display: none;
   }
 }
 
