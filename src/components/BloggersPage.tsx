@@ -1,9 +1,8 @@
 "use client";
 
-import Image from "next/image";
 import Breadcrumbs from "./Breadcrumbs";
+import PageCover from "./PageCover";
 import CollaborationForm from "./CollaborationForm";
-import LogoOverlay from "./LogoOverlay";
 import { Supporters } from "./AboutService";
 import PartnersSlider from "./PartnersSlider";
 import Showcase from "./Showcase";
@@ -21,8 +20,7 @@ export default function BloggersPage() {
           <h1>Сотрудничество с блогерами</h1>
           <div className={styles.heroRow}>
             <div className={`${articleStyles.hero} ${styles.hero}`}>
-              <Image src="/images/bloggers/hero-source-1.png" alt="Блогер рассказывает о сервисе Каштанка" fill priority sizes="(max-width: 979px) calc(100vw - 40px), 1000px" />
-              <LogoOverlay />
+              <PageCover name="bloggers" alt="Сотрудничество с блогерами — Каштанка" />
             </div>
             <div className={styles.formWrap}>
               <CollaborationForm />

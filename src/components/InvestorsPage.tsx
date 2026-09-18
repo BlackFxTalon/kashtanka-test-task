@@ -1,7 +1,7 @@
 "use client";
 
-import Image from "next/image";
 import Breadcrumbs from "./Breadcrumbs";
+import PageCover from "./PageCover";
 import CollaborationForm from "./CollaborationForm";
 import { Supporters } from "./AboutService";
 import PartnersSlider from "./PartnersSlider";
@@ -20,7 +20,7 @@ export default function InvestorsPage() {
           <h1>Сотрудничество с инвесторами</h1>
           <div className={styles.heroRow}>
             <div className={`${articleStyles.hero} ${styles.hero}`}>
-              <Image src="/images/investors/hero-source-1.png" alt="Сотрудничество с инвесторами сервиса Каштанка" fill priority sizes="(max-width: 979px) calc(100vw - 40px), 1000px" />
+              <PageCover name="investors" alt="Сотрудничество с инвесторами — Каштанка" />
             </div>
             <div className={styles.formWrap}>
               <CollaborationForm />
