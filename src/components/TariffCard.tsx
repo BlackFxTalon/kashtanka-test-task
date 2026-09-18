@@ -8,9 +8,7 @@ interface TariffCardProps {
 export default function TariffCard({ data }: TariffCardProps) {
   return (
     <article className={styles.card}>
-      <span className="btn btn--primary">
-        <span>{data.plan}</span>
-      </span>
+      <span className={styles.plan}>{data.plan}</span>
       <p className={styles.price}>{data.price}</p>
 
       <ul className={styles.features}>

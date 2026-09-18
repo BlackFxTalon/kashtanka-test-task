@@ -45,17 +45,19 @@ function LiveCard({
 }: LiveItem) {
   return (
     <article className={styles.card}>
-      <Image
-        className={styles.image}
-        src={image}
-        alt={imageAlt}
-        fill
-        sizes="(max-width: 979px) 355px, (max-width: 1239px) 450px, 400px"
-      />
+      <a href="#" className={styles.imageLink} aria-label={title}>
+        <Image
+          className={styles.image}
+          src={image}
+          alt={imageAlt}
+          fill
+          sizes="(max-width: 979px) 355px, (max-width: 1239px) 450px, 400px"
+        />
+      </a>
       <span className={styles.badge}>{badge}</span>
       <span className={styles.time}>{timeLabel} <i /> {startTime}</span>
       <div className={styles.description}>
-        <h3>{title}</h3>
+        <h3><a href="#">{title}</a></h3>
         <div className={styles.channels}>
           {channels.map((channel) => {
             const ChannelIcon = CHANNEL_ICONS[channel];

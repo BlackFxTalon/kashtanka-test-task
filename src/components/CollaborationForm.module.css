@@ -114,9 +114,9 @@
     content: "";
     position: absolute;
     inset: 0;
-    border: 0.5px solid var(--color-primary);
+    border: 0.5px solid var(--color-white);
     border-radius: 5.75px;
-    background: var(--color-white);
+    background: #687072;
 }
 .checkbox img {
     position: absolute;

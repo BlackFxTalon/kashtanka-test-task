@@ -70,7 +70,7 @@
 
 @media (max-width: 979px) {
   .tariffs {
-    height: 692px;
+    height: auto;
     padding: 30px 10px;
   }
 

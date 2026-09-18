@@ -1,9 +1,8 @@
 "use client";
 
-import Image from "next/image";
 import Breadcrumbs from "./Breadcrumbs";
+import PageCover from "./PageCover";
 import CollaborationForm from "./CollaborationForm";
-import LogoOverlay from "./LogoOverlay";
 import { ArticleShare } from "./ArticlePage";
 import articleStyles from "./ArticlePage.module.css";
 import styles from "./StoryRequestPage.module.css";
@@ -18,14 +17,7 @@ export default function StoryRequestPage() {
 
           <div className={styles.heroRow}>
             <div className={`${articleStyles.hero} ${styles.hero}`}>
-              <Image
-                src="/images/story-request/hero.png"
-                alt="Девушка обнимает собаку в саду"
-                fill
-                priority
-                sizes="(max-width: 979px) calc(100vw - 40px), 1000px"
-              />
-              <LogoOverlay side="left" />
+              <PageCover name="story-request" alt="Заявка на историю — Каштанка" />
             </div>
             <div className={styles.formWrap}>
               <CollaborationForm className={styles.storyForm} title="ОТПРАВИТЬ ИСТОРИЮ" titleId="story-request-form-title" purpose="story" />

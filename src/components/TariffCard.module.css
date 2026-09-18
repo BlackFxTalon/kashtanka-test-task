@@ -11,10 +11,21 @@
   border-radius: var(--radius-btn);
 }
 
-/* План-чип (первый .btn в карточке) */
-.card > .btn:first-child {
+/* Название тарифа — плашка, не кнопка: без ховера */
+.plan {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   width: 130px;
-  padding-inline: 10px;
+  height: 40px;
+  padding: 10px;
+  border-radius: var(--radius-btn);
+  color: var(--color-btn-text);
+  background: var(--grad-btn);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1;
+  white-space: nowrap;
 }
 
 .price {
@@ -71,5 +82,5 @@
 
 .card > .cta:hover {
   color: var(--color-btn-text);
-  border-color: rgba(255, 255, 255, 0.5);
+  border-color: transparent;
 }

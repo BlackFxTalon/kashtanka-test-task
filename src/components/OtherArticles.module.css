@@ -44,7 +44,7 @@
   color: var(--color-text);
 }
 
-.swiper {
+.section .swiper {
   width: 100%;
   padding-left: 40px;
 }
@@ -61,7 +61,7 @@
 }
 
 @media (min-width: 1600px) {
-  .swiper {
+  .section .swiper {
     width: 1660px;
     margin-left: 0;
   }
@@ -85,7 +85,7 @@
     padding-left: 61px;
   }
 
-  .swiper {
+  .section .swiper {
     padding-left: 30px;
   }
 }
@@ -96,7 +96,8 @@
   }
 
   .header {
-    margin-bottom: 40px;
+    /* 375: от верха заголовка до карточки 92px по макету */
+    margin-bottom: 60px;
     padding: 0 10px;
   }
 
@@ -104,7 +105,7 @@
     font-size: 24px;
   }
 
-  .swiper {
+  .section .swiper {
     padding-left: 10px;
   }
 

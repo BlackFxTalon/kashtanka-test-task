@@ -42,6 +42,7 @@ export default function Breadcrumbs({
           <span>-</span>
         </span>
       ))}
+      {mobileCurrentRow && <span className={styles.rowBreak} aria-hidden="true" />}
       <strong className={currentClassName}>{current}</strong>
     </div>
   );
