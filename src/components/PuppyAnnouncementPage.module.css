@@ -282,7 +282,6 @@
   border: 0;
 }
 
-/* Кнопки продавца тёмно-синие, как Город */
 .sellerActions :global(.btn--primary)::before {
   background: var(--grad-btn-active);
 }
@@ -1105,7 +1104,6 @@
     display: none;
   }
 
-  /* Базовое .meta.topMeta { display: none } специфичнее — без этого блок пропадал */
   .meta.topMeta {
     display: grid;
   }
@@ -1258,7 +1256,6 @@
         margin-left: auto;
     }
 
-  /* Вакцинация на 980: подписи жирные, иконки колонкой сразу за подписями (макет 980) */
   .galleryVaccination dl div {
     grid-template-columns: 215px auto;
     justify-content: start;

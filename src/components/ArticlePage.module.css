@@ -18,7 +18,6 @@
 }
 
 .article {
-  /* Высота фрейма Тела статьи из Figma (23:5800); минимальная высота держит фон подложки при narrow-промежуточных ширинах. */
   flex: 0 0 auto;
   width: 1050px;
   min-height: 3345px;
@@ -380,8 +379,6 @@
   }
 
   .mediaSlots {
-    /* При 980px рабочая область может быть уже 880px из-за скроллбара.
-       Гибкие колонки не дают videoFrame выйти за край статьи. */
     grid-template-columns: repeat(2, minmax(0, 1fr));
     align-items: start;
     gap: 40px;

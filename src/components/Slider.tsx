@@ -15,7 +15,6 @@ type SliderItem = AnnouncementData | ServiceCardData;
 interface SliderProps {
   items: SliderItem[];
   buySlot?: ReactNode;
-  /** Какую карточку рендерить: announcement (по умолчанию) или service */
   kind?: "announcement" | "service";
 }
 

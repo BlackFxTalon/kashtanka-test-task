@@ -11,18 +11,15 @@
   margin: 0 auto;
 }
 
-/* DescriptionBlock в этом блоке 404px высотой, без ограничения 550 */
 .inner > :first-child {
   height: 404px;
 }
 
-/* В Планете CTA идёт за текстом, с 18px по макету, а не прижимается к низу. */
 .inner > :first-child :global([class*="ctaWrap"]) {
   margin-top: 18px;
   padding-top: 0;
 }
 
-/* 1600: описание 650 + баннер 800 (30:10079) */
 @media (min-width: 1280px) and (max-width: 1679px) {
   .planet {
     margin-top: 100px;
@@ -36,8 +33,6 @@
   }
 }
 
-/* В промежуточном диапазоне фиксированные 650px + 800px выходили за
-   контейнер. На странице «О проекте» блоки переходят в одну колонку. */
 @media (min-width: 1280px) and (max-width: 1542px),
   (min-width: 1680px) and (max-width: 1802px) {
   .keepVisible .inner {
@@ -50,7 +45,6 @@
   }
 }
 
-/* 980: описание 550 + баннер 410 без арта; блок вплотную к краям (30:12006) */
 @media (min-width: 980px) and (max-width: 1279px) {
   .planet {
     margin-top: 82px;
@@ -63,7 +57,6 @@
     gap: 20px;
   }
 
-  /* Заголовок 20px, как в 30:12011 */
   .inner > :first-child {
     height: 404px;
   }
@@ -85,7 +78,6 @@
   }
 }
 
-/* 375–979: блок скрыт */
 @media (max-width: 979px) {
   .planet:not(.keepVisible) {
     display: none;
@@ -120,7 +112,6 @@
   }
 }
 
-/* Отступ страницы «О проекте» одинаков на всех макетах. */
 .keepVisible {
   margin-top: 40px;
 }

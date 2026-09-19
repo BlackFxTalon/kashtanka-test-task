@@ -220,8 +220,6 @@
   background: #6681f9;
 }
 
-/* Внизу страницы «Планета» используется та же сущность, но с крупными
-   карточками медиа и навигацией из отдельного макета. */
 .supportersPlanet {
   margin-top: 0;
   padding-bottom: 0;
@@ -233,7 +231,6 @@
 }
 
 .supportersPlanet .supporterSlider :global(.swiper) {
-  /* 4 карточки по 190px и три промежутка по 20px на макете 1920. */
   width: min(820px, calc(100% - 168px));
 }
 
@@ -250,8 +247,6 @@
 .supportersPlanet .sliderControls { margin-bottom: 70px; }
 .supportersPlanet .sliderControls button { width: 64px; height: 65px; }
 
-/* Лента блогеров: карточки и кнопки используют те же supporterCard и
-   storyControls, но их геометрия соответствует отдельному макету. */
 .supportersBloggers .supporterSlider {
   position: relative;
   display: block;
@@ -286,7 +281,6 @@
 .supportersBloggers .sliderControls button { width: 64px; height: 65px; }
 .supportersBloggers .sliderControls button:last-child { color: var(--color-white); background: #6681f9; }
 
-/* На макетах 1600–1919 рядом с описанием помещаются три карточки. */
 @media (min-width: 1600px) and (max-width: 1919px) {
   .supportersBloggers .supporterSlider {
     width: 1500px;
@@ -312,7 +306,6 @@
    .supportersPlanet .sliderControls {  margin-bottom: 80px; }
 }
 
-/* Планшетная версия блока СМИ на странице «Планета». */
 @media (min-width: 980px) and (max-width: 1599px) {
   .supportersBloggers .supporterSlider {
     width: 870px;
@@ -440,7 +433,6 @@
   .supporterCard { height: 188px; }
   .sliderControls { gap: 9px; }
   .sliderControls button { width: 36px; height: 36px; }
-  /* Мобильный макет «Планеты»: четыре СМИ в сетке 2×2 и навигация снизу. */
   .supportersPlanet .supporterSlider {
     flex-direction: column;
     align-items: center;

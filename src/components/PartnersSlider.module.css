@@ -27,7 +27,6 @@
   width: 300px;
 }
 
-/* Swiper вычисляет slideSize по .swiper-slide, поэтому ширину задаём через его класс. */
 .slider :global(.swiper-slide) {
   width: 300px;
 }
@@ -226,7 +225,6 @@
   }
 }
 
-/* Стрелки вплотную к ряду логотипов, с тем же зазором, что между карточками */
 @media (min-width: 980px) {
   .sliderArea {
     display: flex;

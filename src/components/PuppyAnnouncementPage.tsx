@@ -325,7 +325,7 @@ export default function PuppyAnnouncementPage() {
                           <span>5</span>
                           <Image
                             src={petCountDivider}
-                            alt=""
+                            alt="Разделитель количества щенков"
                             width={1}
                             height={20}
                           />
@@ -566,7 +566,7 @@ export default function PuppyAnnouncementPage() {
                     "Остерегайтесь мошенников, не пересылайте ваши личные данные!",
                   ].map((tip) => (
                     <li key={tip}>
-                      <Image src={tipCheck} alt="" width={30} height={30} />{" "}
+                      <Image src={tipCheck} alt="Галочка совета" width={30} height={30} />{" "}
                       <span>{tip}</span>
                     </li>
                   ))}

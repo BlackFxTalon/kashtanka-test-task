@@ -46,7 +46,7 @@ function AddStoryCard() {
   return (
     <article className={styles.addStory}>
       <div className={styles.addStoryBlock}>
-        <Image src="/images/blog/story-add.png" alt="" width={146} height={149} />
+        <Image src="/images/blog/story-add.png" alt="Плюс — добавить свою историю" width={146} height={149} />
       </div>
       <div className={styles.addStoryAction}>
         <Link href="/story-request" aria-label="Разместить свою историю">

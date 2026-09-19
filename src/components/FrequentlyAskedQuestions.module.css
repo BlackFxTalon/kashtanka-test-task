@@ -105,7 +105,6 @@
   max-height: 700px;
 }
 
-/* details остаётся открытым до конца анимации закрытия, затем React снимает open. */
 .item.closing .answerAnimation {
   max-height: 0;
 }

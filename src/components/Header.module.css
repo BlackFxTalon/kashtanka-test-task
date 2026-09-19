@@ -1,6 +1,5 @@
 
 
-
 .top {
   min-height: 100px;
 }
@@ -193,9 +192,6 @@
   justify-content: center;
 }
 
-
-
-
 .login {
   display: none;
 }
@@ -205,7 +201,6 @@
     display: inline-flex;
   }
 }
-
 
 .profileNav {
   display: flex;
@@ -230,8 +225,6 @@
   justify-content: center;
   transition: border-color 0.3s ease-in-out;
 }
-
-
 
 .iconBtn::before {
   content: "";
@@ -263,7 +256,6 @@
   margin: auto;
 }
 
-
 .searchFlip {
   transform: scaleX(-1);
 }
@@ -287,7 +279,6 @@
   white-space: nowrap;
   transition: border-color 0.3s ease-in-out;
 }
-
 
 .login::before {
   content: "";
@@ -315,10 +306,6 @@
 .login:hover::before {
   opacity: 1;
 }
-
-
-
-
 
 .userWrap {
   position: relative;
@@ -416,8 +403,6 @@
   width: 13px;
   height: 13px;
 }
-
-
 
 .search {
   position: absolute;
@@ -531,8 +516,6 @@
   justify-content: center;
 }
 
-
-
 .burger {
   display: none;
   padding: 0;
@@ -541,8 +524,6 @@
   color: var(--color-white);
   z-index: 3;
 }
-
-
 
 .mobileMenu {
   position: absolute;
@@ -612,8 +593,6 @@
   text-decoration: none;
 }
 
-
-
 @media (min-width: 1800px) {
   .navLinkXl {
     display: inline-block;
@@ -633,8 +612,6 @@
     display: none;
   }
 }
-
-
 
 @media (min-width: 1600px) {
   .homeBtn {
@@ -658,8 +635,6 @@
   }
 }
 
-
-
 @media (max-width: 1919px) {
   .inner {
     padding: 0 50px;
@@ -675,8 +650,6 @@
     padding: 0 30px;
   }
 }
-
-
 
 @media (max-width: 1599px) {
 .logo {
@@ -695,8 +668,6 @@
      width: 97%;
   }
 }
-
-
 
 @media (max-width: 979px) {
   .top {

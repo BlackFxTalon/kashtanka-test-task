@@ -15,27 +15,22 @@
   --color-blue-overlay: rgba(54, 79, 185, 0.2);
   --color-blue-soft: rgba(54, 79, 185, 0.08);
 
-
   --grad-btn: linear-gradient(180deg, var(--color-accent) 0%, var(--color-primary) 100%);
   --grad-btn-active: linear-gradient(180deg, var(--color-accent) 0%, var(--color-accent-end) 100%);
   --grad-btn-white: linear-gradient(180deg, var(--color-white) 0%, var(--color-gray-light) 100%);
   --bg-page: linear-gradient(180deg, #8d7ac8 0%, var(--color-primary) 34%);
-
 
   --glass: linear-gradient(90deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.6) 100%);
   --glass-border: 1px solid rgba(255, 255, 255, 0.5);
   --glass-border-color: rgba(255, 255, 255, 0.5);
   --glass-blur: 5px;
 
-
   --radius-card: 30px;
   --radius-btn: 15px;
   --radius-pill: 40px;
 
-
   --font-main: var(--font-montserrat), "Montserrat", sans-serif;
   --font-logo: var(--font-manrope), "Manrope", sans-serif;
-
 
   --container-max: 1720px;
   --container-padding: 20px;
@@ -63,9 +58,6 @@ button {
   font-family: inherit;
   cursor: pointer;
 }
-
-
-
 
 .btn {
   position: relative;
@@ -108,7 +100,6 @@ button {
   opacity: 1;
 }
 
-/* В ховере убираем подложку под градиентом: её светлый край читался как белая обводка */
 .btn:hover::before {
   opacity: 0;
 }

@@ -27,7 +27,7 @@ export default function SocialIcon({ network }: { network: SocialNetwork }) {
   if (network === "rutube") {
     return (
       <span className={styles.socialIcon} aria-hidden="true">
-        <Image className={styles.over} src="/images/social/rutube-over.svg" alt="" fill unoptimized />
+        <Image className={styles.over} src="/images/social/rutube-over.svg" alt="Rutube" fill unoptimized />
         <Image className={styles.hover} src="/images/social/rutube-hover.svg" alt="" fill unoptimized />
       </span>
     );
@@ -37,7 +37,7 @@ export default function SocialIcon({ network }: { network: SocialNetwork }) {
 
   return (
     <span className={styles.socialIcon} aria-hidden="true">
-      <Image className={styles.over} src={over} alt="" fill unoptimized />
+      <Image className={styles.over} src={over} alt={`Иконка соцсети ${network}`} fill unoptimized />
       <Image className={styles.hover} src={hover} alt="" fill unoptimized />
     </span>
   );

@@ -4,7 +4,6 @@ interface PlanetBannerProps {
   className?: string;
 }
 
-/** Баннер «Поддержи нас на Планете» — одна картинка из макета под каждую ширину. */
 export default function PlanetBanner({ className }: PlanetBannerProps) {
   return (
     <a
@@ -17,7 +16,6 @@ export default function PlanetBanner({ className }: PlanetBannerProps) {
         <source media="(min-width: 1680px)" srcSet="/images/planet/banner-1920.png" />
         <source media="(min-width: 1280px)" srcSet="/images/planet/banner-1600.png" />
         <source media="(min-width: 980px)" srcSet="/images/planet/banner-980.png" />
-        {/* Разные кадры баннера по ширинам: next/image не умеет art direction */}
         <img
           className={styles.image}
           src="/images/planet/banner-375.png"

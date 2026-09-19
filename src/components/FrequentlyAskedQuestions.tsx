@@ -50,8 +50,8 @@ function Question({ title, answer, defaultOpen = false }: { title: string; answe
       }}>
         <span>{title}</span>
         <span className={styles.chevrons}>
-          <Image src="/images/faq/chevron-closed.svg" alt="" width={22} height={22} className={styles.closedChevron} />
-          <Image src="/images/faq/chevron-open.svg" alt="" width={22} height={22} className={styles.openChevron} />
+          <Image src="/images/faq/chevron-closed.svg" alt="Развернуть ответ" width={22} height={22} className={styles.closedChevron} />
+          <Image src="/images/faq/chevron-open.svg" alt="Свернуть ответ" width={22} height={22} className={styles.openChevron} />
         </span>
       </summary>
       <div className={styles.answerAnimation}>

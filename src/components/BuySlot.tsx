@@ -13,7 +13,7 @@ export default function BuySlot() {
       <div className={styles.slot__art}>
         <Image
           src="/images/buy-slot/art.png"
-          alt=""
+          alt="Собака ждёт хозяина"
           fill
           sizes="(max-width: 979px) calc(100vw - 40px), (max-width: 1599px) 450px, 400px"
           className={styles.slot__artImage}

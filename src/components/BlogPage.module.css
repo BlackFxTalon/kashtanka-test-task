@@ -124,7 +124,6 @@
   row-gap: 80px;
 }
 
-
 .pager {
   display: flex;
   gap: 10px;
@@ -231,7 +230,6 @@
     padding: 30px 10px 0;
   }
 
-
   .intro h1 {
     margin-top: 30px;
   }
@@ -277,7 +275,6 @@
   .articleGrid > :nth-child(n + 8) {
     display: none;
   }
-
 
   .pager {
     gap: 10px;

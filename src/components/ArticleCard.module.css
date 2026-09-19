@@ -65,7 +65,6 @@
 
 .actions > a {
   flex-shrink: 0;
-  /* Кнопка карточки по макету: текст + 10px по бокам */
   padding-inline: 10px;
 }
 

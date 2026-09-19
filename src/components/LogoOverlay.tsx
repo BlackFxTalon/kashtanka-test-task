@@ -1,7 +1,6 @@
 import Image from "next/image";
 import styles from "./LogoOverlay.module.css";
 
-/** Reusable brand substrate for imagery used in promotional blocks. */
 export default function LogoOverlay({ side = "right" }: { side?: "left" | "right" }) {
   return (
     <div className={`${styles.overlay} ${side === "left" ? styles.left : ""}`} aria-label="KASHTANKA — заведи пушистого друга">

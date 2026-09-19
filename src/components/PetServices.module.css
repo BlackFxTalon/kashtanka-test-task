@@ -43,8 +43,6 @@
   margin-top: 44px;
 }
 
-
-
 @media (min-width: 980px) and (max-width: 1679px) {
   .inner {
     max-width: 1440px;
@@ -55,8 +53,6 @@
     gap: 60px 105px;
   }
 }
-
-
 
 @media (min-width: 980px) and (max-width: 1119px) {
   .inner {
@@ -76,8 +72,6 @@
     gap: 60px 20px;
   }
 }
-
-
 
 @media (max-width: 979px) {
   .petServices {
@@ -120,7 +114,6 @@
   }
 }
 
-/* ARTICLE (article page) variant: постоянная белая подложка и сетка 2×2 из фиксированных колонок */
 .petServicesArticle {
   padding: 50px 0 60px;
   border-radius: var(--radius-card);

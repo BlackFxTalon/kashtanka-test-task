@@ -11,7 +11,6 @@
   border-radius: var(--radius-btn);
 }
 
-/* Название тарифа — плашка, не кнопка: без ховера */
 .plan {
   display: inline-flex;
   align-items: center;
@@ -64,7 +63,6 @@
   font-weight: 500;
 }
 
-/* CTA — 151×41, лежит на нижнем крае карточки (26px внутри, 15px наружу) */
 .card > .cta {
   position: absolute;
   left: 50%;
@@ -75,7 +73,6 @@
   font-size: 14px;
 }
 
-/* Ховер: активный градиент + белый текст (Figma 30:7840) */
 .card > .cta::after {
   background: var(--grad-btn-active);
 }

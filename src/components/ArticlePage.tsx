@@ -94,7 +94,6 @@ function ArticleVideo() {
 
   const start = () => {
     videoRef.current?.play().then(() => setPlaying(true)).catch(() => {
-      // Источник видео заказчиком не предоставлен: кнопка остаётся на месте.
     });
   };
 
@@ -110,7 +109,7 @@ function ArticleVideo() {
         />
         {!playing && (
           <button type="button" className={styles.playButton} onClick={start}>
-            <Image src="/images/dogs/play.svg" alt="" width={78} height={78} />
+            <Image src="/images/dogs/play.svg" alt="Кнопка воспроизведения видео" width={78} height={78} />
           </button>
         )}
       </div>

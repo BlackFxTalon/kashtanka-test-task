@@ -59,7 +59,7 @@ export default function ServiceCard({ data, variant = "home" }: ServiceCardProps
 
         <div className={styles.card__row}>
           <span className={styles.card__user}>
-            <Image src={data.avatar} alt="" width={45} height={45} className={styles.card__avatar} />
+            <Image src={data.avatar} alt="Аватар автора услуги" width={45} height={45} className={styles.card__avatar} />
             {data.author}
           </span>
           <span className={styles.card__city}>

@@ -4,7 +4,6 @@ import { FormEvent, useState } from "react";
 import Image from "next/image";
 import styles from "./CollaborationForm.module.css";
 
-/** Reusable lead form for partnership pages. */
 interface CollaborationFormProps {
   className?: string;
   variant?: "desktop" | "mobile";
@@ -64,7 +63,7 @@ export default function CollaborationForm({
           <label className={styles.consent}>
             <span className={styles.checkbox}>
               <input type="checkbox" checked={consentAccepted} onChange={(event) => setConsentAccepted(event.target.checked)} required />
-              {consentAccepted && <Image src="/images/bloggers/consent-checkbox.svg" alt="" width={20} height={20} />}
+              {consentAccepted && <Image src="/images/bloggers/consent-checkbox.svg" alt="Отметка согласия" width={20} height={20} />}
             </span>
             {story ? (
               <span>{'Нажимая на кнопку “Отправить", вы даете'} согласие на обработку своих <a href="#">персональных данных</a> и даете свое согласие на публикацию истории на сайте.</span>

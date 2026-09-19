@@ -24,7 +24,7 @@ export default function NotFound() {
 
           <p className={styles.code} aria-hidden="true">404</p>
           <div className={styles.illustration} aria-hidden="true">
-            <img src="/images/404/puppy.png" alt="" />
+            <img src="/images/404/puppy.png" alt="Щенок породы бигль" />
           </div>
         </section>
       </main>
