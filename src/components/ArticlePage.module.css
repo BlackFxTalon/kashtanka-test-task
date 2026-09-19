@@ -41,7 +41,7 @@
 
 .hero {
   position: relative;
-  width: 1000px;
+  width: 100%;
   aspect-ratio: 1000 / 483;
   margin-left: 5px;
   overflow: hidden;
@@ -426,9 +426,21 @@
     padding-left: 30px;
   }
 
+  .article {
+    max-width: 920px;
+    margin: auto;
+   }
+
   .columns {
     gap: 10px;
   }
+}
+
+@media (max-width: 979px) {
+   .article {
+    max-width: 647px;
+    margin: auto;
+   }
 }
 
 @media (max-width: 1599px) {
@@ -448,6 +460,8 @@
   }
   .columns {
      gap: 10px;
+     max-width: 1510px;
+     margin: auto;
   }
 }
 

@@ -217,17 +217,28 @@
     margin-right: -2px;
   }
 
-  .stories {
-    padding-left: 30px;
-    padding-right: 60px;
-  }
-
   .storyControls {
     position: absolute;
     top: -97px;
     right: 0;
     z-index: 2;
     margin-left: 0;
+  }
+}
+
+@media (min-width: 980px) and (max-width: 1599px) {
+  .stories {
+    padding-left: 0;
+    padding-right: 0;
+    max-width: 890px;
+  }
+}
+
+@media (min-width: 1600px) and (max-width: 1919px) {
+  .stories {
+    padding-left: 0;
+    padding-right: 0;
+    max-width: 1450px;
   }
 }
 

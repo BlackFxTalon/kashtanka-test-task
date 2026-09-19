@@ -72,6 +72,8 @@
   .tariffs {
     height: auto;
     padding: 30px 10px;
+    max-width: 355px;
+    margin: auto;
   }
 
   .tariffs .title {
@@ -87,6 +89,8 @@
 @media (min-width: 1280px) and (max-width: 1679px) {
   .tariffs {
     height: 308px;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
@@ -94,4 +98,20 @@
   .tariffs {
     height: 379px;
   }
+}
+
+@media (min-width: 980px) and (max-width: 1599px) {
+  .tariffs {
+      max-width: 920px;
+      margin-left: auto;
+      margin-right: auto;
+  }
+}
+
+@media (min-width: 1600px) and (max-width: 1919px) {
+    .tariffs {
+    max-width: 1500px;
+    margin-left: auto;
+    margin-right: auto;
+    }
 }

@@ -172,6 +172,9 @@
   .blocks > .block:nth-child(3) {
     display: none;
   }
+  .inner {
+      max-width: 890px;
+  }
 }
 
 
@@ -218,7 +221,6 @@
   .slogan {
     font-size: 24px;
     line-height: inherit;
-    text-align: center;
   }
 }
 
@@ -232,6 +234,9 @@
   .block {
     width: 100%;
     max-width: 100%;
+  }
+  .inner {
+      max-width: 748px;
   }
 }
 
@@ -265,6 +270,9 @@
   .block {
     width: 100%;
     margin: 0 auto;
+  }
+  .inner {
+      max-width: 355px;
   }
 }
 

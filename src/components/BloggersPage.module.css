@@ -2,7 +2,7 @@
 .top { width: min(1802px, calc(100% - 80px)); margin: 0 auto; }
 .article { width: 100%; min-height: 0; padding-bottom: 60px; }
 .heroRow { display: grid; grid-template-columns: minmax(0,1000px) minmax(0,722px); align-items: start; gap: 43px; }
-.hero { margin-left: 0; }
+.hero { margin-left: 0; max-width: 993px; }
 .hero :global([class*="panelFill"]) { opacity: .9; }
 .formWrap { margin-top: 23px; }
 .mobileForm { display: none; }
@@ -41,7 +41,7 @@
   .top { width: 920px; max-width: calc(100% - 60px); }
   .heroRow { grid-template-columns: 1fr; }
   .formWrap { display: none; }
-  .mobileForm { display: block; width: 920px; max-width: calc(100% - 60px); margin: 100px auto 0; }
+  .mobileForm { display: block; max-width: 920px; margin: 100px auto 0; }
   .mobileForm > h2 { margin: 0 0 30px; color: var(--color-white); font-size: 26px; font-weight: 500; line-height: 32px; }
   .supporters { width: 920px; max-width: calc(100% - 60px); margin-top: 100px; }
   .supporters > h2 { margin: 0; text-align: left; }
@@ -58,7 +58,7 @@
   .top { width: calc(100% - 20px); }
   .heroRow { grid-template-columns: 1fr; }
   .formWrap { display: none; }
-  .mobileForm { display: block; width: calc(100% - 20px); margin: 60px auto 0; }
+  .mobileForm { display: block; width: calc(100% - 20px); margin: 60px auto 0; max-width: 355px; }
   .mobileForm > h2 { margin: 0 0 30px; color: var(--color-white); font-size: 24px; font-weight: 500; line-height: 29px; text-align: center; }
   .supporters { width: calc(100% - 20px); margin-top: 60px; }
   .supporters > h2 { margin: 0; font-size: 24px; line-height: 29px; text-align: center; }

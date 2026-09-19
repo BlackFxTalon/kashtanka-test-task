@@ -23,6 +23,7 @@
 
 .hero {
   margin-left: 0;
+  max-width: 1000px;
 }
 
 .hero > img {

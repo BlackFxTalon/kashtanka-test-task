@@ -202,13 +202,6 @@ export default function PuppyAnnouncementPage() {
           current="Щенки Бигля"
           mobileCurrentRow
         />
-        <div className={`${styles.meta} ${styles.topMeta}`}>
-          <span>Опубликовано: 10 дней назад</span>
-          <span className={styles.city}>
-            <CityIcon /> Москва
-          </span>
-          <strong>50 000 ₽</strong>
-        </div>
         <h1>Щенки Бигля</h1>
         <section className={styles.offer}>
           <Gallery />
@@ -256,6 +249,13 @@ export default function PuppyAnnouncementPage() {
             </dl>
           </section>
           <div className={styles.infoColumn}>
+            <div className={`${styles.meta} ${styles.topMeta}`}>
+              <span>Опубликовано: 10 дней назад</span>
+              <span className={styles.city}>
+                <CityIcon /> Москва
+              </span>
+              <strong>50 000 ₽</strong>
+            </div>
             <div className={styles.meta}>
               <span>Опубликовано: 10 дней назад</span>
               <span className={styles.city}>

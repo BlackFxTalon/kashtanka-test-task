@@ -54,20 +54,24 @@
   margin-top: 44px;
 }
 
-
+@media (min-width: 980px) and (max-width: 1599px) {
+      .inner {
+    max-width: 920px;
+  }
+}
 
 @media (min-width: 980px) and (max-width: 1679px) {
-  .inner {
-    max-width: 1440px;
-  }
-
   .grid {
     grid-template-columns: repeat(3, 1fr);
     gap: 60px 105px;
   }
 }
 
-
+@media (min-width: 1600px) and (max-width: 1919px) {
+    .inner {
+    max-width: 1500px;
+  }
+}
 
 @media (min-width: 980px) and (max-width: 1119px) {
   .inner {
@@ -139,6 +143,10 @@
   .footer :global(.btn) {
     width: 140px;
     padding-inline: 10px;
+  }
+
+  .inner {
+    max-width: 355px;
   }
 }
 

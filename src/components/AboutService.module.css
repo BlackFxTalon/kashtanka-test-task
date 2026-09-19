@@ -405,7 +405,7 @@
 }
 
 @media (min-width: 980px) and (max-width: 1316px) {
-  .aboutInner { grid-template-columns: 400px 500px; max-width: 920px; gap: 20px; }
+  .aboutInner { grid-template-columns: 400px 500px; max-width: 920px; gap: 20px; padding-left: 0; }
   .description { padding: 25px 20px 30px; }
   .description h2 { font-size: 18px; }
   .copy p + p { display: none; }
@@ -415,7 +415,7 @@
 
 @media (max-width: 979px) {
   .section { padding-bottom: 30px; }
-  .aboutInner { display: block; padding: 40px 10px 0; }
+  .aboutInner { display: block; padding: 40px 10px 0; max-width: 355px; }
   .description { min-height: 517px; padding: 30px 10px; }
   .description h2 { margin: 20px 0 30px; font-size: 18px; }
   .copy { line-height: 25.2px; }
