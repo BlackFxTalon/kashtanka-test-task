@@ -111,7 +111,7 @@ export default function AboutService() {
         </div>
 
         <div className={styles.projects}>
-          <span className={styles.projectsTag}>Социальные проекты</span>
+          <a href="#" className={`btn btn--white ${styles.projectsTag}`}><span>Социальные проекты</span></a>
           <div className={styles.projectGrid}>
             {projects.map((project) => (
               <article className={styles.projectCard} key={project.id}>

@@ -28,8 +28,7 @@
   background: var(--color-white);
 }
 
-.tag,
-.projectsTag {
+.tag {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -39,6 +38,17 @@
   border: 1px solid transparent;
   border-radius: var(--radius-btn);
   color: var(--color-white);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1;
+  background: var(--grad-btn);
+}
+
+.projectsTag {
+  width: max-content;
+  height: 40px;
+  padding: 10px;
+  border: 1px solid transparent;
   font-size: 12px;
   font-weight: 500;
   line-height: 1;
