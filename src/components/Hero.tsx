@@ -37,14 +37,14 @@ export default function Hero() {
                 src={block.photo}
                 alt={block.title}
                 fill
-                sizes="(max-width: 979px) calc(100vw - 20px), (max-width: 1599px) 460px, 500px"
+                sizes="(max-width: 979px) calc(100vw - 20px), (max-width: 1598px) 460px, 500px"
                 className={styles.blockPhoto}
               />
               <div className={styles.blockBody}>
                 <h2 className={styles.blockTitle}>{block.title}</h2>
                 <h2 className={styles.blockTitleMobile}>{block.titleMobile ?? block.title}</h2>
                 <div className={styles.blockBtns}>
-                  <a href="#" className="btn btn--primary">
+                  <a href="#" className="btn btn--white">
                     <span className={styles.desktopText}>{block.active}</span>
                   </a>
                   {block.inactive && (

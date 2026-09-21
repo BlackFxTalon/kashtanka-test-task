@@ -131,7 +131,7 @@
   }
 }
 
-@media (min-width: 1600px) and (max-width: 1919px) {
+@media (min-width: 1599px) and (max-width: 1919px) {
   .block:nth-child(3) .blockBtns {
     flex-wrap: wrap;
   }
@@ -143,7 +143,7 @@
   }
 }
 
-@media (max-width: 1599px) {
+@media (max-width: 1598px) {
   .text {
     display: none;
   }
@@ -154,7 +154,7 @@
   }
 }
 
-@media (min-width: 980px) and (max-width: 1599px) {
+@media (min-width: 980px) and (max-width: 1598px) {
   .blocks {
     grid-template-columns: 400px 452px;
     gap: 38px;
@@ -231,7 +231,11 @@
   }
 }
 
-@media (min-width: 1280px) and (max-width: 1599px) {
+@media (min-width: 1280px) and (max-width: 1598px) {
+  .inner {
+    max-width: 1420px;
+  }
+
   .blocks {
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 40px;

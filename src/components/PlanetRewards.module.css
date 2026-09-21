@@ -68,7 +68,7 @@
   margin-top: auto;
 }
 
-@media (min-width: 1600px) and (max-width: 1919px) {
+@media (min-width: 1599px) and (max-width: 1919px) {
   .section {
     margin-left: 25px;
   }
@@ -80,7 +80,7 @@
   }
 }
 
-@media (min-width: 980px) and (max-width: 1599px) {
+@media (min-width: 980px) and (max-width: 1598px) {
   .section {
     margin-top: 100px;
   }

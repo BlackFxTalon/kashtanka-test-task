@@ -52,7 +52,7 @@
   border-top: .5px dashed var(--color-text);
 }
 
-@media (min-width: 1600px) and (max-width: 1919px) {
+@media (min-width: 1599px) and (max-width: 1919px) {
   .top {
     width: calc(100% - 100px);
   }
@@ -75,7 +75,7 @@
   }
 }
 
-@media (min-width: 980px) and (max-width: 1599px) {
+@media (min-width: 980px) and (max-width: 1598px) {
   .main {
     padding-bottom: 0;
   }

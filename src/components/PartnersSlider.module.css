@@ -111,10 +111,6 @@
     width: min(1438px, calc(100% - 120px));
   }
 
-  .slider {
-    width: 1360px;
-  }
-
   .navButtonPrev {
     left: 60px;
   }
@@ -135,10 +131,6 @@
 
   .sliderArea {
     margin-top: 60px;
-  }
-
-  .slider {
-    width: 800px;
   }
 
   .slider :global(.swiper-slide) {
@@ -170,6 +162,27 @@
 
   .navButtonNext {
     right: 29px;
+  }
+}
+
+@media (min-width: 980px) and (max-width: 1598px) {
+  .slider {
+    width: 100%;
+    max-width: 800px;
+  }
+}
+
+@media (min-width: 1292px) and (max-width: 1598px) {
+  .slider {
+    width: 100%;
+    max-width: 1020px;
+  }
+}
+
+@media (min-width: 1599px) and (max-width: 1919px) {
+.slider {
+    width: 100%;
+    max-width: 1360px;
   }
 }
 

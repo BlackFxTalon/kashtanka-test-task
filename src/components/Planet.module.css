@@ -27,7 +27,6 @@
   }
 
   .inner {
-    grid-template-columns: 650px 800px;
     justify-content: space-between;
     max-width: 1520px;
   }
@@ -52,7 +51,6 @@
   }
 
   .inner {
-    grid-template-columns: 550px 410px;
     justify-content: space-between;
     gap: 20px;
   }
@@ -66,13 +64,15 @@
   }
 }
 
-@media (min-width:980px) and (max-width: 1599px) {
+@media (min-width:980px) and (max-width: 1598px) {
   .inner {
     max-width: 980px;
+    grid-template-columns: 550px 1fr;
+    gap: 20px;
   }
 }
 
-@media (min-width: 1600px) and (max-width: 1919px) {
+@media (min-width: 1599px) and (max-width: 1919px) {
   .inner {
     max-width: 1490px;
   }

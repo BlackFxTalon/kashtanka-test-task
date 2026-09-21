@@ -1,6 +1,5 @@
 .banner {
   display: block;
-  width: 1080px;
   max-width: 100%;
   border-radius: var(--radius-btn);
   overflow: hidden;
@@ -11,22 +10,4 @@
   display: block;
   width: 100%;
   height: auto;
-}
-
-@media (min-width: 1280px) and (max-width: 1679px) {
-  .banner {
-    width: 800px;
-  }
-}
-
-@media (min-width: 980px) and (max-width: 1279px) {
-  .banner {
-    width: 410px;
-  }
-}
-
-@media (max-width: 979px) {
-  .banner {
-    width: 349px;
-  }
 }

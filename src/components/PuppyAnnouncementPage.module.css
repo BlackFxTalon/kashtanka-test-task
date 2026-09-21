@@ -896,7 +896,7 @@
   }
 }
 
-@media (min-width:1600px) and (max-width:1919px) {
+@media (min-width:1599px) and (max-width:1919px) {
   .container {
     padding: 0;
     max-width: 1500px;
@@ -1018,7 +1018,7 @@
 }
 }
 
-@media (max-width:1599px) {
+@media (max-width:1598px) {
   .container {
     padding: 0 30px
 }
@@ -1095,7 +1095,7 @@
   }
 }
 
-@media (min-width:980px) and (max-width:1599px) {
+@media (min-width:980px) and (max-width:1598px) {
   .container:first-child {
     position: relative;
   }

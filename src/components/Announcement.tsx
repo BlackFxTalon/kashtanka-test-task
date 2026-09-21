@@ -51,7 +51,7 @@ export default function Announcement({ data, variant = "home" }: AnnouncementPro
             src={data.photo}
             alt={`${data.title} — ${data.breed}`}
             fill
-            sizes={article ? "(max-width: 1599px) 350px, 350px" : "(max-width: 979px) calc(100vw - 40px), (max-width: 1599px) 450px, 400px"}
+            sizes={article ? "(max-width: 1598px) 350px, 350px" : "(max-width: 979px) calc(100vw - 40px), (max-width: 1598px) 450px, 400px"}
             className={styles.announcement__photo}
           />
         </Link>

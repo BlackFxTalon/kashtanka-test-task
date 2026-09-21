@@ -81,7 +81,7 @@
   }
 }
 
-@media (max-width: 1599px) {
+@media (max-width: 1598px) {
   .aside:not(.about):not(.planet) {
     display: none;
   }
@@ -101,13 +101,13 @@
   }
 }
 
-@media (min-width: 980px) and (max-width: 1599px) {
+@media (min-width: 980px) and (max-width: 1598px) {
   .planet {
     max-width: 100%;
   }
 }
 
-@media (max-width: 1599px) {
+@media (max-width: 1598px) {
   .about > :last-child {
     display: none;
   }

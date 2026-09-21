@@ -281,7 +281,7 @@
 .supportersBloggers .sliderControls button { width: 64px; height: 65px; }
 .supportersBloggers .sliderControls button:last-child { color: var(--color-white); background: #6681f9; }
 
-@media (min-width: 1600px) and (max-width: 1919px) {
+@media (min-width: 1599px) and (max-width: 1919px) {
   .supportersBloggers .supporterSlider {
     width: 1500px;
     max-width: 100%;
@@ -306,7 +306,7 @@
    .supportersPlanet .sliderControls {  margin-bottom: 80px; }
 }
 
-@media (min-width: 980px) and (max-width: 1599px) {
+@media (min-width: 980px) and (max-width: 1598px) {
   .supportersBloggers .supporterSlider {
     width: 870px;
     margin-left: 50px;
@@ -392,7 +392,7 @@
 }
 
 @media (min-width: 980px) and (max-width: 1679px) {
-  .aboutInner { grid-template-columns: 650px 1fr; max-width: 1440px; gap: 130px; }
+  .aboutInner { grid-template-columns: 650px 1fr; max-width: 1500px; gap: 130px; }
   .projectGrid { grid-template-columns: 500px; }
   .projectCard:nth-child(n + 3) { display: none; }
 }

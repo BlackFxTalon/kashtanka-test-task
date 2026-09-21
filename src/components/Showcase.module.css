@@ -54,7 +54,7 @@
   margin-top: 44px;
 }
 
-@media (min-width: 980px) and (max-width: 1599px) {
+@media (min-width: 980px) and (max-width: 1598px) {
       .inner {
     max-width: 920px;
   }
@@ -67,7 +67,7 @@
   }
 }
 
-@media (min-width: 1600px) and (max-width: 1919px) {
+@media (min-width: 1599px) and (max-width: 1919px) {
     .inner {
     max-width: 1500px;
   }
@@ -79,7 +79,7 @@
   }
 }
 
-@media (max-width: 1599px) {
+@media (max-width: 1598px) {
   .showcase {
     margin-top: 30px;
     padding: 50px 30px 60px;
@@ -92,7 +92,7 @@
   }
 }
 
-@media (min-width: 980px) and (max-width: 1599px) {
+@media (min-width: 980px) and (max-width: 1598px) {
   .showcaseHome {
     margin-top: 66px;
   }

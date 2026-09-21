@@ -213,7 +213,7 @@
   }
 }
 
-@media (min-width: 1600px) and (max-width: 1919px) {
+@media (min-width: 1599px) and (max-width: 1919px) {
   .articles {
     max-width: 1500px;
     padding-left: 0;

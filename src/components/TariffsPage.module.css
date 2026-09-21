@@ -125,7 +125,7 @@
   }
 }
 
-@media (min-width: 1600px) and (max-width: 1919px) {
+@media (min-width: 1599px) and (max-width: 1919px) {
   .tariffs {
     max-width: 1500px;
     margin-left: auto;

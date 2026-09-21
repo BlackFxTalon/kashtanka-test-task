@@ -196,7 +196,7 @@
   display: none;
 }
 
-@media (min-width: 1600px) {
+@media (min-width: 1599px) {
   .login {
     display: inline-flex;
   }
@@ -603,7 +603,7 @@
   }
 }
 
-@media (min-width: 1600px) {
+@media (min-width: 1599px) {
   .navLink1920 {
     display: inline-block;
   }
@@ -613,7 +613,7 @@
   }
 }
 
-@media (min-width: 1600px) {
+@media (min-width: 1599px) {
   .homeBtn {
     display: flex;
   }
@@ -651,7 +651,7 @@
   }
 }
 
-@media (max-width: 1599px) {
+@media (max-width: 1598px) {
 .logo {
   text-decoration: none;
   left: 30px;
