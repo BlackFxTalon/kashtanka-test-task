@@ -235,6 +235,9 @@
 }
 
 .supportersPlanet .supporterSlide { width: 190px !important; }
+@media (min-width:1500px) and (max-width:1599px) {
+  .supportersPlanet .supporterSlide { width: 180px !important; }
+}
 .supportersPlanet .supporterCard { height: auto; }
 .supportersPlanet .supporterImage { height: 190px; }
 .supportersPlanet .supporterImage > img {
@@ -281,7 +284,7 @@
 .supportersBloggers .sliderControls button { width: 64px; height: 65px; }
 .supportersBloggers .sliderControls button:last-child { color: var(--color-white); background: #6681f9; }
 
-@media (min-width: 1599px) and (max-width: 1919px) {
+@media (min-width: 1499px) and (max-width: 1919px) {
   .supportersBloggers .supporterSlider {
     width: 1500px;
     max-width: 100%;
@@ -306,7 +309,7 @@
    .supportersPlanet .sliderControls {  margin-bottom: 80px; }
 }
 
-@media (min-width: 980px) and (max-width: 1598px) {
+@media (min-width: 980px) and (max-width: 1498px) {
   .supportersBloggers .supporterSlider {
     width: 870px;
     margin-left: 50px;

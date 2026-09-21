@@ -92,7 +92,7 @@
   }
 }
 
-@media (min-width: 1500px) and (max-width: 1598px) {
+@media (min-width: 1499px) and (max-width: 1598px) {
   .grid {
     grid-template-columns: repeat(3, 1fr);
   }

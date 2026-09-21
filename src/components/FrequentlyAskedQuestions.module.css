@@ -135,7 +135,7 @@
   margin-top: 0;
 }
 
-@media (min-width: 1280px) and (max-width: 1679px) {
+@media (min-width: 1280px) and (max-width: 1498px) {
   .section {
     margin-top: 100px;
   }
@@ -200,6 +200,17 @@
          width: 100%;
          gap: 100px;
   }
+}
+
+@media (min-width: 1499px) and (max-width: 1599px) {
+    .columns {
+        grid-template-columns: repeat(3, 410px);
+        gap: 50px;
+        max-width: 1600px;
+        margin-left: auto;
+        margin-right: auto;
+        justify-content: center;
+    }
 }
 
 @media (max-width: 979px) {
