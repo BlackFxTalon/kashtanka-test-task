@@ -216,6 +216,10 @@
     width: 350px;
   }
 
+  .inner {
+    margin-left: 25px;
+  }
+
   .sidebar .grid {
     grid-template-columns: 350px;
     justify-content: initial;

@@ -92,9 +92,18 @@
   }
 }
 
+@media (min-width: 1500px) and (max-width: 1598px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .inner {
+      max-width: 1040px;
+  }
+}
+
 @media (min-width: 980px) and (max-width: 1598px) {
   .showcaseHome {
-    margin-top: 66px;
+    margin-top: 86px;
   }
 }
 

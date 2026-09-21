@@ -105,7 +105,20 @@
   margin-top: 40px;
 }
 
-.thumbs > button:not(.controls button) {
+.thumbViewport {
+  flex: 1 1 0;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.thumbTrack {
+  display: flex;
+  gap: 20px;
+  transition: transform 300ms ease-in-out;
+  will-change: transform;
+}
+
+.thumbTrack > button {
   position: relative;
   flex: 0 0 240px;
   height: 130px;
@@ -114,12 +127,6 @@
   border-radius: 30px;
   padding: 0;
   background: transparent;
-}
-
-@media (max-width: 1919px) {
-  .thumbs > button:nth-child(3) {
-    display: none;
-  }
 }
 
 .thumbs .thumbActive {
@@ -137,7 +144,7 @@
   place-items: center;
   width: 40px;
   height: 40px;
-  border: 1px solid #c2bdbd;
+  border: 1px solid transparent;
   border-radius: 15px;
   color: #000;
   background: #edeae9;
@@ -1920,5 +1927,56 @@ border-radius: 10px;
     justify-content: center;
     gap: 20px;
     margin-left: 0;
+  }
+}
+
+/* The thumbnail track remains mounted so it can be moved with transform. */
+@media (min-width:980px) and (max-width:1598px) {
+  .thumbTrack {
+    gap: 30px;
+  }
+
+  .thumbTrack > button {
+    flex-basis: 180px;
+    width: 180px;
+    height: 100px;
+  }
+}
+
+@media (min-width:375px) and (max-width:979px) {
+  .thumbs {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .thumbViewport {
+    flex-basis: 100%;
+  }
+
+  .thumbTrack {
+    gap: 27px;
+  }
+
+  .thumbTrack > button {
+    flex-basis: 164px;
+    width: 164px;
+    height: 91px;
+    border-radius: 20px;
+  }
+
+  .thumbs .controls {
+    margin: 0 auto;
+  }
+}
+
+@media (max-width:374px) {
+  .thumbTrack {
+    gap: 6px;
+  }
+
+  .thumbTrack > button {
+    flex-basis: 55px;
+    height: 48px;
+    border-radius: 13px;
   }
 }

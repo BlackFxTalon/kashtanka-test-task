@@ -231,6 +231,12 @@
   }
 }
 
+@media (min-width: 980px) and (max-width: 1598px) {
+  .slogan {
+     text-align: center;
+  }
+}
+
 @media (min-width: 1280px) and (max-width: 1598px) {
   .inner {
     max-width: 1420px;

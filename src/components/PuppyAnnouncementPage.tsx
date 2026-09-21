@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { Swiper as SwiperInstance } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -129,9 +129,44 @@ function PedigreeTree() {
 }
 function Gallery() {
   const slider = useRef<SwiperInstance | null>(null);
+  const thumbsViewport = useRef<HTMLDivElement | null>(null);
   const [active, setActive] = useState(0);
-  const firstPreview = Math.min(Math.max(active - 1, 0), PHOTOS.length - 2);
-  const previews = PHOTOS.slice(firstPreview, firstPreview + 3);
+  const [thumbStep, setThumbStep] = useState(0);
+  const [visibleThumbs, setVisibleThumbs] = useState(1);
+
+  useEffect(() => {
+    const viewport = thumbsViewport.current;
+
+    if (!viewport) {
+      return;
+    }
+
+    const updateThumbMetrics = () => {
+      const track = viewport.firstElementChild;
+      const thumb = track?.firstElementChild;
+
+      if (!track || !thumb) {
+        return;
+      }
+
+      const gap = Number.parseFloat(getComputedStyle(track).gap) || 0;
+      const step = thumb.getBoundingClientRect().width + gap;
+
+      setThumbStep(step);
+      setVisibleThumbs(Math.max(1, Math.floor((viewport.clientWidth + gap) / step)));
+    };
+
+    updateThumbMetrics();
+    const observer = new ResizeObserver(updateThumbMetrics);
+    observer.observe(viewport);
+
+    return () => observer.disconnect();
+  }, []);
+
+  const firstPreview = Math.min(
+    Math.max(active - 1, 0),
+    Math.max(PHOTOS.length - visibleThumbs, 0),
+  );
   const selectSlide = (index: number) => {
     const nextIndex = (index + PHOTOS.length) % PHOTOS.length;
     setActive(nextIndex);
@@ -161,24 +196,29 @@ function Gallery() {
         ))}
       </Swiper>
       <div className={styles.thumbs}>
-        {previews.map((photo, index) => {
-          const photoIndex = firstPreview + index;
-          return (
-            <button
-              type="button"
-              key={photoIndex}
-              className={active === photoIndex ? styles.thumbActive : ""}
-              onClick={() => selectSlide(photoIndex)}
-            >
-              <Image
-                src={photo}
-                alt={`Фото щенка ${photoIndex + 1}`}
-                fill
-                sizes="240px"
-              />
-            </button>
-          );
-        })}
+        <div ref={thumbsViewport} className={styles.thumbViewport}>
+          <div
+            className={styles.thumbTrack}
+            style={{ transform: `translateX(-${firstPreview * thumbStep}px)` }}
+          >
+            {PHOTOS.map((photo, photoIndex) => (
+              <button
+                type="button"
+                key={photoIndex}
+                className={active === photoIndex ? styles.thumbActive : ""}
+                onClick={() => selectSlide(photoIndex)}
+                aria-current={active === photoIndex ? "true" : undefined}
+              >
+                <Image
+                  src={photo}
+                  alt={`Фото щенка ${photoIndex + 1}`}
+                  fill
+                  sizes="240px"
+                />
+              </button>
+            ))}
+          </div>
+        </div>
         <SliderControls
           onPrev={() => selectSlide(active - 1)}
           onNext={() => selectSlide(active + 1)}

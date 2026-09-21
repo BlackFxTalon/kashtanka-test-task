@@ -177,7 +177,7 @@
   width: 40px;
   height: 40px;
   padding: 0;
-  border: 1px solid #c2bdbd;
+  border: 1px solid transparent;
   border-radius: 15px;
   background: var(--color-gray-bg);
   color: var(--color-text);
@@ -212,7 +212,7 @@
   }
 }
 
-@media (min-width: 980px) and (max-width: 1239px) {
+@media (min-width: 980px) and (max-width: 1598px) {
   .storyRow {
     margin-right: -2px;
   }
@@ -231,6 +231,9 @@
     padding-left: 0;
     padding-right: 0;
     max-width: 890px;
+  }
+  .storyRow {
+    max-width: 892px;
   }
 }
 

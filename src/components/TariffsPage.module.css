@@ -49,7 +49,7 @@
   height: 40px;
   padding: 0;
   place-items: center;
-  border: 1px solid #c2bdbd;
+  border: 1px solid transparent;
   border-radius: 15px;
   color: var(--color-text);
   background: var(--color-gray-bg);
@@ -122,6 +122,12 @@
   .controls {
     top: -90px;
     right: 30px;
+  }
+}
+
+@media (min-width: 980px) and (max-width: 1598px) {
+  .intro h1 {
+    margin-bottom: 40px;
   }
 }
 

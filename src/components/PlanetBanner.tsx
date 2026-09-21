@@ -13,8 +13,8 @@ export default function PlanetBanner({ className }: PlanetBannerProps) {
       className={`${styles.banner}${className ? ` ${className}` : ""}`}
     >
       <picture>
-        <source media="(min-width: 1680px)" srcSet="/images/planet/banner-1920.png" />
-        <source media="(min-width: 1280px)" srcSet="/images/planet/banner-1600.png" />
+        <source media="(min-width: 1920px)" srcSet="/images/planet/banner-1920.png" />
+        <source media="(min-width: 1600px)" srcSet="/images/planet/banner-1600.png" />
         <source media="(min-width: 980px)" srcSet="/images/planet/banner-980.png" />
         <img
           className={styles.image}

@@ -205,7 +205,7 @@
   width: 40px;
   height: 40px;
   padding: 0;
-  border: 1px solid #c2bdbd;
+  border: 1px solid transparent;
   border-radius: var(--radius-btn);
   background: var(--color-gray-bg);
   color: var(--color-text);
