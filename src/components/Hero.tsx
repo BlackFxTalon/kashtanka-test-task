@@ -37,7 +37,7 @@ export default function Hero() {
                 src={block.photo}
                 alt={block.title}
                 fill
-                sizes="(max-width: 979px) calc(100vw - 20px), (max-width: 1598px) 460px, 500px"
+                sizes="(max-width: 979px) calc(100vw - 20px), (max-width: 1498px) 460px, 500px"
                 className={styles.blockPhoto}
               />
               <div className={styles.blockBody}>
@@ -65,9 +65,9 @@ export default function Hero() {
 
         <div className={styles.bottom}>
           <h1 className={styles.slogan}>
-            Найди щенка, который
+            <span>Найди щенка, который</span>
             <br />
-            ждёт именно тебя
+            <span>ждёт именно тебя</span>
           </h1>
           <div className={styles.text}>
             Покупайте, продавайте и находите специалистов для своего питомца.

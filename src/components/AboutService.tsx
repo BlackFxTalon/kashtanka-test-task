@@ -119,7 +119,7 @@ export default function AboutService() {
                 <div className={styles.projectContent}>
                   <h3>Название социального проекта</h3>
                   <div className={styles.projectActions}>
-                    <a href="#" className="btn btn--primary"><span className={styles.moreDesktop}>Подробнее о проекте</span><span className={styles.moreMobile}>Подробнее</span></a>
+                    <a href="#" className="btn btn--white"><span className={styles.moreDesktop}>Подробнее о проекте</span><span className={styles.moreMobile}>Подробнее</span></a>
                     <a href="#" className="btn btn--white"><span>Помочь проекту</span></a>
                   </div>
                 </div>

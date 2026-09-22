@@ -212,7 +212,7 @@
   }
 }
 
-@media (min-width: 980px) and (max-width: 1598px) {
+@media (min-width: 980px) and (max-width: 1498px) {
   .storyRow {
     margin-right: -2px;
   }
@@ -224,20 +224,15 @@
     z-index: 2;
     margin-left: 0;
   }
-}
 
-@media (min-width: 980px) and (max-width: 1598px) {
   .stories {
     padding-left: 0;
     padding-right: 0;
     max-width: 890px;
   }
-  .storyRow {
-    max-width: 892px;
-  }
 }
 
-@media (min-width: 1599px) and (max-width: 1919px) {
+@media (min-width: 1499px) and (max-width: 1919px) {
   .stories {
     padding-left: 0;
     padding-right: 0;

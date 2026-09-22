@@ -15,7 +15,7 @@ export default function BuySlot() {
           src="/images/buy-slot/art.png"
           alt="Собака ждёт хозяина"
           fill
-          sizes="(max-width: 979px) calc(100vw - 40px), (max-width: 1598px) 450px, 400px"
+          sizes="(max-width: 979px) calc(100vw - 40px), (max-width: 1498px) 450px, 400px"
           className={styles.slot__artImage}
         />
         <span className={styles.slot__badge}>Место свободно</span>

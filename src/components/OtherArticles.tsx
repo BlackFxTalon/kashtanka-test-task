@@ -62,7 +62,7 @@ export default function OtherArticles() {
       >
         {ARTICLES.map((article, index) => (
           <SwiperSlide key={`${article.image}-${index}`} className={styles.slide}>
-            <ArticleCard {...article} imageSizes="(max-width: 979px) 355px, (max-width: 1598px) 420px, 500px" />
+            <ArticleCard {...article} imageSizes="(max-width: 979px) 355px, (max-width: 1498px) 420px, 500px" />
           </SwiperSlide>
         ))}
       </Swiper>

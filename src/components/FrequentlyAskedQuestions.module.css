@@ -194,7 +194,7 @@
   }
 }
 
-@media (min-width: 1599px) and (max-width: 1919px) {
+@media (min-width: 1499px) and (max-width: 1919px) {
   .columns {
     grid-template-columns: repeat(2, 600px);
          max-width: 1300px;

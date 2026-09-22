@@ -132,20 +132,20 @@
   }
 }
 
-@media (max-width: 1598px) {
+@media (max-width: 1498px) {
   .copyright {
     padding-top: 31px;
   }
 }
 
-@media (min-width: 980px) and (max-width: 1598px) {
+@media (min-width: 980px) and (max-width: 1498px) {
   .footer {
     padding-left: 30px;
     padding-right: 30px;
   }
 }
 
-@media (min-width: 1599px) and (max-width: 1919px) {
+@media (min-width: 1499px) and (max-width: 1919px) {
   .footer {
     padding-left: 60px;
     padding-right: 60px;

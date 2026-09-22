@@ -146,7 +146,7 @@
     background: rgba(255, 255, 255, 0.6);
     backdrop-filter: blur(5px);
 }
-@media (min-width: 760px) and (max-width: 1598px) {
+@media (min-width: 760px) and (max-width: 1498px) {
     .mobile {
         height: 437px;
         padding: 30px 15px;
@@ -179,7 +179,7 @@
     max-width: 445px;
 }
 }
-@media (min-width: 1599px) and (max-width: 1919px) {
+@media (min-width: 1499px) and (max-width: 1919px) {
     .form {
         height: 766px;
         padding: 30px 15px;

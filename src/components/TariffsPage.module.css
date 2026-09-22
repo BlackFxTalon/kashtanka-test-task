@@ -125,13 +125,13 @@
   }
 }
 
-@media (min-width: 980px) and (max-width: 1598px) {
+@media (min-width: 980px) and (max-width: 1498px) {
   .intro h1 {
     margin-bottom: 40px;
   }
 }
 
-@media (min-width: 1599px) and (max-width: 1919px) {
+@media (min-width: 1499px) and (max-width: 1919px) {
   .tariffs {
     max-width: 1500px;
     margin-left: auto;

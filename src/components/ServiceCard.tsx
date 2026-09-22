@@ -22,7 +22,7 @@ export default function ServiceCard({ data, variant = "home" }: ServiceCardProps
           src={data.photo}
           alt={data.title}
           fill
-          sizes={article ? "350px" : "(max-width: 979px) calc(100vw - 40px), (max-width: 1598px) 450px, 400px"}
+          sizes={article ? "350px" : "(max-width: 979px) calc(100vw - 40px), (max-width: 1498px) 450px, 400px"}
           className={styles.card__photo}
         />
         <span className={styles.card__badge}>Услуга</span>

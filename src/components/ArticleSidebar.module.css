@@ -15,6 +15,13 @@
   backdrop-filter: blur(var(--glass-blur));
 }
 
+@media (min-width: 1499px) and (max-width: 1599px) {
+  .categories {
+    margin-left: 25px;
+    padding-left: 0;
+  }
+}
+
 .categories a {
   display: inline-flex;
   align-items: center;

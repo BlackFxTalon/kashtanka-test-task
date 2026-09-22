@@ -131,7 +131,7 @@
   }
 }
 
-@media (min-width: 1599px) and (max-width: 1919px) {
+@media (min-width: 1499px) and (max-width: 1919px) {
   .block:nth-child(3) .blockBtns {
     flex-wrap: wrap;
   }
@@ -143,7 +143,7 @@
   }
 }
 
-@media (max-width: 1598px) {
+@media (max-width: 1498px) {
   .text {
     display: none;
   }
@@ -154,7 +154,7 @@
   }
 }
 
-@media (min-width: 980px) and (max-width: 1598px) {
+@media (min-width: 980px) and (max-width: 1498px) {
   .blocks {
     grid-template-columns: 400px 452px;
     gap: 38px;
@@ -231,13 +231,21 @@
   }
 }
 
-@media (min-width: 980px) and (max-width: 1598px) {
+@media (min-width: 980px) and (max-width: 1279px) {
   .slogan {
      text-align: center;
   }
+
+  .slogan br {
+    display: none;
+  }
+
+  .slogan span:last-child {
+    margin-left: 5px;
+  }
 }
 
-@media (min-width: 1280px) and (max-width: 1598px) {
+@media (min-width: 1280px) and (max-width: 1498px) {
   .inner {
     max-width: 1420px;
   }

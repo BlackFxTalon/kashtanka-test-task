@@ -60,7 +60,7 @@
   }
 }
 
-@media (min-width: 1599px) {
+@media (min-width: 1499px) {
   .section .swiper {
     width: 1660px;
     margin-left: 0;
@@ -74,7 +74,7 @@
   }
 }
 
-@media (max-width: 1598px) {
+@media (max-width: 1498px) {
   .section {
     margin-top: -20px;
   }

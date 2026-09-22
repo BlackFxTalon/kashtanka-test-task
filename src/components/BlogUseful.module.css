@@ -93,7 +93,7 @@
   margin-top: 40px;
 }
 
-@media (min-width: 1599px) and (max-width: 1920px) {
+@media (min-width: 1499px) and (max-width: 1920px) {
   .grid,
   .heading {
     max-width: 1639px;
@@ -211,7 +211,7 @@
   }
 }
 
-@media (min-width: 1599px) and (max-width: 1919px) {
+@media (min-width: 1499px) and (max-width: 1919px) {
   .sidebar {
     width: 350px;
   }
@@ -235,7 +235,7 @@
 
 }
 
-@media (max-width: 1598px) {
+@media (max-width: 1498px) {
   .sidebar {
     display: none;
   }
