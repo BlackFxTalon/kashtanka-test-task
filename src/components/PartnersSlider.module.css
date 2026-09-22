@@ -172,14 +172,14 @@
   }
 }
 
-@media (min-width: 1292px) and (max-width: 1498px) {
+@media (min-width: 1292px) and (max-width: 1599px) {
   .slider {
     width: 100%;
     max-width: 1020px;
   }
 }
 
-@media (min-width: 1499px) and (max-width: 1919px) {
+@media (min-width: 1600px) and (max-width: 1919px) {
 .slider {
     width: 100%;
     max-width: 1360px;

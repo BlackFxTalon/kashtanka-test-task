@@ -5,11 +5,34 @@
   color: var(--color-text);
 }
 
-.image {
-  object-fit: cover;
-  height: 300px !important;
+.media {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 300px;
+  overflow: hidden;
   border: var(--glass-border);
   border-radius: 30px;
+}
+
+.image {
+  object-fit: cover;
+}
+
+.knowledgeCard .media {
+  background: #364fb9;
+}
+
+.knowledgeCard .image {
+  top: 15px !important;
+  right: auto !important;
+  bottom: auto !important;
+  left: 50% !important;
+  width: 296px !important;
+  height: 270px !important;
+  object-fit: contain;
+  transform: translateX(-50%);
 }
 
 .category {

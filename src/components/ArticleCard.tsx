@@ -10,9 +10,10 @@ export interface ArticleCardData {
   secondaryAction?: string;
   secondaryHref?: string;
   mobileAction?: string;
-  variant?: "default" | "social";
+  variant?: "default" | "social" | "knowledge";
   href?: string;
   imageSizes?: string;
+  imageAlt?: string;
 }
 
 export default function ArticleCard({
@@ -26,16 +27,19 @@ export default function ArticleCard({
   variant = "default",
   href = "/blog/article",
   imageSizes = "(max-width: 979px) 355px, (max-width: 1239px) 420px, 33vw",
+  imageAlt = "Собаки и специалисты проекта",
 }: ArticleCardData) {
   return (
-    <article className={`${styles.card}${variant === "social" ? ` ${styles.socialCard}` : ""}`}>
-      <Image
-        className={styles.image}
-        src={image}
-        alt="Собаки и специалисты проекта"
-        fill
-        sizes={imageSizes}
-      />
+    <article className={`${styles.card}${variant === "social" ? ` ${styles.socialCard}` : ""}${variant === "knowledge" ? ` ${styles.knowledgeCard}` : ""}`}>
+      <div className={styles.media}>
+        <Image
+          className={styles.image}
+          src={image}
+          alt={imageAlt}
+          fill
+          sizes={imageSizes}
+        />
+      </div>
       {category && <span className={styles.category}>{category}</span>}
       <div className={styles.description}>
         <h2>{title}</h2>

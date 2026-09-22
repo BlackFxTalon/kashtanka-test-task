@@ -447,11 +447,7 @@
   }
 }
 
-@media (min-width: 1499px) and (max-width: 1919px) {
-  .copy {
-    max-width: 1005px;
-  }
-
+@media (min-width: 1499px) and (max-width: 1599px) {
   .layout {
     padding-right: 50px;
   }
@@ -459,6 +455,15 @@
      gap: 10px;
      max-width: 1510px;
      margin: auto;
+  }
+  .copy {
+    max-width: 890px;
+  }
+}
+
+@media (min-width: 1600px) and (max-width: 1919px) {
+.copy {
+    max-width: 1005px;
   }
 }
 

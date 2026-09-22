@@ -7,6 +7,7 @@ import Breadcrumbs from "./Breadcrumbs";
 import LiveSection from "./LiveSection";
 import Stories from "./Stories";
 import { LIVE_ITEMS } from "./liveData";
+import type { ArticleCardData } from "./ArticleCard";
 import styles from "./BlogPage.module.css";
 
 const ARTICLE_IMAGES = [
@@ -52,16 +53,26 @@ export function Pager({ className }: { className?: string }) {
   );
 }
 
-export default function BlogPage() {
+interface BlogPageProps {
+  title?: string;
+  categoryLabel?: string;
+  articles?: ArticleCardData[];
+}
+
+export default function BlogPage({
+  title = "Блог",
+  categoryLabel = "Категории блога",
+  articles = ARTICLES,
+}: BlogPageProps) {
   const [categoriesOpen, setCategoriesOpen] = useState(false);
 
   return (
     <main className={styles.main}>
       <section className={styles.intro}>
-        <Breadcrumbs items={[{ label: "Главная", href: "/" }]} current="Блог" />
-        <h1>Блог</h1>
+        <Breadcrumbs items={[{ label: "Главная", href: "/" }]} current={title} />
+        <h1>{title}</h1>
         <button type="button" className={`btn btn--primary ${styles.categoryButton}`} onClick={() => setCategoriesOpen(true)}>
-          <span>Категории блога</span>
+          <span>{categoryLabel}</span>
         </button>
         <div className={`${styles.categoryMenu}${categoriesOpen ? ` ${styles.categoryMenuOpen}` : ""}`}>
           <button type="button" className={styles.categoryClose} onClick={() => setCategoriesOpen(false)}>×</button>
@@ -81,7 +92,7 @@ export default function BlogPage() {
 
       <section className={styles.articles}>
         <div className={styles.articleGrid}>
-          {ARTICLES.map((article, index) => <ArticleCard key={index} {...article} />)}
+          {articles.map((article, index) => <ArticleCard key={index} {...article} />)}
         </div>
         <Pager />
       </section>

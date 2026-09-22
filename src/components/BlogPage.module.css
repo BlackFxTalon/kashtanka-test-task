@@ -216,11 +216,12 @@
 @media (min-width: 1499px) and (max-width: 1919px) {
   .articles {
     max-width: 1500px;
-    padding-left: 0;
-    padding-right: 0;
   }
   .intro {
     max-width: 1590px;
+  }
+  .articleGrid {
+    gap: 80px 60px;
   }
 }
 
