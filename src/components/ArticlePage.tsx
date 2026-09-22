@@ -29,9 +29,9 @@ const FIRST_DAYS_TEXT = "В первые 2–3 дня важно снизить 
 const LIST_ITEMS = ["Строка 1", "Строка 2", "Строка 3", "Строка 4", "Строка 5"];
 
 const SLIDE_IMAGES = [
-  { image: "/images/dogs/slider-1.png", alt: "Щенок немецкой овчарки лежит на зелёной траве" },
-  { image: "/images/dogs/dog-2.png", alt: "Спящий щенок с игрушкой в своём домике" },
-  { image: "/images/dogs/dog-4.png", alt: "Белый щенок сидит среди садовых цветов" },
+  { image: "/images/dogs/slider-1.webp", alt: "Щенок немецкой овчарки лежит на зелёной траве" },
+  { image: "/images/dogs/dog-2.webp", alt: "Спящий щенок с игрушкой в своём домике" },
+  { image: "/images/dogs/dog-4.webp", alt: "Белый щенок сидит среди садовых цветов" },
 ];
 
 const SHARE_LINKS = [
@@ -103,7 +103,7 @@ function ArticleVideo() {
         <video
           ref={videoRef}
           className={styles.video}
-          poster="/images/dogs/video-poster.png"
+          poster="/images/dogs/video-poster.webp"
           preload="none"
           controls={playing}
         />
@@ -163,8 +163,8 @@ export default function ArticlePage({ variant = "article", title: titleOverride 
             <h1>{title}</h1>
 
             <div className={styles.hero}>
-              {planet ? <><Image src="/images/planet/hero-photo.png" alt="Щенки играют в саду" fill priority sizes="(max-width: 979px) calc(100vw - 40px), 1000px" /><LogoOverlay /></> : <Image
-                src="/images/dogs/dog-1.png"
+              {planet ? <><Image src="/images/planet/hero-photo.webp" alt="Щенки играют в саду" fill priority sizes="(max-width: 979px) calc(100vw - 40px), 1000px" /><LogoOverlay /></> : <Image
+                src="/images/dogs/dog-1.webp"
                 alt="Щенок золотистого ретривера лежит на траве"
                 fill
                 priority
@@ -197,7 +197,7 @@ export default function ArticlePage({ variant = "article", title: titleOverride 
               <figure className={styles.photo}>
                 <div className={styles.photoFrame}>
                   <Image
-                    src="/images/dogs/dog-3.png"
+                    src="/images/dogs/dog-3.webp"
                     alt="Немецкая овчарка бежит по траве"
                     fill
                     sizes="(max-width: 979px) calc(100vw - 40px), 650px"

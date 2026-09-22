@@ -11,10 +11,10 @@ import {
 import styles from "./AboutService.module.css";
 
 const projects = [
-  { id: "article", image: "/images/blog/article-3.png" },
-  { id: "vet", image: "/images/social/project-vet.png" },
-  { id: "group", image: "/images/social/project-group.png" },
-  { id: "reading", image: "/images/blog/reading-3.png" },
+  { id: "article", image: "/images/blog/article-3.webp" },
+  { id: "vet", image: "/images/social/project-vet.webp" },
+  { id: "group", image: "/images/social/project-group.webp" },
+  { id: "reading", image: "/images/blog/reading-3.webp" },
 ];
 
 const supportProjects = Array.from({ length: 6 }, (_, index) => ({
@@ -73,7 +73,7 @@ export function Supporters({ variant = "default" }: { variant?: "default" | "pla
             <SwiperSlide className={styles.supporterSlide} key={project.id}>
               <article className={styles.supporterCard}>
                 <div className={styles.supporterImage}>
-                  <Image src="/images/blog/story-add.png" alt="Плейсхолдер проекта" sizes="120px" width={70} height={70}/>
+                  <Image src="/images/blog/story-add.webp" alt="Плейсхолдер проекта" sizes="120px" width={70} height={70}/>
                 </div>
                 <span>{variant === "planet" || bloggers ? <>Название<br />проекта</> : project.name}</span>
               </article>

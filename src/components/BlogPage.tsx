@@ -11,9 +11,9 @@ import type { ArticleCardData } from "./ArticleCard";
 import styles from "./BlogPage.module.css";
 
 const ARTICLE_IMAGES = [
-  "/images/blog/article-1.png",
-  "/images/blog/article-2.png",
-  "/images/blog/article-3.png",
+  "/images/blog/article-1.webp",
+  "/images/blog/article-2.webp",
+  "/images/blog/article-3.webp",
 ];
 
 const ARTICLES = Array.from({ length: 15 }, (_, index) => ({
@@ -71,7 +71,7 @@ export default function BlogPage({
       <section className={styles.intro}>
         <Breadcrumbs items={[{ label: "Главная", href: "/" }]} current={title} />
         <h1>{title}</h1>
-        <button type="button" className={`btn btn--primary ${styles.categoryButton}`} onClick={() => setCategoriesOpen(true)}>
+        <button type="button" className={`btn btn--white ${styles.categoryButton}`} onClick={() => setCategoriesOpen(true)}>
           <span>{categoryLabel}</span>
         </button>
         <div className={`${styles.categoryMenu}${categoriesOpen ? ` ${styles.categoryMenuOpen}` : ""}`}>

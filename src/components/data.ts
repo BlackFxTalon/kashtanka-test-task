@@ -14,7 +14,7 @@ export const ANNOUNCEMENTS: AnnouncementData[] = Array.from(
     femaleCount: 3,
     city: "Москва",
     litterDate: "03.03.2026",
-    photo: `/images/dogs/${PHOTOS[i]}.png`,
+    photo: `/images/dogs/${PHOTOS[i]}.webp`,
   }),
 );
 
@@ -31,6 +31,6 @@ export const TOP_ANNOUNCEMENTS: AnnouncementData[] = TOP_PHOTOS.map(
     femaleCount: 3,
     city: "Москва",
     litterDate: "03.03.2026",
-    photo: `/images/dogs/${photo}.png`,
+    photo: `/images/dogs/${photo}.webp`,
   }),
 );

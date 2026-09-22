@@ -8,7 +8,7 @@ import ArticleCard, { type ArticleCardData } from "./ArticleCard";
 import { PagerChevronIcon } from "./icons";
 import styles from "./OtherArticles.module.css";
 
-const ARTICLE_IMAGES = ["article-1.png", "article-2.png", "article-3.png"];
+const ARTICLE_IMAGES = ["article-1.webp", "article-2.webp", "article-3.webp"];
 const ARTICLE_ACTIONS = ["Читать статью", "Смотреть видео", "Читать статью"];
 
 const ARTICLES: ArticleCardData[] = Array.from({ length: 6 }, (_, index) => ({

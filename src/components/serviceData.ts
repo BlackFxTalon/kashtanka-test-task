@@ -22,7 +22,7 @@ export const SERVICE_CARDS: ServiceCardData[] = [
     avatar: "/images/services/avatar.svg",
     role: "Заводчик",
     city: "Москва",
-    photo: "/images/blog/article-1.png",
+    photo: "/images/blog/article-1.webp",
   },
   {
     id: 2,
@@ -34,7 +34,7 @@ export const SERVICE_CARDS: ServiceCardData[] = [
     avatar: "/images/services/avatar.svg",
     role: "Заводчик",
     city: "Москва",
-    photo: "/images/hero/hero-help.png",
+    photo: "/images/hero/hero-help.webp",
   },
   {
     id: 3,
@@ -46,7 +46,7 @@ export const SERVICE_CARDS: ServiceCardData[] = [
     avatar: "/images/services/avatar.svg",
     role: "Заводчик",
     city: "Москва",
-    photo: "/images/blog/live-2.png",
+    photo: "/images/blog/live-2.webp",
   },
   {
     id: 4,
@@ -58,7 +58,7 @@ export const SERVICE_CARDS: ServiceCardData[] = [
     avatar: "/images/services/avatar.svg",
     role: "Заводчик",
     city: "Москва",
-    photo: "/images/social/project-group.png",
+    photo: "/images/social/project-group.webp",
   },
 ];
 

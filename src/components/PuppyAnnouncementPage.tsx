@@ -20,12 +20,12 @@ import {
   PagerChevronIcon,
 } from "./icons";
 import styles from "./PuppyAnnouncementPage.module.css";
-import breederAvatar from "../assets/figma/breeder-avatar.png";
+import breederAvatar from "../assets/figma/breeder-avatar.webp";
 import tipCheck from "../assets/figma/tip-check.svg";
 import petCountDivider from "../assets/figma/pet-count-divider.svg";
 import statusApproved from "../assets/figma/status-approved.svg";
 import statusRejected from "../assets/figma/status-rejected.svg";
-const PHOTOS = Array.from({ length: 9 }, () => "/images/dogs/dog-1.png");
+const PHOTOS = Array.from({ length: 9 }, () => "/images/dogs/dog-1.webp");
 const LITTER: AnnouncementData[] = [
   60000, 90000, 80000, 60000, 75000, 85000, 70000, 95000,
 ].map((price, index) => ({
@@ -38,7 +38,7 @@ const LITTER: AnnouncementData[] = [
   femaleCount: 1,
   city: "Москва",
   litterDate: "03.03.2026",
-  photo: "/images/dogs/dog-1.png",
+  photo: "/images/dogs/dog-1.webp",
 }));
 function SliderControls({
   onPrev,
@@ -64,7 +64,7 @@ function PedigreeCard({ main = false }: { main?: boolean }) {
       {main && (
         <div className={styles.pedigreePhoto}>
           <Image
-            src="/images/dogs/dog-1.png"
+            src="/images/dogs/dog-1.webp"
             alt="Щенок бигля"
             fill
             sizes="400px"
@@ -89,7 +89,7 @@ function PedigreeCard({ main = false }: { main?: boolean }) {
         {!main && (
           <Image
             className={styles.pedigreeAvatar}
-            src="/images/dogs/dog-3.png"
+            src="/images/dogs/dog-3.webp"
             alt="Родитель щенка"
             width={60}
             height={60}
@@ -307,7 +307,7 @@ export default function PuppyAnnouncementPage() {
               <div className={styles.seller}>
                 <Image
                   className={styles.avatar}
-                  src="/images/dogs/dog-2.png"
+                  src="/images/dogs/dog-2.webp"
                   alt="Инна Крамаренко"
                   width={80}
                   height={80}

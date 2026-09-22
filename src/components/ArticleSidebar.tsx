@@ -22,10 +22,10 @@ const CATEGORIES = [
 ];
 
 const READING_ITEMS: ArticleCardData[] = [
-  { image: "/images/blog/article-1.png", action: "Читать статью" },
-  { image: "/images/blog/live-2.png", action: "Читать статью" },
-  { image: "/images/blog/reading-3.png", action: "Читать статью" },
-  { image: "/images/blog/story-3.png", action: "Читать статью" },
+  { image: "/images/blog/article-1.webp", action: "Читать статью" },
+  { image: "/images/blog/live-2.webp", action: "Читать статью" },
+  { image: "/images/blog/reading-3.webp", action: "Читать статью" },
+  { image: "/images/blog/story-3.webp", action: "Читать статью" },
 ];
 
 const ARTICLE_ANNOUNCEMENTS: AnnouncementData[] = [
@@ -39,7 +39,7 @@ const ARTICLE_ANNOUNCEMENTS: AnnouncementData[] = [
     femaleCount: 3,
     city: "Москва",
     litterDate: "03.03.2026",
-    photo: "/images/dogs/dog-1.png",
+    photo: "/images/dogs/dog-1.webp",
   },
   {
     id: 102,
@@ -51,7 +51,7 @@ const ARTICLE_ANNOUNCEMENTS: AnnouncementData[] = [
     femaleCount: 3,
     city: "Москва",
     litterDate: "03.03.2026",
-    photo: "/images/dogs/ad-2.png",
+    photo: "/images/dogs/ad-2.webp",
   },
   {
     id: 103,
@@ -63,7 +63,7 @@ const ARTICLE_ANNOUNCEMENTS: AnnouncementData[] = [
     femaleCount: 3,
     city: "Москва",
     litterDate: "03.03.2026",
-    photo: "/images/dogs/ad-3.png",
+    photo: "/images/dogs/ad-3.webp",
   },
   {
     id: 104,
@@ -75,7 +75,7 @@ const ARTICLE_ANNOUNCEMENTS: AnnouncementData[] = [
     femaleCount: 3,
     city: "Москва",
     litterDate: "03.03.2026",
-    photo: "/images/dogs/ad-4.png",
+    photo: "/images/dogs/ad-4.webp",
   },
 ];
 

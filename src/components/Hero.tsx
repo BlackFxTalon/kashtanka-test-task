@@ -3,21 +3,21 @@ import styles from "./Hero.module.css";
 
 const BLOCKS = [
   {
-    photo: "/images/hero/hero-puppy.png",
+    photo: "/images/hero/hero-puppy.webp",
     title: "Подписка для вас",
     active: "Купить подписку",
     inactive: "Первый раз здесь",
     extra: null,
   },
   {
-    photo: "/images/hero/hero-subscription.png",
+    photo: "/images/hero/hero-subscription.webp",
     title: "Щенок в доме, ваш друг",
     active: "Щенки",
     inactive: null,
     extra: "Купить сертификат",
   },
   {
-    photo: "/images/hero/hero-help.png",
+    photo: "/images/hero/hero-help.webp",
     title: "Вы любите животных, помогите",
     titleMobile: "Любишь животных",
     active: "Предложи услуги",

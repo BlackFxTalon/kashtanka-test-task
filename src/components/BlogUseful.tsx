@@ -9,12 +9,12 @@ import { PagerChevronIcon } from "./icons";
 import styles from "./BlogUseful.module.css";
 
 const IMAGES = [
-  "/images/blog/article-1.png",
-  "/images/blog/article-2.png",
-  "/images/blog/article-3.png",
-  "/images/blog/article-2.png",
-  "/images/dogs/dog-2.png",
-  "/images/blog/article-1.png",
+  "/images/blog/article-1.webp",
+  "/images/blog/article-2.webp",
+  "/images/blog/article-3.webp",
+  "/images/blog/article-2.webp",
+  "/images/dogs/dog-2.webp",
+  "/images/blog/article-1.webp",
 ];
 
 const ARTICLES = IMAGES.map((image, index) => ({
@@ -23,10 +23,10 @@ const ARTICLES = IMAGES.map((image, index) => ({
 }));
 
 const SIDEBAR_ARTICLES = [
-  "/images/blog/article-1.png",
-  "/images/blog/live-2.png",
-  "/images/blog/reading-3.png",
-  "/images/blog/story-3.png",
+  "/images/blog/article-1.webp",
+  "/images/blog/live-2.webp",
+  "/images/blog/reading-3.webp",
+  "/images/blog/story-3.webp",
 ].map((image) => ({ image, action: "Читать статью" }));
 
 interface BlogUsefulProps {

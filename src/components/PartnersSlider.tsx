@@ -29,7 +29,7 @@ const LOGOS = {
     height: 68,
   },
   white: {
-    src: "/images/partners/partner-white.png",
+    src: "/images/partners/partner-white.webp",
     alt: "Логотип партнёра",
     width: 207,
     height: 82,

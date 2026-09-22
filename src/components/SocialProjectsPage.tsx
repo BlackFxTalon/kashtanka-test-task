@@ -6,21 +6,21 @@ import { LIVE_ITEMS } from "./liveData";
 import styles from "./SocialProjectsPage.module.css";
 
 const PROJECT_IMAGES = [
-  "/images/blog/article-1.png",
-  "/images/blog/live-2.png",
-  "/images/blog/article-3.png",
-  "/images/blog/article-1.png",
-  "/images/blog/live-2.png",
-  "/images/blog/article-3.png",
-  "/images/blog/article-1.png",
-  "/images/blog/live-2.png",
-  "/images/blog/article-3.png",
-  "/images/blog/article-1.png",
-  "/images/blog/live-2.png",
-  "/images/blog/article-3.png",
-  "/images/blog/article-1.png",
-  "/images/blog/live-2.png",
-  "/images/blog/article-3.png",
+  "/images/blog/article-1.webp",
+  "/images/blog/live-2.webp",
+  "/images/blog/article-3.webp",
+  "/images/blog/article-1.webp",
+  "/images/blog/live-2.webp",
+  "/images/blog/article-3.webp",
+  "/images/blog/article-1.webp",
+  "/images/blog/live-2.webp",
+  "/images/blog/article-3.webp",
+  "/images/blog/article-1.webp",
+  "/images/blog/live-2.webp",
+  "/images/blog/article-3.webp",
+  "/images/blog/article-1.webp",
+  "/images/blog/live-2.webp",
+  "/images/blog/article-3.webp",
 ];
 
 const PROJECTS: ArticleCardData[] = Array.from({ length: 15 }, (_, index) => ({

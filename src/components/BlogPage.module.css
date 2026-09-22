@@ -258,8 +258,8 @@
   }
 
   .categoryMore {
-    right: 40px;
-    left: auto;
+    right: unset;
+    left: 20px;
     transform: none;
   }
 
@@ -285,5 +285,11 @@
 
   .pagerMobileHidden {
     display: none;
+  }
+}
+
+@media (min-width: 980px) and (max-width: 1499px) {
+  .categoryMore {
+         left: 80px;
   }
 }

@@ -14,18 +14,18 @@ import {
 import styles from "./Stories.module.css";
 
 const STORY_IMAGES = [
-  "/images/blog/story-4.png",
-  "/images/blog/story-1.png",
-  "/images/blog/story-2.png",
-  "/images/blog/story-3.png",
-  "/images/blog/story-4.png",
-  "/images/blog/story-3.png",
-  "/images/blog/story-1.png",
-  "/images/blog/story-2.png",
-  "/images/blog/story-4.png",
-  "/images/blog/story-3.png",
-  "/images/blog/story-1.png",
-  "/images/blog/story-2.png",
+  "/images/blog/story-4.webp",
+  "/images/blog/story-1.webp",
+  "/images/blog/story-2.webp",
+  "/images/blog/story-3.webp",
+  "/images/blog/story-4.webp",
+  "/images/blog/story-3.webp",
+  "/images/blog/story-1.webp",
+  "/images/blog/story-2.webp",
+  "/images/blog/story-4.webp",
+  "/images/blog/story-3.webp",
+  "/images/blog/story-1.webp",
+  "/images/blog/story-2.webp",
 ];
 
 function StoryCard({ image }: { image: string }) {
@@ -46,7 +46,7 @@ function AddStoryCard() {
   return (
     <article className={styles.addStory}>
       <div className={styles.addStoryBlock}>
-        <Image src="/images/blog/story-add.png" alt="Плюс — добавить свою историю" width={146} height={149} />
+        <Image src="/images/blog/story-add.webp" alt="Плюс — добавить свою историю" width={146} height={149} />
       </div>
       <div className={styles.addStoryAction}>
         <Link href="/story-request" aria-label="Разместить свою историю">

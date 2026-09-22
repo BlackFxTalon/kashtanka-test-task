@@ -19,7 +19,7 @@ const KNOWLEDGE_ARTICLES = [
   "Реабилитация питомца",
   "Помощь и пространство питомца",
 ].map((title, index) => ({
-  image: `/images/knowledge-center/${String(index + 1).padStart(2, "0")}.png`,
+  image: `/images/knowledge-center/${String(index + 1).padStart(2, "0")}.webp`,
   title,
   action: "читать статью",
   category: "",

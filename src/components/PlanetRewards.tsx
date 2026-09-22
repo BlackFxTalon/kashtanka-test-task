@@ -4,10 +4,10 @@ import Image from "next/image";
 import styles from "./PlanetRewards.module.css";
 
 const rewards = [
-  ["/images/planet/reward-2.jpeg", "200 ₽"],
-  ["/images/planet/reward-4.jpeg", "800 ₽"],
-  ["/images/planet/reward-3.jpeg", "3 700 ₽"],
-  ["/images/planet/reward-7.jpeg", "6 000 ₽"]
+  ["/images/planet/reward-2.webp", "200 ₽"],
+  ["/images/planet/reward-4.webp", "800 ₽"],
+  ["/images/planet/reward-3.webp", "3 700 ₽"],
+  ["/images/planet/reward-7.webp", "6 000 ₽"]
 ];
 
 export default function PlanetRewards() {
